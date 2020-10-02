@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply from: '../jacoco.gradle'
 
 android {
     compileSdkVersion 29
@@ -17,6 +18,7 @@ android {
 
     buildTypes {
         release {
+            debug { testCoverageEnabled true }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
