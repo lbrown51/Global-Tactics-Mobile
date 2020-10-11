@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_top_line_margin_top">220dp</dimen>
+    <dimen name="logo_bottom_line_margin_top">480dp</dimen>
+    <dimen name="logo_letter_space">5dp</dimen>
+    <dimen name="logo_global_margin_left">80dp</dimen>
+    <dimen name="logo_global_margin_top">10dp</dimen>
+    <dimen name="logo_tactics_margin_top">140dp</dimen>
+    <dimen name="logo_tactics_margin_left">95dp</dimen>
+</resources>

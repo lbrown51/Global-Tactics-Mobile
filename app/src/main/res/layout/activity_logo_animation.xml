@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lALogo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogoAnimationActivity">
+
+    <ImageView
+        android:id="@+id/ivTopLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/logo_top_line_margin_top"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/line" />
+
+    <ImageView
+        android:id="@+id/ivGlobalG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginLeft="@dimen/logo_global_margin_left"
+        android:layout_marginTop="@dimen/logo_global_margin_top"
+        app:srcCompat="@drawable/light_g" />
+
+    <ImageView
+        android:id="@+id/ivGlobalLOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivGlobalG"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_global_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/light_l1" />
+
+    <ImageView
+        android:id="@+id/ivGlobalO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivGlobalLOne"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_global_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/letter_o" />
+
+    <ImageView
+        android:id="@+id/ivGlobalB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivGlobalO"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_global_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+
+        app:srcCompat="@drawable/light_b" />
+
+    <ImageView
+        android:id="@+id/ivGlobalA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivGlobalB"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_global_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/light_a" />
+
+    <ImageView
+        android:id="@+id/ivGlobalLTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivGlobalA"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_global_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/light_l" />
+
+    <ImageView
+        android:id="@+id/ivTacticsTOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginLeft="@dimen/logo_tactics_margin_left"
+        android:layout_marginTop="@dimen/logo_tactics_margin_top"
+        app:srcCompat="@drawable/dark_t" />
+
+    <ImageView
+        android:id="@+id/ivTacticsA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivTacticsTOne"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_tactics_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/dark_a" />
+
+    <ImageView
+        android:id="@+id/ivTacticsCOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivTacticsA"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_tactics_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/dark_c" />
+
+    <ImageView
+        android:id="@+id/ivTacticsTTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivTacticsCOne"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_tactics_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/dark_t1" />
+
+    <ImageView
+        android:id="@+id/ivTacticsI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivTacticsTTwo"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_tactics_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/dark_i" />
+
+    <ImageView
+        android:id="@+id/ivTacticsCTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivTacticsI"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_tactics_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/dark_c1" />
+
+    <ImageView
+        android:id="@+id/ivTacticsS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivTacticsCTwo"
+        android:layout_below="@+id/ivTopLine"
+        android:layout_marginTop="@dimen/logo_tactics_margin_top"
+        android:layout_marginLeft="@dimen/logo_letter_space"
+        app:srcCompat="@drawable/dark_s" />
+
+    <ImageView
+        android:id="@+id/ivBottomLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/logo_bottom_line_margin_top"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/line" />
+</RelativeLayout>
