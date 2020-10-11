@@ -26,4 +26,17 @@ public class MainActivityTest {
         onView(withId(R.id.hello_world_text))
                 .check(matches(withText("Hello World!")));
     }
+  
+    @Test
+    public void allFragmentsDisplayed() {
+        onView(withId(R.id.about_placeholder_text))
+                .check(matches(withText(R.string.about_us_placeholder)));
+        onView(withId(R.id.blog_placeholder_text))
+                .check(matches(withText(R.string.blog_placeholder)));
+        onView(withId(R.id.events_placeholder_text))
+                .check(matches(withText(R.string.events_placeholder)));
+        onView(withId(R.id.privacy_placeholder_text))
+                .check(matches(withText(R.string.privacy_placeholder)));
+
+    }
 }
