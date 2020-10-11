@@ -26,7 +26,7 @@ public class MainActivityTest {
         onView(withId(R.id.hello_world_text))
                 .check(matches(withText("Hello World!")));
     }
-
+  
     @Test
     public void allFragmentsDisplayed() {
         onView(withId(R.id.about_placeholder_text))
