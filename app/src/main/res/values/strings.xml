@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Global Tactics</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_us_placeholder">About Us Fragment</string>
+    <string name="blog_placeholder">Blog Fragment</string>
+    <string name="events_placeholder">Events Fragment</string>
+    <string name="privacy_placeholder">Privacy Fragment</string>
 </resources>
