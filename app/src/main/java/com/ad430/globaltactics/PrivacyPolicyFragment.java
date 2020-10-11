@@ -34,13 +34,13 @@ public class PrivacyPolicyFragment extends Fragment {
      * @return A new instance of fragment PrivacyPolicyFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PrivacyPolicyFragment newInstance(String param1, String param2) {
-        PrivacyPolicyFragment fragment = new PrivacyPolicyFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
-        return fragment;
-    }
+//    public static PrivacyPolicyFragment newInstance(String param1, String param2) {
+//        PrivacyPolicyFragment fragment = new PrivacyPolicyFragment();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_PARAM1, param1);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

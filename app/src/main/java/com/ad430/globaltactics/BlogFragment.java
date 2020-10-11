@@ -34,13 +34,13 @@ public class BlogFragment extends Fragment {
      * @return A new instance of fragment BlogFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlogFragment newInstance(String param1, String param2) {
-        BlogFragment fragment = new BlogFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
-        return fragment;
-    }
+//    public static BlogFragment newInstance(String param1, String param2) {
+//        BlogFragment fragment = new BlogFragment();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_PARAM1, param1);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

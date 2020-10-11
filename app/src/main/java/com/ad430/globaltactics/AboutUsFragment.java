@@ -34,13 +34,13 @@ public class AboutUsFragment extends Fragment {
      * @return A new instance of fragment AboutUsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AboutUsFragment newInstance(String param1, String param2) {
-        AboutUsFragment fragment = new AboutUsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
-        return fragment;
-    }
+//    public static AboutUsFragment newInstance(String param1, String param2) {
+//        AboutUsFragment fragment = new AboutUsFragment();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_PARAM1, param1);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
