@@ -24,8 +24,8 @@ import static androidx.test.espresso.intent.matcher.UriMatchers.hasHost;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static org.hamcrest.Matchers.allOf;
 
-import static java.util.EnumSet.allOf;
 import static org.junit.Assert.*;
 
 @RunWith(AndroidJUnit4.class)
@@ -78,20 +78,20 @@ public class MainActivityTest {
     public void clickOnLinkedinIcon() {
         onView(withId(R.id.ivLinkedin)).perform(click());
 
-        intended(hasAction(Intent.ACTION_VIEW));
+        intended(allOf(hasAction(Intent.ACTION_VIEW), hasData(allOf(hasHost("www.linkedin.com")))));
     }
 
     @Test
     public void clickOnFacebookIcon() {
         onView(withId(R.id.ivFacebook)).perform(click());
 
-        intended(hasAction(Intent.ACTION_VIEW));
+        intended(allOf(hasAction(Intent.ACTION_VIEW), hasData(allOf(hasHost("www.facebook.com")))));
     }
 
     @Test
     public void clickOnTwitterIcon() {
         onView(withId(R.id.ivTwitter)).perform(click());
 
-        intended(hasAction(Intent.ACTION_VIEW));
+        intended(allOf(hasAction(Intent.ACTION_VIEW), hasData(allOf(hasHost("twitter.com")))));
     }
 }
