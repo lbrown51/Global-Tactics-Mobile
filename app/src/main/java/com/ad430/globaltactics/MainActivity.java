@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         AboutUsFragment aboutUsFragment = new AboutUsFragment();
+
+
         fragmentTransaction.add(R.id.about_fragment_container, aboutUsFragment);
 
         BlogFragment blogFragment = new BlogFragment();
@@ -27,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         PrivacyPolicyFragment privacyPolicyFragment = new PrivacyPolicyFragment();
         fragmentTransaction.add(R.id.privacy_fragment_container, privacyPolicyFragment);
+
+        HomeScreenFragment homeScreenFragment = new HomeScreenFragment();
+        fragmentTransaction.add(R.id.home_screen_fragment_container, homeScreenFragment);
+
 
         fragmentTransaction.commit();
     }

@@ -6,4 +6,6 @@
     <string name="blog_placeholder">Blog Fragment</string>
     <string name="events_placeholder">Events Fragment</string>
     <string name="privacy_placeholder">Privacy Fragment</string>
+    <string name="home_screen_placeholder">Home Screen Fragment</string>
+    <string name="motto_text">Turning Perspective into Opportunity</string>
 </resources>
