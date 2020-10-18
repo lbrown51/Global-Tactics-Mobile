@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class LogoAnimationActivity extends AppCompatActivity {
     //declare variables
-    private static int splash_screen = 6000;
+    private static int splash_screen = 5000;
 
     ImageView ivGlobalG, ivGlobalLOne, ivGlobalO, ivGlobalB, ivGlobalA, ivGlobalLTwo,
             ivTacticsTOne, ivTacticsA, ivTacticsCOne, ivTacticsTTwo, ivTacticsI, ivTacticsCTwo, ivTacticsS,
@@ -71,14 +71,23 @@ public class LogoAnimationActivity extends AppCompatActivity {
         ivTacticsS.setAnimation(fromBottom);
         bottomLine.setAnimation(fromRight);
 
-        new Handler().postDelayed(new Runnable() {
+        Thread timer = new Thread() {
             @Override
             public void run() {
-                Intent intent = new Intent(LogoAnimationActivity.this, MainActivity.class);
-                startActivity(intent);
-
-                finish();
+                try {
+                    sleep(splash_screen);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    super.run();
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                super.run();
             }
-        }, splash_screen);
+        };
+
+        timer.start();
     }
 }
