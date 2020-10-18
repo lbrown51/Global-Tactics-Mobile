@@ -1,10 +1,12 @@
 package com.ad430.globaltactics;
 
 import android.content.Intent;
-
+import androidx.test.core.app.ApplicationProvider;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import androidx.test.rule.ActivityTestRule;
 
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -21,13 +23,29 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
+
 public class AboutUsFragmentTest {
+
     @Rule
-    public ActivityScenarioRule<MainActivity> activityScenarioRule =
-            new ActivityScenarioRule<>(MainActivity.class);
+    public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class){
+        @Override
+        protected Intent getActivityIntent() {
+            Intent intent = new Intent(ApplicationProvider.getApplicationContext(),MainActivity.class);
+
+            return intent;
+        }
+    };
 
     @Rule
     public IntentsTestRule<MainActivity> intentsTestRule = new IntentsTestRule<>(MainActivity.class);
+
+    MainActivity mainActivity;
+    AboutUsFragment aboutUsFragment;
+
+    @Before
+    public void init(){
+        activityTestRule.getActivity().getSupportFragmentManager().beginTransaction();
+    }
 
     @Test
     public void aboutUsFragmentsAllTextViews() {
