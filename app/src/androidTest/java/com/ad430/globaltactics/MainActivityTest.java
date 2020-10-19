@@ -5,7 +5,6 @@ import android.app.Instrumentation;
 import android.content.Intent;
 import android.net.Uri;
 
-import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
