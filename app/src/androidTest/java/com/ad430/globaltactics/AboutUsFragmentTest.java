@@ -73,7 +73,7 @@ public class AboutUsFragmentTest {
 
     @Test
     public void clickOnLinkedinIcon() {
-        RelativeLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
+        ConstraintLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
 
         AboutUsFragment mFragment = new AboutUsFragment();
 
@@ -81,16 +81,14 @@ public class AboutUsFragmentTest {
 
         getInstrumentation().waitForIdleSync();
 
-        View view = mFragment.getView().findViewById(R.id.aboutUsFragment);
-
-        onView(withId(R.id.ivLinkedin)).perform(scrollTo(), click());
+        onView(withId(R.id.ivLinkedin)).perform(click());
 
         intended(allOf(hasAction(Intent.ACTION_VIEW), hasData(allOf(hasHost("www.linkedin.com")))));
     }
 
     @Test
     public void clickOnFacebookIcon() {
-        RelativeLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
+        ConstraintLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
 
         AboutUsFragment mFragment = new AboutUsFragment();
 
@@ -98,16 +96,14 @@ public class AboutUsFragmentTest {
 
         getInstrumentation().waitForIdleSync();
 
-        View view = mFragment.getView().findViewById(R.id.aboutUsFragment);
-
-        onView(withId(R.id.ivLinkedin)).perform(scrollTo(), click());
+        onView(withId(R.id.ivLinkedin)).perform(click());
 
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
 
     @Test
     public void clickOnTwitterIcon() {
-        RelativeLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
+        ConstraintLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
 
         AboutUsFragment mFragment = new AboutUsFragment();
 
@@ -115,9 +111,7 @@ public class AboutUsFragmentTest {
 
         getInstrumentation().waitForIdleSync();
 
-        View view = mFragment.getView().findViewById(R.id.aboutUsFragment);
-
-        onView(withId(R.id.ivLinkedin)).perform(scrollTo(), click());
+        onView(withId(R.id.ivLinkedin)).perform(click());
 
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
