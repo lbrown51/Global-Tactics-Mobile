@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.rule.ActivityTestRule;
 
@@ -45,7 +46,7 @@ public class AboutUsFragmentTest {
 
     @Test
     public void aboutUsFragmentsAllTextViews() {
-        RelativeLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
+        ConstraintLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
 
         assertNotNull(mRelativeLayout);
 
