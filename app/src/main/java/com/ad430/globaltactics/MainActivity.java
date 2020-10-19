@@ -1,10 +1,22 @@
 package com.ad430.globaltactics;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.customview.widget.Openable;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.navigation.NavigationView;
+
+import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,27 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        AboutUsFragment aboutUsFragment = new AboutUsFragment();
-
-
-        fragmentTransaction.add(R.id.about_fragment_container, aboutUsFragment);
-
-        BlogFragment blogFragment = new BlogFragment();
-        fragmentTransaction.add(R.id.blog_fragment_container, blogFragment);
-
-        EventsFragment eventsFragment = new EventsFragment();
-        fragmentTransaction.add(R.id.events_fragment_container, eventsFragment);
-
-        PrivacyPolicyFragment privacyPolicyFragment = new PrivacyPolicyFragment();
-        fragmentTransaction.add(R.id.privacy_fragment_container, privacyPolicyFragment);
-
-        HomeScreenFragment homeScreenFragment = new HomeScreenFragment();
-        fragmentTransaction.add(R.id.home_screen_fragment_container, homeScreenFragment);
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment);
+        assert navHostFragment != null;
+        NavController navController = navHostFragment.getNavController();
 
 
-        fragmentTransaction.commit();
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navView = findViewById(R.id.navigation_view);
+        MaterialToolbar materialToolbar = findViewById(R.id.topAppBar);
+
+        AppBarConfiguration appBarConfiguration =
+                new AppBarConfiguration.Builder(navController.getGraph())
+                        .setOpenableLayout(drawerLayout)
+                        .build();
+
+        NavigationUI.setupWithNavController(navView, navController);
+        NavigationUI.setupWithNavController(materialToolbar, navController, appBarConfiguration);
     }
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeScreenFragment">
+
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.ad430.globaltactics.HomeScreenFragment"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" />
+
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.ad430.globaltactics.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/blogFragment"
+        android:name="com.ad430.globaltactics.BlogFragment"
+        android:label="fragment_blog"
+        tools:layout="@layout/fragment_blog" />
+
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.ad430.globaltactics.PrivacyPolicyFragment"
+        android:label="fragment_privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" />
+
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.ad430.globaltactics.EventsFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_events" />
+
+    <action
+        android:id="@+id/action_global_blogFragment"
+        app:destination="@id/blogFragment" />
+    <action
+        android:id="@+id/action_global_aboutUsFragment"
+        app:destination="@id/aboutUsFragment" />
+    <action
+        android:id="@+id/action_global_eventsFragment"
+        app:destination="@id/eventsFragment" />
+    <action
+        android:id="@+id/action_global_privacyPolicyFragment"
+        app:destination="@id/privacyPolicyFragment" />
+    <action
+        android:id="@+id/action_global_homeScreenFragment"
+        app:destination="@id/homeScreenFragment" />
+</navigation>
