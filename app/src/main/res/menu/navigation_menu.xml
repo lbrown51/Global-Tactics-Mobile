@@ -9,7 +9,13 @@
         android:id="@+id/aboutUsFragment"
         android:title="About Us" />
     <item
+        android:id="@+id/eventsFragment"
+        android:title="Events" />
+    <item
         android:id="@+id/blogFragment"
         android:title="Blog" />
+    <item
+        android:id="@+id/privacyPolicyFragment"
+        android:title="Privacy Policy" />
 
 </menu>

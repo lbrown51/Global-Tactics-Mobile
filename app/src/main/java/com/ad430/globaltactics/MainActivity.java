@@ -18,6 +18,9 @@ import com.google.android.material.navigation.NavigationView;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -35,8 +38,17 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navView = findViewById(R.id.navigation_view);
         MaterialToolbar materialToolbar = findViewById(R.id.topAppBar);
 
+        HashSet<Integer> fragmentIds = new HashSet<Integer>(
+                Arrays.asList(
+                        R.id.homeScreenFragment,
+                        R.id.aboutUsFragment,
+                        R.id.blogFragment,
+                        R.id.eventsFragment,
+                        R.id.privacyPolicyFragment
+                ));
+
         AppBarConfiguration appBarConfiguration =
-                new AppBarConfiguration.Builder(navController.getGraph())
+                new AppBarConfiguration.Builder(fragmentIds)
                         .setOpenableLayout(drawerLayout)
                         .build();
 
