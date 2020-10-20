@@ -7,6 +7,10 @@
     <dimen name="logo_global_margin_top">10dp</dimen>
     <dimen name="logo_tactics_margin_top">140dp</dimen>
     <dimen name="logo_tactics_margin_left">95dp</dimen>
+    <dimen name="gt_image_home_padding">30dp</dimen>
+    <dimen name="gt_text_home_padding">10dp</dimen>
+    <dimen name="gt_text_home_size">50sp</dimen>
+    <item name="gt_image_home_vertical" type="dimen" format="float">0.255</item>
     <dimen name="thirty_dp">30dp</dimen>
     <dimen name="thirty_sp">30sp</dimen>
     <dimen name="fifteen_dp">15dp</dimen>

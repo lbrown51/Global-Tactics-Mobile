@@ -6,6 +6,8 @@
     <string name="blog_placeholder">Blog Fragment</string>
     <string name="events_placeholder">Events Fragment</string>
     <string name="privacy_placeholder">Privacy Fragment</string>
+    <string name="home_screen_placeholder">Home Screen Fragment</string>
+    <string name="motto_text">Turning Perspective into Opportunity</string>
     <string name="about_us">ABOUT US</string>
     <string name="paragraph_one">Perspective is the ultimate advantage. It opens our minds. It reveals what others don\'t see. Global Tactics turns perspective into opportunity.</string>
     <string name="paragraph_two">Global Tactics is an international advisory firm that helps corporations, governments, and nonprofit organizations to understand how the world is changing and how that creates opportunities to be seized and risks to be managed.</string>
