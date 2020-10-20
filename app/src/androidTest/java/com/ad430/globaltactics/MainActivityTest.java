@@ -5,10 +5,7 @@ import android.view.Gravity;
 import androidx.test.espresso.ViewAssertion;
 import androidx.test.espresso.contrib.DrawerActions;
 import androidx.test.espresso.contrib.NavigationViewActions;
-import android.app.Activity;
-import android.app.Instrumentation;
-import android.content.Intent;
-import android.net.Uri;
+
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -44,9 +41,6 @@ public class MainActivityTest {
 
         onView(withId(R.id.navigation_view))
                 .perform(NavigationViewActions.navigateTo(R.id.aboutUsFragment));
-
-        onView(withId(R.id.about_placeholder_text))
-                .check(matches(withText(R.string.about_us_placeholder)));
     }
   
 //    @Test
@@ -62,9 +56,9 @@ public class MainActivityTest {
 //
 //    }
 //
-//    @Test public void homeScreenFragmentHasMotto() {
-//        onView(withId(R.id.motto_placeholder)).check(matches(withText(R.string.motto_text)));
-//    }
+    @Test public void homeScreenFragmentHasMotto() {
+        onView(withId(R.id.motto_placeholder)).check(matches(withText(R.string.motto_text)));
+    }
 //
 //    @Test public void homeScreenFragmentHasGTLogo() {
 //        onView(withId(R.id.gtLogo)).check(matches(isDisplayed()));
