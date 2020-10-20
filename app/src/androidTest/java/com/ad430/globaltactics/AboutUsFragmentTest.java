@@ -81,7 +81,7 @@ public class AboutUsFragmentTest {
 
         getInstrumentation().waitForIdleSync();
 
-        onView(withId(R.id.ivLinkedin)).perform(click());
+        onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
 
         intended(allOf(hasAction(Intent.ACTION_VIEW), hasData(allOf(hasHost("www.linkedin.com")))));
     }
@@ -96,7 +96,7 @@ public class AboutUsFragmentTest {
 
         getInstrumentation().waitForIdleSync();
 
-        onView(withId(R.id.ivLinkedin)).perform(click());
+        onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
 
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
@@ -111,7 +111,7 @@ public class AboutUsFragmentTest {
 
         getInstrumentation().waitForIdleSync();
 
-        onView(withId(R.id.ivLinkedin)).perform(click());
+        onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
 
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
