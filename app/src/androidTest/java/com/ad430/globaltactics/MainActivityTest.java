@@ -1,6 +1,11 @@
 package com.ad430.globaltactics;
 
 import androidx.test.espresso.ViewAssertion;
+import android.app.Activity;
+import android.app.Instrumentation;
+import android.content.Intent;
+import android.net.Uri;
+
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -31,8 +36,8 @@ public class MainActivityTest {
   
     @Test
     public void allFragmentsDisplayed() {
-        onView(withId(R.id.about_placeholder_text))
-                .check(matches(withText(R.string.about_us_placeholder)));
+        onView(withId(R.id.tvAboutUs))
+                .check(matches(withText(R.string.about_us)));
         onView(withId(R.id.blog_placeholder_text))
                 .check(matches(withText(R.string.blog_placeholder)));
         onView(withId(R.id.events_placeholder_text))
