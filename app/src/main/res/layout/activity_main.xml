@@ -21,7 +21,7 @@
                 android:id="@+id/logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/letter_o" />
+                android:src="@mip" />
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
