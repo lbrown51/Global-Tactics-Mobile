@@ -6,4 +6,9 @@
     <string name="blog_placeholder">Blog Fragment</string>
     <string name="events_placeholder">Events Fragment</string>
     <string name="privacy_placeholder">Privacy Fragment</string>
+    <string name="about_us">ABOUT US</string>
+    <string name="paragraph_one">Perspective is the ultimate advantage. It opens our minds. It reveals what others don\'t see. Global Tactics turns perspective into opportunity.</string>
+    <string name="paragraph_two">Global Tactics is an international advisory firm that helps corporations, governments, and nonprofit organizations to understand how the world is changing and how that creates opportunities to be seized and risks to be managed.</string>
+    <string name="paragraph_three">We work with our clients to navigate the increasingly complex global environment, to analyze political and economic developments, and understand country-specific regulations and business practices.</string>
+    <string name="paragraph_four">We evaluate market readiness, barriers of entry, and strategic alignment between business operations and product development.</string>
 </resources>
