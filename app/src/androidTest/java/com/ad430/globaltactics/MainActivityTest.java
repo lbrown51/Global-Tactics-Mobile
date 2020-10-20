@@ -26,11 +26,11 @@ public class MainActivityTest {
     public ActivityScenarioRule<MainActivity> activityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
 
-//    @Test
-//    public void hasHelloWorld() {
-//        onView(withId(R.id.hello_world_text))
-//                .check(matches(withText("Hello World!")));
-//    }
+    @Test
+    public void hasHelloWorld() {
+        onView(withId(R.id.hello_world_text))
+                .check(matches(withText("Hello World!")));
+    }
   
     @Test
     public void allFragmentsDisplayed() {
