@@ -11,4 +11,14 @@
     <dimen name="gt_text_home_padding">10dp</dimen>
     <dimen name="gt_text_home_size">50sp</dimen>
     <item name="gt_image_home_vertical" type="dimen" format="float">0.255</item>
+    <dimen name="thirty_dp">30dp</dimen>
+    <dimen name="thirty_sp">30sp</dimen>
+    <dimen name="fifteen_dp">15dp</dimen>
+    <dimen name="eighteen_sp">18sp</dimen>
+    <dimen name="five_dp">5dp</dimen>
+    <dimen name="fifty_dp">50dp</dimen>
+    <dimen name="ninety_dp">90dp</dimen>
+    <dimen name="forty_dp">40dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
+    <dimen name="seventy_dp">70dp</dimen>
 </resources>

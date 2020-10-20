@@ -1,5 +1,7 @@
 package com.ad430.globaltactics;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +21,7 @@ public class AboutUsFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
+    ImageView ivLinkedin, ivFacebook, ivTwitter;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -53,7 +57,39 @@ public class AboutUsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about_us, container, false);
+        View myView = inflater.inflate(R.layout.fragment_about_us, container, false);
+
+        ivLinkedin = myView.findViewById(R.id.ivLinkedin);
+        ivFacebook = myView.findViewById(R.id.ivFacebook);
+        ivTwitter = myView.findViewById(R.id.ivTwitter);
+
+        ivLinkedin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.linkedin.com/company/globaltactics"));
+                startActivity(intent);
+            }
+        });
+
+
+        ivFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/GlobalTactics"));
+                startActivity(intent);
+            }
+        });
+
+
+        ivTwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://twitter.com/Global__Tactics"));
+                startActivity(intent);
+            }
+        });
+
+        return myView;
+
     }
 }
