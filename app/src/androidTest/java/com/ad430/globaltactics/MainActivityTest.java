@@ -94,6 +94,4 @@ public class MainActivityTest {
         onView(withId(R.id.topAppBar))
                 .check(matches(hasDescendant(withText(R.string.home_fragment_title))));
     }
-
-
 }
