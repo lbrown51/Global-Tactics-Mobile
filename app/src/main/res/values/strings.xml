@@ -13,4 +13,9 @@
     <string name="paragraph_two">Global Tactics is an international advisory firm that helps corporations, governments, and nonprofit organizations to understand how the world is changing and how that creates opportunities to be seized and risks to be managed.</string>
     <string name="paragraph_three">We work with our clients to navigate the increasingly complex global environment, to analyze political and economic developments, and understand country-specific regulations and business practices.</string>
     <string name="paragraph_four">We evaluate market readiness, barriers of entry, and strategic alignment between business operations and product development.</string>
+    <string name="home_fragment_title">Home</string>
+    <string name="about_us_fragment_title">About Us</string>
+    <string name="events_fragment_title">Events</string>
+    <string name="blog_fragment_title">Blog</string>
+    <string name="privacy_policy_fragment_title">Privacy Policy</string>
 </resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeScreenFragment"
+        android:title="@string/home_fragment_title" />
+    <item
+        android:id="@+id/aboutUsFragment"
+        android:title="@string/about_us_fragment_title" />
+    <item
+        android:id="@+id/eventsFragment"
+        android:title="@string/events_fragment_title" />
+    <item
+        android:id="@+id/blogFragment"
+        android:title="@string/blog_fragment_title" />
+    <item
+        android:id="@+id/privacyPolicyFragment"
+        android:title="@string/privacy_policy_fragment_title" />
+
+</menu>
