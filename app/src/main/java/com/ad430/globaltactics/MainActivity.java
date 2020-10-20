@@ -28,16 +28,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupNavigation();
+    }
+
+    private void setupNavigation() {
+        // Get navigation host that links to the nav graph
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.nav_host_fragment);
         assert navHostFragment != null;
+        // Get the nav controller of that fragment
         NavController navController = navHostFragment.getNavController();
 
 
+        // Get the drawer that holds the rest of the main activity
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        // Get the view that contains the menu
         NavigationView navView = findViewById(R.id.navigation_view);
+        // Get the material io toolbar that contains the app title
         MaterialToolbar materialToolbar = findViewById(R.id.topAppBar);
 
+        // All the different fragments
         HashSet<Integer> fragmentIds = new HashSet<Integer>(
                 Arrays.asList(
                         R.id.homeScreenFragment,
@@ -47,12 +57,15 @@ public class MainActivity extends AppCompatActivity {
                         R.id.privacyPolicyFragment
                 ));
 
+        // The different fragments that will show up in the app bar
         AppBarConfiguration appBarConfiguration =
                 new AppBarConfiguration.Builder(fragmentIds)
                         .setOpenableLayout(drawerLayout)
                         .build();
 
+        // Link the nav controller and the menu of navigation items
         NavigationUI.setupWithNavController(navView, navController);
+        // Link the material io toolbar, the navigation controller, and the app bar
         NavigationUI.setupWithNavController(materialToolbar, navController, appBarConfiguration);
     }
 }
