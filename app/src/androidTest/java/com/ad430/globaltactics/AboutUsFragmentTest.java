@@ -28,8 +28,6 @@ public class AboutUsFragmentTest {
     public void aboutUsFragmentsHasCorrectContent() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
 
-        Thread.sleep(5000);
-
         onView(withId(R.id.tvAboutUs)).check(matches(withText(R.string.about_us)));
         onView(withId(R.id.tvParagraphOne)).check(matches(withText(R.string.paragraph_one)));
         onView(withId(R.id.tvParagraphTwo)).check(matches(withText(R.string.paragraph_two)));
@@ -45,8 +43,6 @@ public class AboutUsFragmentTest {
     public void clickOnLinkedinIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
 
-        Thread.sleep(5000);
-
         onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
@@ -55,8 +51,6 @@ public class AboutUsFragmentTest {
     public void clickOnFacebookIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
 
-        Thread.sleep(5000);
-
         onView(withId(R.id.ivFacebook)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
@@ -64,8 +58,6 @@ public class AboutUsFragmentTest {
     @Test
     public void clickOnTwitterIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
-
-        Thread.sleep(5000);
 
         onView(withId(R.id.ivTwitter)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
