@@ -25,8 +25,10 @@ public class AboutUsFragmentTest {
     public IntentsTestRule<MainActivity> intentsTestRule = new IntentsTestRule<>(MainActivity.class);
 
     @Test
-    public void aboutUsFragmentsHasCorrectContent() {
+    public void aboutUsFragmentsHasCorrectContent() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
+
+        Thread.sleep(5000);
 
         onView(withId(R.id.tvAboutUs)).check(matches(withText(R.string.about_us)));
         onView(withId(R.id.tvParagraphOne)).check(matches(withText(R.string.paragraph_one)));
@@ -40,24 +42,30 @@ public class AboutUsFragmentTest {
     }
 
     @Test
-    public void clickOnLinkedinIcon() {
+    public void clickOnLinkedinIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
+
+        Thread.sleep(5000);
 
         onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
 
     @Test
-    public void clickOnFacebookIcon() {
+    public void clickOnFacebookIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
+
+        Thread.sleep(5000);
 
         onView(withId(R.id.ivFacebook)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
 
     @Test
-    public void clickOnTwitterIcon() {
+    public void clickOnTwitterIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
+
+        Thread.sleep(5000);
 
         onView(withId(R.id.ivTwitter)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
