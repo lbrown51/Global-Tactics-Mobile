@@ -82,6 +82,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/your_message_top"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="3dp"
