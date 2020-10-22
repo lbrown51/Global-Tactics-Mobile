@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.testing.FragmentScenario;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.rule.ActivityTestRule;
 
@@ -46,17 +47,7 @@ public class ContactFragmentTest {
 
     @Test
     public void aboutUsFragmentsAllTextViews() {
-        ConstraintLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
-
-        assertNotNull(mRelativeLayout);
-
-        AboutUsFragment mFragment = new AboutUsFragment();
-
-        mActivity.getSupportFragmentManager().beginTransaction().add(mRelativeLayout.getId(), mFragment).commitAllowingStateLoss();
-
-        getInstrumentation().waitForIdleSync();
-
-        View view = mFragment.getView().findViewById(R.id.contactFragment);
+        FragmentScenario<ContactFragment> fragmentScenario = FragmentScenario.launchInContainer(ContactFragment.class);
 
         onView(withId(R.id.your_name_top)).check(matches(withText(R.string.contact_form_name)));
         onView(withId(R.id.your_email_top)).check(matches(withText(R.string.contact_form_email)));
