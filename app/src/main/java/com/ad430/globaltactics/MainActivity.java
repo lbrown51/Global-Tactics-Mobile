@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
                         R.id.aboutUsFragment,
                         R.id.blogFragment,
                         R.id.eventsFragment,
-                        R.id.privacyPolicyFragment
+                        R.id.privacyPolicyFragment,
+                        R.id.contactFragment
                 ));
 
         // The different fragments that will show up in the app bar
