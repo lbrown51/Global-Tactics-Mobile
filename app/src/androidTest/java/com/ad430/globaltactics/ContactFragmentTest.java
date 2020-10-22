@@ -47,7 +47,17 @@ public class ContactFragmentTest {
 
     @Test
     public void aboutUsFragmentsAllTextViews() {
-        FragmentScenario<ContactFragment> fragmentScenario = FragmentScenario.launchInContainer(ContactFragment.class);
+        ConstraintLayout mRelativeLayout = mActivity.findViewById(R.id.testContainer);
+
+        assertNotNull(mRelativeLayout);
+
+        AboutUsFragment mFragment = new AboutUsFragment();
+
+        mActivity.getSupportFragmentManager().beginTransaction().add(mRelativeLayout.getId(), mFragment).commitAllowingStateLoss();
+
+        getInstrumentation().waitForIdleSync();
+
+        View view = mFragment.getView().findViewById(R.id.contactFragment);
 
         onView(withId(R.id.your_name_top)).check(matches(withText(R.string.contact_form_name)));
         onView(withId(R.id.your_email_top)).check(matches(withText(R.string.contact_form_email)));
