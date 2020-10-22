@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.testing.FragmentScenario;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.rule.ActivityTestRule;
 
@@ -33,7 +32,7 @@ import static org.junit.Assert.assertNotNull;
 public class ContactFragmentTest {
 
     @Rule
-   public ActivityTestRule<TestActivity> mActivityTestRule = new ActivityTestRule<>(TestActivity.class);
+    public ActivityTestRule<TestActivity> mActivityTestRule = new ActivityTestRule<>(TestActivity.class);
 
     @Rule
     public IntentsTestRule<MainActivity> intentsTestRule = new IntentsTestRule<>(MainActivity.class);
@@ -58,6 +57,7 @@ public class ContactFragmentTest {
         getInstrumentation().waitForIdleSync();
 
         View view = mFragment.getView().findViewById(R.id.contactFragment);
+
         onView(withId(R.id.your_name_top)).check(matches(withText(R.string.contact_form_name)));
         onView(withId(R.id.your_email_top)).check(matches(withText(R.string.contact_form_email)));
         onView(withId(R.id.your_subject_top)).check(matches(withText(R.string.contact_form_subject)));
@@ -67,8 +67,8 @@ public class ContactFragmentTest {
 
     }
 
-   @After
-   public void tearDown() throws Exception {
-       mActivity = null;
+    @After
+    public void tearDown() throws Exception {
+        mActivity = null;
     }
 }
