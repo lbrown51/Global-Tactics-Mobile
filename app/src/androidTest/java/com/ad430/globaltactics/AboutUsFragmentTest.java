@@ -42,6 +42,7 @@ public class AboutUsFragmentTest {
     @Test
     public void clickOnLinkedinIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
+
         onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
@@ -49,6 +50,7 @@ public class AboutUsFragmentTest {
     @Test
     public void clickOnFacebookIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
+
         onView(withId(R.id.ivFacebook)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
@@ -56,6 +58,7 @@ public class AboutUsFragmentTest {
     @Test
     public void clickOnTwitterIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
+
         onView(withId(R.id.ivTwitter)).perform(scrollTo()).perform(click());
         intended(allOf(hasAction(Intent.ACTION_VIEW)));
     }
