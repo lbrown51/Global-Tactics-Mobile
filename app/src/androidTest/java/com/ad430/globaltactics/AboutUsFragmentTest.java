@@ -3,8 +3,11 @@ package com.ad430.globaltactics;
 import android.content.Intent;
 
 import androidx.fragment.app.testing.FragmentScenario;
+import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
 
+import org.hamcrest.Matcher;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -21,8 +24,6 @@ import static org.hamcrest.Matchers.allOf;
 
 
 public class AboutUsFragmentTest {
-    @Rule
-    public IntentsTestRule<MainActivity> intentsTestRule = new IntentsTestRule<>(MainActivity.class);
 
     @Test
     public void aboutUsFragmentsHasCorrectContent() throws InterruptedException {
@@ -43,23 +44,37 @@ public class AboutUsFragmentTest {
     public void clickOnLinkedinIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
 
+        Thread.sleep(5000);
+
+        Intents.init();
         onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
-        intended(allOf(hasAction(Intent.ACTION_VIEW)));
+        Intents.intended(allOf(hasAction(Intent.ACTION_VIEW)));
+        Intents.release();
     }
 
     @Test
     public void clickOnFacebookIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
 
+        Thread.sleep(5000);
+        Intents.init();
+
         onView(withId(R.id.ivFacebook)).perform(scrollTo()).perform(click());
-        intended(allOf(hasAction(Intent.ACTION_VIEW)));
+        Intents.intended(allOf(hasAction(Intent.ACTION_VIEW)));
+        Intents.release();
+
     }
 
     @Test
     public void clickOnTwitterIcon() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
 
+        Thread.sleep(5000);
+        Intents.init();
+
         onView(withId(R.id.ivTwitter)).perform(scrollTo()).perform(click());
-        intended(allOf(hasAction(Intent.ACTION_VIEW)));
+        Intents.intended(allOf(hasAction(Intent.ACTION_VIEW)));
+        Intents.release();
+
     }
 }
