@@ -1,18 +1,39 @@
 const functions = require("firebase-functions");
+
 const admin = require("firebase-admin");
 admin.initializeApp();
+
+const nodemailer = require("nodemailer");
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "gtcontactform@gmail.com",
+    pass: "cxcwljxqhlhvedrt",
+  },
+});
 
 exports.sendContactInformation = functions.firestore
   .document("/requests/{requestId}")
   .onCreate((snap, context) => {
-    const original = snap.data();
-    console.log(original);
-  });
+    const formDetails = snap.data();
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+    const from = `From: ${formDetails.email} \n`;
+    const name = `Name: ${formDetails.firstName} ${formDetails.lastName} \n`;
+    const topic = `Topic: ${formDetails.topic} \n`;
+    const message = `Message: ${formDetails.message} \n`;
+
+    const mailOptions = {
+      from: "gtcontactform@gmail.com",
+      to: "lenny.casey.brown@gmail.com",
+      subject: "GT Contact Form",
+      text: '' + from + name + topic + message,
+    };
+
+    return transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        return { err: err.toString() };
+      }
+      console.log(info);
+      return { info: "SENT REQUEST FORM" };
+    });
+  });

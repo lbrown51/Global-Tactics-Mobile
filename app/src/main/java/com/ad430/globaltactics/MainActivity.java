@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         contactFormInfo.put("lastName", "Brown");
         contactFormInfo.put("topic", "Consultancy");
         contactFormInfo.put("email", "penn2014@gmail.com");
+        contactFormInfo.put("message", "I'm contacting you about possible consulting I need done in the near future");
 
         db.collection("requests")
                 .add(contactFormInfo)
