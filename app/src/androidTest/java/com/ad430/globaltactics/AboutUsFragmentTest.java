@@ -29,11 +29,11 @@ public class AboutUsFragmentTest {
     public void aboutUsFragmentsHasCorrectContent() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
 
-        onView(withId(R.id.tvAboutUs)).check(matches(withText(R.string.about_us)));
-        onView(withId(R.id.tvParagraphOne)).check(matches(withText(R.string.paragraph_one)));
-        onView(withId(R.id.tvParagraphTwo)).check(matches(withText(R.string.paragraph_two)));
-        onView(withId(R.id.tvParagraphThree)).check(matches(withText(R.string.paragraph_three)));
-        onView(withId(R.id.tvParagraphFour)).check(matches(withText(R.string.paragraph_four)));
+        onView(withId(R.id.tvAboutUs)).check(matches(isDisplayed()));
+        onView(withId(R.id.tvParagraphOne)).check(matches(isDisplayed()));
+        onView(withId(R.id.tvParagraphTwo)).check(matches(isDisplayed()));
+        onView(withId(R.id.tvParagraphThree)).check(matches(isDisplayed()));
+        onView(withId(R.id.tvParagraphFour)).check(matches(isDisplayed()));
         onView(withId(R.id.tvBorderLine)).check(matches(isDisplayed()));
         onView(withId(R.id.ivLinkedin)).check(matches(isDisplayed()));
         onView(withId(R.id.ivFacebook)).check(matches(isDisplayed()));
