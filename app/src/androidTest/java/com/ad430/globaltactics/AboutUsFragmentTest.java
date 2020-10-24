@@ -34,6 +34,8 @@ public class AboutUsFragmentTest {
         onView(withId(R.id.tvParagraphTwo)).check(matches(isDisplayed()));
         onView(withId(R.id.tvParagraphThree)).check(matches(isDisplayed()));
         onView(withId(R.id.tvParagraphFour)).check(matches(isDisplayed()));
+        onView(withId(R.id.ivLinkedin)).perform(scrollTo());
+
         onView(withId(R.id.tvBorderLine)).check(matches(isDisplayed()));
         onView(withId(R.id.ivLinkedin)).check(matches(isDisplayed()));
         onView(withId(R.id.ivFacebook)).check(matches(isDisplayed()));
