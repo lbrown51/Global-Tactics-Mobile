@@ -9,6 +9,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EventAdapter.EventClicked {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,5 +69,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
         // Link the material io toolbar, the navigation controller, and the app bar
         NavigationUI.setupWithNavController(materialToolbar, navController, appBarConfiguration);
+    }
+
+    @Override
+    public void onEventClicked(int index) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(EventRecords.events.get(index).getUrl()));
+        startActivity(intent);
     }
 }
