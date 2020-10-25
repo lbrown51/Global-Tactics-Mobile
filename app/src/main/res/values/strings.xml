@@ -18,4 +18,14 @@
     <string name="events_fragment_title">Events</string>
     <string name="blog_fragment_title">Blog</string>
     <string name="privacy_policy_fragment_title">Privacy Policy</string>
+    <string name="contact_fragment_title">Contact</string>
+    <string name="contact_placeholder">Contact Fragment</string>
+    <string name="contact_form">Contact Us</string>
+    <string name="contact_form_name">Your Name</string>
+    <string name="contact_form_email">Your Email</string>
+    <string name="contact_form_subject">Subject</string>
+    <string name="contact_form_message">Message</string>
+    <string name="contact_form_button">Send Message</string>
+    <string name="contact_form_post_message">Please wait! We\'re sending your message to the support department...</string>
+    <string name="contact_posted">Your message has been successfully delivered.</string>
 </resources>

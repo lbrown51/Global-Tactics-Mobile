@@ -35,6 +35,13 @@
         android:label="Privacy Policy"
         tools:layout="@layout/fragment_privacy_policy" />
 
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.ad430.globaltactics.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact" />
+
+
     <action
         android:id="@+id/action_global_aboutUsFragment"
         app:destination="@id/aboutUsFragment" />
@@ -45,7 +52,11 @@
         android:id="@+id/action_global_privacyPolicyFragment"
         app:destination="@id/privacyPolicyFragment" />
     <action
+        android:id="@+id/action_global_contactFragment"
+        app:destination="@id/contactFragment" />
+    <action
         android:id="@+id/action_global_homeScreenFragment"
         app:destination="@id/homeScreenFragment" />
-    <action android:id="@+id/action_global_blogFragment2" app:destination="@id/blogFragment" />
+    <action android:id="@+id/action_global_blogFragment2"
+        app:destination="@id/blogFragment" />
 </navigation>

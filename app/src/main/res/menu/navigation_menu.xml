@@ -17,5 +17,8 @@
     <item
         android:id="@+id/privacyPolicyFragment"
         android:title="@string/privacy_policy_fragment_title" />
+    <item
+        android:id="@+id/contactFragment"
+        android:title="@string/contact_fragment_title" />
 
 </menu>

@@ -46,6 +46,8 @@ public class MainActivityTest {
                 .check(matches(hasDescendant(withText(R.string.events_fragment_title))));
         onView(withId(R.id.navigation_view))
                 .check(matches(hasDescendant(withText(R.string.privacy_policy_fragment_title))));
+        onView(withId(R.id.navigation_view))
+                .check(matches(hasDescendant(withText(R.string.contact_fragment_title))));
     }
 
     @Test
@@ -84,6 +86,15 @@ public class MainActivityTest {
                 .perform(NavigationViewActions.navigateTo(R.id.privacyPolicyFragment));
         onView(withId(R.id.topAppBar))
                 .check(matches(hasDescendant(withText(R.string.privacy_policy_fragment_title))));
+
+        Thread.sleep(500);
+        onView(withId(R.id.drawer_layout))
+                .perform(DrawerActions.open())
+                .check(matches(isOpen()));
+        onView(withId(R.id.navigation_view))
+                .perform(NavigationViewActions.navigateTo(R.id.contactFragment));
+        onView(withId(R.id.topAppBar))
+                .check(matches(hasDescendant(withText(R.string.contact_fragment_title))));
 
         Thread.sleep(500);
         onView(withId(R.id.drawer_layout))
