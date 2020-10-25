@@ -40,65 +40,58 @@ public class ContactFragment extends Fragment {
 //        }
     }
 
-    public void onCreate(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contact,
                 container, false);
 
-        final EditText your_name = (EditText) getView().findViewById(R.id.your_name);
-        final EditText your_email = (EditText) getView().findViewById(R.id.your_email);
-        final EditText your_subject = (EditText) getView().findViewById(R.id.your_subject);
-        final EditText your_message = (EditText) getView().findViewById(R.id.your_message);
+        final EditText your_name = view.findViewById(R.id.your_name);
+        final EditText your_email = view.findViewById(R.id.your_email);
+        final EditText your_subject = view.findViewById(R.id.your_subject);
+        final EditText your_message = view.findViewById(R.id.your_message);
 
-        Button email = (Button) getView().findViewById(R.id.post_message);
-        email.setOnClickListener(new View.OnClickListener() {
+        Button email = view.findViewById(R.id.post_message);
+        boolean testEmailValidity = isValidEmail("test@gmail.com");
+//        email.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                String name      = your_name.getText().toString();
+//                String email     = your_email.getText().toString();
+//                String subject   = your_subject.getText().toString();
+//                String message   = your_message.getText().toString();
+//
+//                if (TextUtils.isEmpty(name)){
+//                    your_name.setError("Enter Your Name");
+//                    your_name.requestFocus();
+//                    return;
+//                }
+//
+//                boolean onError = false;
+//
+//                if (!isValidEmail(email)) {
+//                    onError = true;
+//                    your_email.setError("Invalid Email");
+//                    return;
+//                }
+//
+//                if (TextUtils.isEmpty(subject)){
+//                    your_subject.setError("Enter Your Subject");
+//                    your_subject.requestFocus();
+//                    return;
+//                }
+//
+//                if (TextUtils.isEmpty(message)){
+//                    your_message.setError("Enter Your Message");
+//                    your_message.requestFocus();
+//                    return;
+//                }
+//
+//            }
+//        });
 
-            @Override
-            public void onClick(View v) {
-                String name      = your_name.getText().toString();
-                String email     = your_email.getText().toString();
-                String subject   = your_subject.getText().toString();
-                String message   = your_message.getText().toString();
-
-                if (TextUtils.isEmpty(name)){
-                    your_name.setError("Enter Your Name");
-                    your_name.requestFocus();
-                    return;
-                }
-
-                Boolean onError = false;
-
-                if (!isValidEmail(email)) {
-                    onError = true;
-                    your_email.setError("Invalid Email");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(subject)){
-                    your_subject.setError("Enter Your Subject");
-                    your_subject.requestFocus();
-                    return;
-                }
-
-                if (TextUtils.isEmpty(message)){
-                    your_message.setError("Enter Your Message");
-                    your_message.requestFocus();
-                    return;
-                }
-
-                Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
-
-                /* Fill it with Data */
-                sendEmail.setType("plain/text");
-                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"toolbax@gmail.com"});
-                sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
-                sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
-                        "name:"+name+'\n'+"Email ID:"+email+'\n'+"Message:"+'\n'+message);
-
-                /* Send it off to the Activity-Chooser */
-                startActivity(Intent.createChooser(sendEmail, "Send mail..."));
-
-            }
-        });
+        return view;
     }
 
     @Override
@@ -127,12 +120,4 @@ public class ContactFragment extends Fragment {
         return matcher.matches();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View myView = inflater.inflate(R.layout.fragment_contact, container, false);
-
-        return myView;
-
-    }
 }
