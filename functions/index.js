@@ -15,7 +15,7 @@ exports.sendContactInformation = functions.firestore
   .onCreate((snap, context) => {
     const formDetails = snap.data();
 
-    const from = `From: ${formDetails.email} \n`;
+    const email = `From: ${formDetails.email} \n`;
     const name = `Name: ${formDetails.firstName} ${formDetails.lastName} \n`;
     const topic = `Topic: ${formDetails.topic} \n`;
     const message = `Message: ${formDetails.message} \n`;
