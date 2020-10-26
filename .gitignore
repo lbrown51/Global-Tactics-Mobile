@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 google-services.json
+node_modules
+*.log
+.env
