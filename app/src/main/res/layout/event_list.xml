@@ -13,6 +13,7 @@
         app:cardCornerRadius="@dimen/five_dp"
         app:cardElevation="@dimen/five_dp"
         app:cardUseCompatPadding="false"
+        android:theme="@style/Theme.MaterialComponents.Light"
         android:layout_margin="@dimen/five_dp">
 
         <LinearLayout
