@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="wrap_content">
-    
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="#F6F6F6"
@@ -14,6 +14,7 @@
         app:cardElevation="@dimen/five_dp"
         app:cardUseCompatPadding="false"
         android:layout_margin="@dimen/five_dp">
+
         <LinearLayout
             android:id="@+id/llEvent"
             android:layout_width="match_parent"
@@ -57,5 +58,5 @@
             </LinearLayout>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
