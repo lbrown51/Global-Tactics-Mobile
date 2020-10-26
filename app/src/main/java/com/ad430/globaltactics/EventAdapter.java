@@ -1,6 +1,8 @@
 package com.ad430.globaltactics;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +16,11 @@ import java.util.ArrayList;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
 
     private ArrayList<Event> events;
-    EventClicked activity;
-
-    public interface EventClicked {
-        void onEventClicked(int index);
-    }
+    Context myContext;
 
     public EventAdapter (Context context, ArrayList<Event> eventList) {
         events = eventList;
-        activity = (EventClicked) context;
+        myContext = context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -39,7 +37,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    activity.onEventClicked(events.indexOf((Event) v.getTag()));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(EventRecords.events.get(events.indexOf((Event) v.getTag())).getUrl()));
+                    myContext.startActivity(intent);
                 }
             });
         }

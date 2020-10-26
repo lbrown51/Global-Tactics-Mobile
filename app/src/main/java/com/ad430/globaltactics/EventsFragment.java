@@ -1,5 +1,7 @@
 package com.ad430.globaltactics;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -49,7 +51,7 @@ public class EventsFragment extends Fragment {
         layoutManager = new LinearLayoutManager(this.getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        myAdapter = new EventAdapter(getContext(), EventRecords.events);
+        myAdapter = new EventAdapter(this.getActivity(), EventRecords.events);
 
         recyclerView.setAdapter(myAdapter);
     }
