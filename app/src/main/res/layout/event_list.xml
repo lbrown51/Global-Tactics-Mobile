@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="wrap_content">
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
@@ -24,13 +25,14 @@
 
             <ImageView
                 android:id="@+id/ivEventCalendar"
+                android:contentDescription="@string/calendar"
                 android:layout_width="@dimen/fifty_dp"
                 android:layout_height="@dimen/fifty_dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/calendar" />
 
             <LinearLayout
-                android:id="@+id/llEvendDetails"
+                android:id="@+id/llEventDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -40,10 +42,9 @@
                     android:id="@+id/tvEventDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingLeft="@dimen/fifteen_dp"
+                    android:paddingStart="@dimen/fifteen_dp"
+                    android:paddingEnd="@dimen/fifteen_dp"
                     android:paddingTop="@dimen/ten_dp"
-                    android:text="TextView"
                     android:textSize="@dimen/eighteen_sp"
                     android:textStyle="bold" />
 
@@ -52,10 +53,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/ten_dp"
-                    android:layout_weight="2"
-                    android:paddingLeft="@dimen/fifteen_dp"
-                    android:paddingTop="@dimen/ten_dp"
-                    android:text="TextView" />
+                    android:paddingStart="@dimen/fifteen_dp"
+                    android:paddingEnd="@dimen/fifteen_dp"
+                    android:paddingTop="@dimen/ten_dp" />
             </LinearLayout>
 
         </LinearLayout>

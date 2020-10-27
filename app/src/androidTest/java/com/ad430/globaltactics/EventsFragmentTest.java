@@ -21,9 +21,6 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 
 
 public class EventsFragmentTest {
-    @Rule
-    public ActivityScenarioRule<MainActivity> activityScenarioRule = new ActivityScenarioRule<>(MainActivity.class);
-
     public static RecyclerViewMatcherTestUtils withRecyclerView(final int recyclerViewId) {
         return new RecyclerViewMatcherTestUtils(recyclerViewId);
     }
