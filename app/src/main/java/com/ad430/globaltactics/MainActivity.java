@@ -17,8 +17,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
-//import com.google.firebase.firestore.DocumentReference;
-//import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -33,30 +33,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
-//
-//        Map<String, Object> contactFormInfo = new HashMap<>();
-//        contactFormInfo.put("firstName", "Lenny");
-//        contactFormInfo.put("lastName", "Brown");
-//        contactFormInfo.put("topic", "Consultancy");
-//        contactFormInfo.put("email", "penn2014@gmail.com");
-//        contactFormInfo.put("message", "I'm contacting you about possible consulting I need done in the near future");
-//
-//        db.collection("requests")
-//                .add(contactFormInfo)
-//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//                    @Override
-//                    public void onSuccess(DocumentReference documentReference) {
-//                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Log.w(TAG, "Error adding document", e);
-//                    }
-//                });
-//
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        Map<String, Object> contactFormInfo = new HashMap<>();
+        contactFormInfo.put("firstName", "Lenny");
+        contactFormInfo.put("lastName", "Brown");
+        contactFormInfo.put("topic", "Consultancy");
+        contactFormInfo.put("email", "penn2014@gmail.com");
+        contactFormInfo.put("message", "I'm contacting you about possible consulting I need done in the near future");
+
+        db.collection("requests")
+                .add(contactFormInfo)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
+
         setupNavigation();
     }
 
