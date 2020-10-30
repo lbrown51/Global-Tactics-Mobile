@@ -6,6 +6,9 @@ public class Expert {
     String location;
     String specialties;
     String description;
+    String linkedin;
+
+    public Expert() {}
 
     public Expert(String name, String title, String location, String specialties, String description) {
         this.name = name;
@@ -13,6 +16,7 @@ public class Expert {
         this.location = location;
         this.specialties = specialties;
         this.description = description;
+        this.linkedin = linkedin;
     }
 
     public String getName() {
@@ -53,5 +57,13 @@ public class Expert {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
     }
 }
