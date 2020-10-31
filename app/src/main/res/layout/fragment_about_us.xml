@@ -20,6 +20,7 @@
             android:id="@+id/tvAboutUs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifty_dp"
             android:layout_marginLeft="@dimen/thirty_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:gravity="center"
@@ -79,6 +80,7 @@
             android:layout_marginLeft="@dimen/ninety_dp"
             android:layout_marginTop="@dimen/forty_dp"
             android:layout_marginRight="@dimen/ninety_dp"
+            android:layout_marginBottom="@dimen/ten_dp"
             android:background="#ffffff" />
 
         <LinearLayout
