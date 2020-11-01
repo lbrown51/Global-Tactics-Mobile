@@ -6,23 +6,24 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.HashMap;
 
 public class EventsFragment extends Fragment {
     RecyclerView recyclerView;
-    RecyclerView.Adapter myAdapter;
     RecyclerView.LayoutManager layoutManager;
     View myView;
+    EventViewModel eventViewModel;
+    ArrayList<HashMap<String,String>> dataList = new ArrayList<>();
 
     public EventsFragment() {
 
@@ -31,6 +32,10 @@ public class EventsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        eventViewModel = new ViewModelProvider(this.getActivity()).get(EventViewModel.class);
+
+        dataList = eventViewModel.getEventsList();
     }
 
     @Override
@@ -51,8 +56,25 @@ public class EventsFragment extends Fragment {
         layoutManager = new LinearLayoutManager(this.getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        myAdapter = new EventAdapter(this.getActivity(), EventRecords.events);
+        EventAdapter dataAdapter = new EventAdapter(this.getActivity(),dataList);
+        recyclerView.setAdapter(dataAdapter);
 
-        recyclerView.setAdapter(myAdapter);
+        RecyclerItemDecoration recyclerItemDecoration = new RecyclerItemDecoration(this.getActivity(),getResources().getDimensionPixelSize(R.dimen.header_height),true,getSectionCallback(dataList));
+        recyclerView.addItemDecoration(recyclerItemDecoration);
+    }
+
+    private RecyclerItemDecoration.SectionCallback getSectionCallback(final ArrayList<HashMap<String,String>> list) {
+        return new RecyclerItemDecoration.SectionCallback() {
+            @Override
+            public boolean isSection(int pos) {
+                return pos==0 || list.get(pos).get("Title")!=list.get(pos-1).get("Title");
+            }
+
+            @Override
+            public String getSectionHeaderName(int pos) {
+                HashMap<String,String> dataMap = list.get(pos);
+                return dataMap.get("Title");
+            }
+        };
     }
 }
