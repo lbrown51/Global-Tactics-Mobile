@@ -21,7 +21,23 @@
         android:id="@+id/ourExpertsFragment"
         android:name="com.ad430.globaltactics.OurExpertsFragment"
         android:label="@string/our_experts_fragment_title"
-        tools:layout="@layout/fragment_our_experts" />
+        tools:layout="@layout/fragment_our_experts" >
+        <action
+            android:id="@+id/action_ourExpertsFragment_to_expertDetailsFragment"
+            app:destination="@id/expertDetailsFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/expertDetailsFragment"
+        android:name="com.ad430.globaltactics.ExpertDetailsFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_expert_details">
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/blogFragment"
