@@ -32,7 +32,8 @@ public class OurExpertsFragment extends Fragment {
     RecyclerView.Adapter<OurExpertsAdapter.ViewHolder> ourExpertsAdapter;
     RecyclerView.LayoutManager ourExpertsLayoutManager;
     View ourExpertsView;
-    FirebaseFirestore db;
+
+    private OurExpertsViewModel ourExpertsViewModel;
 
 
     public OurExpertsFragment() {
@@ -57,42 +58,20 @@ public class OurExpertsFragment extends Fragment {
         final ArrayList<Expert> testExperts = new ArrayList<>();
         final Activity activity = this.getActivity();
 
-        db = FirebaseFirestore.getInstance();
-        db.collection("experts")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Expert expert = document.toObject(Expert.class);
-                                testExperts.add(expert);
-                                Log.d(TAG, expert.toString());
-                            }
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
+        ourExpertsViewModel = new OurExpertsViewModel();
 
-                            Expert lenny = new Expert(
-                                    "Lenny",
-                                    "Best Manager",
-                                    "Seattle",
-                                    "Management, Testing, Being Cool",
-                                    "Is the best manager on the team, everyone loves Lenny."
-                            );
+        ourExpertsViewModel.getExperts(
+                (ArrayList<Expert> experts) -> {
+                    ourExpertsRecyclerView = ourExpertsView.findViewById(R.id.our_experts_list);
+                    ourExpertsRecyclerView.setHasFixedSize(true);
 
-                            testExperts.add(lenny);
-                        }
+                    ourExpertsLayoutManager = new LinearLayoutManager(activity);
+                    ourExpertsRecyclerView.setLayoutManager(ourExpertsLayoutManager);
 
-                        ourExpertsRecyclerView = ourExpertsView.findViewById(R.id.our_experts_list);
-                        ourExpertsRecyclerView.setHasFixedSize(true);
+                    ourExpertsAdapter = new OurExpertsAdapter(activity, experts);
 
-                        ourExpertsLayoutManager = new LinearLayoutManager(activity);
-                        ourExpertsRecyclerView.setLayoutManager(ourExpertsLayoutManager);
-
-                        ourExpertsAdapter = new OurExpertsAdapter(activity, testExperts);
-
-                        ourExpertsRecyclerView.setAdapter(ourExpertsAdapter);
-                    }
-                });
+                    ourExpertsRecyclerView.setAdapter(ourExpertsAdapter);
+                }
+        );
     }
 }
