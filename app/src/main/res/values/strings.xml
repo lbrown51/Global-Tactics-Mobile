@@ -140,7 +140,8 @@
     <string name="contact_fragment_title">Contact</string>
     <string name="contact_placeholder">Contact Fragment</string>
     <string name="contact_form">Contact Us</string>
-    <string name="contact_form_name">Your Name</string>
+    <string name="contact_form_first_name">Your First Name</string>
+    <string name="contact_form_last_name">Your Last Name</string>
     <string name="contact_form_email">Your Email</string>
     <string name="contact_form_subject">Subject</string>
     <string name="contact_form_message">Message</string>
