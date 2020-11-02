@@ -27,7 +27,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class OurExpertsFragment extends Fragment {
-    final String TAG = "OurExpertsFragment";
+    final String TAG = OurExpertsFragment.class.getSimpleName();
     RecyclerView ourExpertsRecyclerView;
     RecyclerView.Adapter<OurExpertsAdapter.ViewHolder> ourExpertsAdapter;
     RecyclerView.LayoutManager ourExpertsLayoutManager;
@@ -41,7 +41,9 @@ public class OurExpertsFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +57,6 @@ public class OurExpertsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        final ArrayList<Expert> testExperts = new ArrayList<>();
         final Activity activity = this.getActivity();
 
         ourExpertsViewModel = new OurExpertsViewModel();
