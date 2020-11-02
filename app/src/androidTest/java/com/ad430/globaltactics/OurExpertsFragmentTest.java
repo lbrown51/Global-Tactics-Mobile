@@ -100,8 +100,9 @@ public class OurExpertsFragmentTest {
         Thread.sleep(1000);
 
         onView(withRecyclerView(R.id.our_experts_list).atPosition(0)).perform(click());
+
         Thread.sleep(5000);
-//        onView(withId(R.layout.fragment_expert_details)).check(matches(isDisplayed()));
+        assertEquals(navController.getCurrentDestination().getId(), R.id.expertDetailsFragment);
 
     }
 }
