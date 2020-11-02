@@ -66,9 +66,9 @@ public class ContactFragment extends Fragment {
         final EditText your_subject = view.findViewById(R.id.your_subject);
         final EditText your_message = view.findViewById(R.id.your_message);
 
-        Button email = view.findViewById(R.id.post_message);
+        Button buttonOne = view.findViewById(R.id.post_message);
 
-        email.setOnClickListener(new View.OnClickListener() {
+        buttonOne.setOnClickListener(new Button.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -125,8 +125,6 @@ public class ContactFragment extends Fragment {
                                 Log.w(TAG, "Error adding document", e);
                             }
                         });
-
-
             }
         });
 
