@@ -1,8 +1,11 @@
 package com.ad430.globaltactics;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 import androidx.fragment.app.testing.FragmentScenario;
+import androidx.test.core.app.ApplicationProvider;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
@@ -27,7 +30,12 @@ public class EventsFragmentTest {
 
     @Test
     public void hasRecyclerView() {
-        FragmentScenario<EventsFragment> fragmentScenario = FragmentScenario.launchInContainer(EventsFragment.class);
+        FragmentScenario<EventsFragment> fragmentScenario = FragmentScenario.launchInContainer(
+                EventsFragment.class,
+                new Bundle(),
+                R.style.AppTheme,
+                null
+        );
 
         onView(withId(R.id.eventList)).check(matches(isDisplayed()));
     }
