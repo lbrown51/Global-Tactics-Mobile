@@ -3,10 +3,17 @@ package com.ad430.globaltactics;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentFactory;
 import androidx.fragment.app.testing.FragmentScenario;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 import androidx.navigation.Navigation;
 import androidx.navigation.testing.TestNavHostController;
 import androidx.test.core.app.ApplicationProvider;
+import androidx.test.espresso.contrib.NavigationViewActions;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -97,12 +104,7 @@ public class OurExpertsFragmentTest {
             Navigation.setViewNavController(fragment.requireView(), navController);
         });
 
-        Thread.sleep(1000);
-
         onView(withRecyclerView(R.id.our_experts_list).atPosition(0)).perform(click());
-
-        Thread.sleep(5000);
         assertEquals(navController.getCurrentDestination().getId(), R.id.expertDetailsFragment);
-
     }
 }

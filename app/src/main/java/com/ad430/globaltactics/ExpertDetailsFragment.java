@@ -15,7 +15,6 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class ExpertDetailsFragment extends Fragment {
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_NAME = "name";
@@ -67,8 +66,14 @@ public class ExpertDetailsFragment extends Fragment {
         TextView expertDetailsLocationTV = v.findViewById(R.id.expert_details_location_tv);
         expertDetailsLocationTV.setText(location);
 
+        TextView expertDetailsSpecialtiesTV = v.findViewById(R.id.expert_details_specialties_tv);
+        expertDetailsSpecialtiesTV.setText(specialties);
+
         TextView expertDetailsDescriptionTV = v.findViewById(R.id.expert_details_description_tv);
         expertDetailsDescriptionTV.setText(description);
+
+        TextView expertDetailsLinkedInTV = v.findViewById(R.id.expert_details_linkedin_tv);
+        expertDetailsLinkedInTV.setText(linkedin);
 
         return v;
     }
