@@ -29,13 +29,15 @@ public class EventsFragmentTest {
     }
 
     @Test
-    public void hasRecyclerView() {
+    public void hasRecyclerView() throws InterruptedException{
         FragmentScenario<EventsFragment> fragmentScenario = FragmentScenario.launchInContainer(
                 EventsFragment.class,
                 new Bundle(),
                 R.style.AppTheme,
                 null
         );
+
+        Thread.sleep(5000);
 
         onView(withId(R.id.eventList)).check(matches(isDisplayed()));
     }
