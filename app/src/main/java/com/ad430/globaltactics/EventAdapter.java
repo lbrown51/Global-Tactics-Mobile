@@ -13,8 +13,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
 
@@ -28,7 +31,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivEventCalendar;
-        TextView tvEventDate, tvEventDescription, tvDesc1, tvDesc2;
+        TextView tvEventDate, tvEventDescription;
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -58,8 +61,11 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
+        String dateStr = sdf.format(list.get(position).getFrom());
+
         holder.itemView.setTag(list.get(position));
-        holder.tvEventDate.setText(String.valueOf(list.get(position).getFrom()));
+        holder.tvEventDate.setText(dateStr);
         holder.tvEventDescription.setText(list.get(position).getDescription());
     }
 

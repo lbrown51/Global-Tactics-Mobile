@@ -64,15 +64,13 @@ public class EventsFragment extends Fragment {
                 layoutManager = new LinearLayoutManager(this.getActivity());
                 recyclerView.setLayoutManager(layoutManager);
 
-                list = events;
-
                 EventAdapter dataAdapter = new EventAdapter(activity, events);
                 recyclerView.setAdapter(dataAdapter);
+
+                RecyclerItemDecoration recyclerItemDecoration = new RecyclerItemDecoration(this.getActivity(),getResources().getDimensionPixelSize(R.dimen.header_height),true,getSectionCallback(events));
+                recyclerView.addItemDecoration(recyclerItemDecoration);
             }
         );
-
-        RecyclerItemDecoration recyclerItemDecoration = new RecyclerItemDecoration(this.getActivity(),getResources().getDimensionPixelSize(R.dimen.header_height),true,getSectionCallback(list));
-        recyclerView.addItemDecoration(recyclerItemDecoration);
     }
 
     private RecyclerItemDecoration.SectionCallback getSectionCallback(final ArrayList<Event> list) {
