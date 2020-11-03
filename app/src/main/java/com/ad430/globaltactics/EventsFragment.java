@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class EventsFragment extends Fragment {
@@ -26,19 +28,11 @@ public class EventsFragment extends Fragment {
     View myView;
     EventViewModel eventViewModel;
     ArrayList<HashMap<String,String>> dataList = new ArrayList<>();
+
     ArrayList<Event> list = new ArrayList<>();
 
     public EventsFragment() {
 
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-//        eventViewModel = new ViewModelProvider(this.getActivity()).get(EventViewModel.class);
-//
-//        dataList = eventViewModel.getEventsList();
     }
 
     @Override
@@ -65,26 +59,43 @@ public class EventsFragment extends Fragment {
                 layoutManager = new LinearLayoutManager(this.getActivity());
                 recyclerView.setLayoutManager(layoutManager);
 
-                Log.d("dasdasdasdadasdasdasdasdadasdsa", String.valueOf(events.get(0)));
-                EventAdapter dataAdapter = new EventAdapter(activity, events);
+                for (Event event : events) {
+                    HashMap<String,String> dataMAp = new HashMap<>();
+                    dataMAp.put("title", event.getTitle());
+                    dataMAp.put("date", event.getDate());
+                    dataMAp.put("description", event.getDescription());
+                    dataMAp.put("url", event.getHost());
+                    dataMAp.put("intDate", String.valueOf(event.getIntDate()));
+
+                    dataList.add(dataMAp);
+                }
+
+                Collections.sort(dataList, new Comparator<HashMap<String, String>>() {
+                    @Override
+                    public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
+                        return o1.get("intDate").compareTo(o2.get("intDate"));
+                    }
+                });
+
+                EventAdapter dataAdapter = new EventAdapter(activity, dataList);
                 recyclerView.setAdapter(dataAdapter);
 
-                RecyclerItemDecoration recyclerItemDecoration = new RecyclerItemDecoration(this.getActivity(),getResources().getDimensionPixelSize(R.dimen.header_height),true,getSectionCallback(events));
+                RecyclerItemDecoration recyclerItemDecoration = new RecyclerItemDecoration(this.getActivity(),getResources().getDimensionPixelSize(R.dimen.header_height),true,getSectionCallback(dataList));
                 recyclerView.addItemDecoration(recyclerItemDecoration);
             }
         );
     }
 
-    private RecyclerItemDecoration.SectionCallback getSectionCallback(final ArrayList<Event> list) {
+    private RecyclerItemDecoration.SectionCallback getSectionCallback(final ArrayList<HashMap<String,String>> list) {
         return new RecyclerItemDecoration.SectionCallback() {
             @Override
             public boolean isSection(int pos) {
-                return pos==0 || list.get(pos).getFrom() != list.get(pos-1).getFrom();
+                return pos==0 || !list.get(pos).get("title").equals(list.get(pos-1).get("title"));
             }
 
             @Override
             public String getSectionHeaderName(int pos) {
-                return String.valueOf(list.get(pos).getFrom());
+                return String.valueOf(list.get(pos).get("title"));
             }
         };
     }

@@ -24,16 +24,16 @@ import java.util.Locale;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<Event> list;
+    ArrayList<HashMap<String,String>> list = new ArrayList<>();
 
-    public EventAdapter(Context con, ArrayList<Event> events) {
+    public EventAdapter(Context con,ArrayList<HashMap<String,String>> dataList) {
         context = con;
-        list = events;
+        list = dataList;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivEventCalendar;
-        TextView tvEventDate, tvEventDescription;
+        TextView tvEventDate, tvEventDescription, tvDesc1, tvDesc2;
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -45,7 +45,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(list.get((Integer) v.getTag()).getHost()));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(list.get((Integer) v.getTag()).get("url")));
                     context.startActivity(intent);
                 }
             });
@@ -63,15 +63,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Date fromDate = list.get(position).getFrom().toDate();
-        String formattedFromDate = DateFormat.getDateInstance(android.icu.text.DateFormat.SHORT).format(fromDate);
-
-        Date toDate = list.get(position).getFrom().toDate();
-        String formattedToDate = DateFormat.getDateInstance(android.icu.text.DateFormat.SHORT).format(toDate);
-        Log.d("sdfsdfsdfsdfsdfsfsdfsdfsfsdfsfsdfsdfsdf", formattedFromDate);
-        holder.itemView.setTag(list.get(position));
-        holder.tvEventDate.setText(formattedFromDate + " - " + formattedToDate);
-        holder.tvEventDescription.setText(list.get(position).getDescription());
+        HashMap<String,String> dataMap = list.get(position);
+        holder.itemView.setTag(position);
+        holder.tvEventDate.setText(dataMap.get("date"));
+        holder.tvEventDescription.setText(dataMap.get("description"));
     }
 
     @Override
