@@ -75,4 +75,10 @@ public class OurExpertsFragment extends Fragment {
                 }
         );
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ourExpertsViewModel.clear();
+    }
 }

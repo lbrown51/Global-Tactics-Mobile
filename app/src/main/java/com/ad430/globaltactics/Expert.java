@@ -10,14 +10,14 @@ public class Expert {
 
     public Expert() {}
 
-    public Expert(String name, String title, String location, String specialties, String description) {
-        this.name = name;
-        this.title = title;
-        this.location = location;
-        this.specialties = specialties;
-        this.description = description;
-        this.linkedin = linkedin;
-    }
+//    public Expert(String name, String title, String location, String specialties, String description) {
+//        this.name = name;
+//        this.title = title;
+//        this.location = location;
+//        this.specialties = specialties;
+//        this.description = description;
+//        this.linkedin = linkedin;
+//    }
 
     public String getName() {
         return name;
