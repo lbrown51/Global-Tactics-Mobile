@@ -17,6 +17,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -79,6 +81,7 @@ public class ContactFragment extends Fragment {
                 String subject   = your_subject.getText().toString();
                 String message   = your_message.getText().toString();
 
+
                 if (TextUtils.isEmpty(firstName)){
                     first_name.setError("Enter Your Name");
                     first_name.requestFocus();
@@ -128,6 +131,7 @@ public class ContactFragment extends Fragment {
                                 Log.w(TAG, "Error adding document", e);
                             }
                         });
+                Toast.makeText(getContext(), "Email Sent", Toast.LENGTH_SHORT).show();
             }
         });
 
