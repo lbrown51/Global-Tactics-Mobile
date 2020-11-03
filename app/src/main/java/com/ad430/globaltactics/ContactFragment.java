@@ -61,6 +61,8 @@ public class ContactFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_contact,
                 container, false);
 
+
+
         final EditText first_name = view.findViewById(R.id.first_name);
         final EditText last_name = view.findViewById(R.id.last_name);
         final EditText your_email = view.findViewById(R.id.your_email);

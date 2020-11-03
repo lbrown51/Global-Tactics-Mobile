@@ -21,10 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/thirty_dp"
+            android:layout_marginTop="@dimen/fifty_dp"
             android:layout_marginRight="@dimen/thirty_dp"
+            android:fontFamily="@font/rufina"
             android:gravity="center"
             android:text="@string/privacy_policy"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
             android:textSize="@dimen/thirty_sp"
             android:textStyle="bold|italic" />
 
@@ -35,8 +37,10 @@
             android:layout_marginLeft="@dimen/thirty_dp"
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
+            android:fontFamily="@font/oxygen_light"
             android:text="@string/privacy_updated"
-            android:textColor="#FAF7F7"
+            android:textStyle="bold|italic"
+            android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp" />
         <TextView
             android:id="@+id/tvPrivacyHeaderOne"
@@ -46,8 +50,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_one"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphOne"
@@ -56,8 +61,9 @@
             android:layout_marginLeft="@dimen/thirty_dp"
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
+            android:fontFamily="@font/oxygen"
             android:text="@string/privacy_paragraph_one"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -68,7 +74,8 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_two"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
+            android:fontFamily="@font/oxygen"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -79,7 +86,8 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_three"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
+            android:fontFamily="@font/oxygen"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -90,7 +98,8 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_four"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
+            android:fontFamily="@font/oxygen"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -101,8 +110,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_two"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFive"
@@ -112,8 +122,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_five"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphSix"
@@ -123,8 +134,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_six"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletOne"
@@ -134,8 +146,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_one"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwo"
@@ -145,8 +158,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_two"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThree"
@@ -156,8 +170,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_three"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFour"
@@ -167,8 +182,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_four"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphSeven"
@@ -178,8 +194,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_seven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFive"
@@ -189,8 +206,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_five"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletSix"
@@ -200,8 +218,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_six"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletSeven"
@@ -211,8 +230,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_seven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletEight"
@@ -222,8 +242,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_eight"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletNine"
@@ -233,8 +254,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_nine"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTen"
@@ -244,8 +266,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_ten"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletEleven"
@@ -255,8 +278,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_eleven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphEight"
@@ -266,8 +290,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_eight"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphNine"
@@ -277,8 +302,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_nine"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderThree"
@@ -288,8 +314,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_three"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTen"
@@ -299,8 +326,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_ten"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwelve"
@@ -310,8 +338,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twelve"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirteen"
@@ -321,8 +350,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFourteen"
@@ -332,8 +362,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fourteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFifteen"
@@ -343,8 +374,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fifteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletSixteen"
@@ -354,8 +386,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_sixteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletSeventeen"
@@ -365,8 +398,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_seventeen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphEleven"
@@ -376,8 +410,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_eleven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderFour"
@@ -387,8 +422,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_four"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwelve"
@@ -398,8 +434,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twelve"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletEighteen"
@@ -409,8 +446,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_eighteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletNineteen"
@@ -420,8 +458,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_nineteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwenty"
@@ -431,8 +470,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twenty"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyOne"
@@ -442,8 +482,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentyone"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyTwo"
@@ -453,8 +494,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentytwo"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderFive"
@@ -464,8 +506,10 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_five"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp"
+            />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirteen"
@@ -475,8 +519,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFourteen"
@@ -486,8 +531,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fourteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFifteen"
@@ -497,8 +543,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fifteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderSix"
@@ -508,8 +555,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_six"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphSixteen"
@@ -519,8 +567,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_sixteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphSeventeen"
@@ -530,8 +579,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_seventeen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphEighteen"
@@ -541,8 +591,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_eighteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphNineteen"
@@ -552,8 +603,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_nineteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwenty"
@@ -563,8 +615,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twenty"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyOne"
@@ -574,8 +627,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentyone"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyTwo"
@@ -585,8 +639,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentytwo"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyThree"
@@ -596,8 +651,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentythree"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyFour"
@@ -607,8 +663,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentyfour"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderSeven"
@@ -618,8 +675,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_seven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyFive"
@@ -629,8 +687,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentyfive"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderEight"
@@ -640,8 +699,10 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_eight"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp"
+            />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentySix"
@@ -651,8 +712,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentysix"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderNine"
@@ -662,8 +724,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_nine"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentySeven"
@@ -673,8 +736,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentyseven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderTen"
@@ -684,8 +748,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_ten"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyEight"
@@ -695,8 +760,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentyeight"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyNine"
@@ -706,8 +772,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_twentynine"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirty"
@@ -717,7 +784,7 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirty"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -728,8 +795,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_eleven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyOne"
@@ -739,8 +807,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtyone"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyTwo"
@@ -750,8 +819,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtytwo"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyThree"
@@ -761,8 +831,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentythree"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyFour"
@@ -772,8 +843,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentyfour"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyFive"
@@ -783,8 +855,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentyfive"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentySix"
@@ -794,8 +867,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentysix"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyThree"
@@ -805,8 +879,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtythree"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyFour"
@@ -816,8 +891,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtyfour"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyFive"
@@ -827,8 +903,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtyfive"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtySix"
@@ -838,8 +915,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtysix"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtySeven"
@@ -849,8 +927,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtyseven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyEight"
@@ -860,8 +939,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtyeight"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyNine"
@@ -871,8 +951,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_thirtynine"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphForty"
@@ -882,8 +963,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_forty"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyOne"
@@ -893,8 +975,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortyone"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyTwo"
@@ -904,8 +987,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortytwo"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyThree"
@@ -915,8 +999,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortythree"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentySeven"
@@ -926,8 +1011,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentyseven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyEight"
@@ -937,8 +1023,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentyeight"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyNine"
@@ -948,8 +1035,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_twentynine"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirty"
@@ -959,8 +1047,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirty"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyFour"
@@ -970,8 +1059,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortyfour"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyOne"
@@ -981,8 +1071,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtyone"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyTwo"
@@ -992,8 +1083,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtytwo"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
 
         <TextView
@@ -1004,8 +1096,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtythree"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyFour"
@@ -1015,8 +1108,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtyfour"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyFive"
@@ -1026,8 +1120,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortyfive"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyFive"
@@ -1037,8 +1132,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtyfive"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtySix"
@@ -1048,8 +1144,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtysix"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtySeven"
@@ -1059,8 +1156,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtyseven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyEight"
@@ -1070,8 +1168,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtyeight"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyNine"
@@ -1081,8 +1180,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_thirtynine"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortySix"
@@ -1092,7 +1192,7 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortysix"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -1103,8 +1203,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_forty"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyOne"
@@ -1114,8 +1215,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fortyone"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyTwo"
@@ -1125,8 +1227,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fortytwo"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyThree"
@@ -1136,8 +1239,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fortythree"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyFour"
@@ -1147,8 +1251,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fortyfour"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyFive"
@@ -1158,8 +1263,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fortyfive"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortySix"
@@ -1169,8 +1275,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fortysix"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortySeven"
@@ -1180,8 +1287,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_bullet_fortyseven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortySeven"
@@ -1191,8 +1299,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortyseven"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyEight"
@@ -1202,8 +1311,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortyeight"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyNine"
@@ -1213,8 +1323,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fortynine"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderTwelve"
@@ -1224,8 +1335,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_twelve"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFifty"
@@ -1235,8 +1347,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fifty"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderThirteen"
@@ -1246,8 +1359,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_thirteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFiftyOne"
@@ -1257,8 +1371,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fiftyone"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderFourteen"
@@ -1268,8 +1383,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_fourteen"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFiftyTwo"
@@ -1279,8 +1395,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fiftytwo"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFiftyThree"
@@ -1290,8 +1407,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fiftythree"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFiftyFour"
@@ -1301,8 +1419,9 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_fiftyfour"
-            android:textColor="#FAF7F7"
-            android:textSize="@dimen/eighteen_sp" />
+            android:textColor="#000000"
+            android:textSize="@dimen/eighteen_sp"
+            android:fontFamily="@font/oxygen"/>
 
         <TextView
             android:id="@+id/tvBorderLine"
@@ -1311,7 +1430,8 @@
             android:layout_marginLeft="@dimen/ninety_dp"
             android:layout_marginTop="@dimen/forty_dp"
             android:layout_marginRight="@dimen/ninety_dp"
-            android:background="#ffffff" />
+            android:background="#000000"
+            android:fontFamily="@font/oxygen"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -1323,6 +1443,7 @@
                 android:layout_width="@dimen/fifty_dp"
                 android:layout_height="@dimen/fifty_dp"
                 android:layout_margin="@dimen/ten_dp"
+                android:layout_margin_bottom="20dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:src="@drawable/linkedin" />
@@ -1332,6 +1453,7 @@
                 android:layout_width="@dimen/fifty_dp"
                 android:layout_height="@dimen/fifty_dp"
                 android:layout_margin="@dimen/ten_dp"
+                android:layout_margin_bottom="20dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:src="@drawable/facebook" />
@@ -1341,6 +1463,7 @@
                 android:layout_width="@dimen/fifty_dp"
                 android:layout_height="@dimen/fifty_dp"
                 android:layout_margin="@dimen/ten_dp"
+                android:layout_margin_bottom="20dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:src="@drawable/twitter" />

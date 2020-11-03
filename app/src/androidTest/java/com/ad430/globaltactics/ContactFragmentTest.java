@@ -23,11 +23,12 @@ public class ContactFragmentTest {
     public void aboutUsFragmentsAllTextViews() {
         FragmentScenario<ContactFragment> fragmentScenario = FragmentScenario.launchInContainer(ContactFragment.class);
 
-        onView(withId(R.id.first_name_top)).check(matches(withText(R.string.contact_form_first_name)));
-        onView(withId(R.id.last_name_top)).check(matches(withText(R.string.contact_form_last_name)));
-        onView(withId(R.id.your_email_top)).check(matches(withText(R.string.contact_form_email)));
-        onView(withId(R.id.your_subject_top)).check(matches(withText(R.string.contact_form_subject)));
-        onView(withId(R.id.your_message_top)).check(matches(withText(R.string.contact_form_message)));
+        onView(withId(R.id.contactUs)).check(matches(withText(R.string.contact_page_title)));
+        onView(withId(R.id.first_name)).check(matches(withText(R.string.contact_form_first_name)));
+        onView(withId(R.id.last_name)).check(matches(withText(R.string.contact_form_last_name)));
+        onView(withId(R.id.your_email)).check(matches(withText(R.string.contact_form_email)));
+        onView(withId(R.id.your_subject)).check(matches(withText(R.string.contact_form_subject)));
+        onView(withId(R.id.your_message)).check(matches(withText(R.string.contact_form_message)));
         onView(withId(R.id.post_message)).check(matches(withText(R.string.contact_form_button)));
         //   onView(withId(R.id.tvBorderLine)).check(matches(isDisplayed()));
 

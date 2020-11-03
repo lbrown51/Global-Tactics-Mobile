@@ -13,7 +13,7 @@
     <string name="paragraph_three">We work with our clients to navigate the increasingly complex global environment, to analyze political and economic developments, and understand country-specific regulations and business practices.</string>
     <string name="paragraph_four">We evaluate market readiness, barriers of entry, and strategic alignment between business operations and product development.</string>
 
-    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy">PRIVACY POLICY</string>
     <string name="privacy_updated">Last Updated: August 22, 2020</string>
     <string name="privacy_header_one">Introduction</string>
     <string name="privacy_paragraph_one">Global Tactics, LLC ("Global Tactics") knows your privacy is important so we will treat the information you share with us with care.</string>
@@ -131,7 +131,7 @@
     <string name="privacy_paragraph_fiftythree">Site viewers may view and print excerpts from these pages provided it is for their personal, non-commercial use.</string>
     <string name="privacy_paragraph_fiftyfour">If you feel that we are not abiding by this privacy policy, you should contact us immediately via email at info@globaltactics.co, telephone at +1 (206) 552-9601 or by mail at Global Tactics, LLC, Attn: Privacy Team, 600 Stewart Street, Suite 400, Seattle, Washington 98101-1217.</string>
 
-
+    <string name="contact_page_title">CONTACT US</string>
     <string name="home_fragment_title">Home</string>
     <string name="about_us_fragment_title">About Us</string>
     <string name="events_fragment_title">Events</string>
@@ -143,8 +143,8 @@
     <string name="contact_form_first_name">Your First Name</string>
     <string name="contact_form_last_name">Your Last Name</string>
     <string name="contact_form_email">Your Email</string>
-    <string name="contact_form_subject">Subject</string>
-    <string name="contact_form_message">Message</string>
+    <string name="contact_form_subject">Your Subject</string>
+    <string name="contact_form_message">Your Message</string>
     <string name="contact_form_button">Send Message</string>
     <string name="contact_form_post_message">Please wait! We\'re sending your message to the support department...</string>
     <string name="contact_posted">Your message has been successfully delivered.</string>
