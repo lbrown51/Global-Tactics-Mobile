@@ -8,43 +8,68 @@
     <fragment
         android:id="@+id/homeScreenFragment"
         android:name="com.ad430.globaltactics.HomeScreenFragment"
-        android:label="Home"
+        android:label="@string/home_fragment_title"
         tools:layout="@layout/fragment_home_screen" />
 
     <fragment
         android:id="@+id/aboutUsFragment"
         android:name="com.ad430.globaltactics.AboutUsFragment"
-        android:label="About Us"
+        android:label="@string/about_us_fragment_title"
         tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/ourExpertsFragment"
+        android:name="com.ad430.globaltactics.OurExpertsFragment"
+        android:label="@string/our_experts_fragment_title"
+        tools:layout="@layout/fragment_our_experts" >
+        <action
+            android:id="@+id/action_ourExpertsFragment_to_expertDetailsFragment"
+            app:destination="@id/expertDetailsFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/expertDetailsFragment"
+        android:name="com.ad430.globaltactics.ExpertDetailsFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_expert_details">
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/blogFragment"
         android:name="com.ad430.globaltactics.BlogFragment"
-        android:label="Blog"
+        android:label="@string/blog_fragment_title"
         tools:layout="@layout/fragment_blog" />
 
     <fragment
         android:id="@+id/eventsFragment"
         android:name="com.ad430.globaltactics.EventsFragment"
-        android:label="Events"
+        android:label="@string/events_fragment_title"
         tools:layout="@layout/fragment_events" />
 
     <fragment
         android:id="@+id/privacyPolicyFragment"
         android:name="com.ad430.globaltactics.PrivacyPolicyFragment"
-        android:label="Privacy Policy"
+        android:label="@string/privacy_policy_fragment_title"
         tools:layout="@layout/fragment_privacy_policy" />
 
     <fragment
         android:id="@+id/contactFragment"
         android:name="com.ad430.globaltactics.ContactFragment"
-        android:label="Contact"
+        android:label="@string/contact_fragment_title"
         tools:layout="@layout/fragment_contact" />
 
 
     <action
         android:id="@+id/action_global_aboutUsFragment"
         app:destination="@id/aboutUsFragment" />
+    <action
+        android:id="@+id/action_global_ourExpertsFragment"
+        app:destination="@id/ourExpertsFragment" />
     <action
         android:id="@+id/action_global_eventsFragment"
         app:destination="@id/eventsFragment" />
@@ -57,6 +82,8 @@
     <action
         android:id="@+id/action_global_homeScreenFragment"
         app:destination="@id/homeScreenFragment" />
-    <action android:id="@+id/action_global_blogFragment2"
+    <action
+        android:id="@+id/action_global_blogFragment"
         app:destination="@id/blogFragment" />
+
 </navigation>
