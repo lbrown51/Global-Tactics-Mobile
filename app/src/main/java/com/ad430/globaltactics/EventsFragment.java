@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,7 @@ public class EventsFragment extends Fragment {
                 layoutManager = new LinearLayoutManager(this.getActivity());
                 recyclerView.setLayoutManager(layoutManager);
 
+                Log.d("dasdasdasdadasdasdasdasdadasdsa", String.valueOf(events.get(0)));
                 EventAdapter dataAdapter = new EventAdapter(activity, events);
                 recyclerView.setAdapter(dataAdapter);
 

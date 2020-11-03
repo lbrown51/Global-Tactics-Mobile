@@ -14,8 +14,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -61,11 +63,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
-        String dateStr = sdf.format(list.get(position).getFrom());
+        Date fromDate = list.get(position).getFrom().toDate();
+        String formattedFromDate = DateFormat.getDateInstance(android.icu.text.DateFormat.SHORT).format(fromDate);
 
+        Date toDate = list.get(position).getFrom().toDate();
+        String formattedToDate = DateFormat.getDateInstance(android.icu.text.DateFormat.SHORT).format(toDate);
+        Log.d("sdfsdfsdfsdfsdfsfsdfsdfsfsdfsfsdfsdfsdf", formattedFromDate);
         holder.itemView.setTag(list.get(position));
-        holder.tvEventDate.setText(dateStr);
+        holder.tvEventDate.setText(formattedFromDate + " - " + formattedToDate);
         holder.tvEventDescription.setText(list.get(position).getDescription());
     }
 
