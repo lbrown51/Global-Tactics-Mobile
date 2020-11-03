@@ -19,11 +19,11 @@ import java.util.HashMap;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<HashMap<String,String>> list = new ArrayList<>();
+    ArrayList<Event> list;
 
-    public EventAdapter(Context con,ArrayList<HashMap<String,String>> dataList) {
+    public EventAdapter(Context con, ArrayList<Event> events) {
         context = con;
-        list = dataList;
+        list = events;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -40,7 +40,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(list.get((Integer) v.getTag()).get("url")));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(list.get((Integer) v.getTag()).getHost()));
                     context.startActivity(intent);
                 }
             });
@@ -58,10 +58,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        HashMap<String,String> dataMap = list.get(position);
-        holder.itemView.setTag(position);
-        holder.tvEventDate.setText(dataMap.get("date"));
-        holder.tvEventDescription.setText(dataMap.get("description"));
+        holder.itemView.setTag(list.get(position));
+        holder.tvEventDate.setText(String.valueOf(list.get(position).getFrom()));
+        holder.tvEventDescription.setText(list.get(position).getDescription());
     }
 
     @Override

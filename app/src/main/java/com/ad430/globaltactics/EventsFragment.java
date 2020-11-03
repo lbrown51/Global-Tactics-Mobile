@@ -1,5 +1,6 @@
 package com.ad430.globaltactics;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class EventsFragment extends Fragment {
     View myView;
     EventViewModel eventViewModel;
     ArrayList<HashMap<String,String>> dataList = new ArrayList<>();
+    ArrayList<Event> list = new ArrayList<>();
 
     public EventsFragment() {
 
@@ -33,9 +35,9 @@ public class EventsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        eventViewModel = new ViewModelProvider(this.getActivity()).get(EventViewModel.class);
-
-        dataList = eventViewModel.getEventsList();
+//        eventViewModel = new ViewModelProvider(this.getActivity()).get(EventViewModel.class);
+//
+//        dataList = eventViewModel.getEventsList();
     }
 
     @Override
@@ -50,31 +52,46 @@ public class EventsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        recyclerView = myView.findViewById(R.id.eventList);
-        recyclerView.setHasFixedSize(true);
+        final Activity activity = this.getActivity();
 
-        layoutManager = new LinearLayoutManager(this.getActivity());
-        recyclerView.setLayoutManager(layoutManager);
+        eventViewModel = new EventViewModel();
 
-        EventAdapter dataAdapter = new EventAdapter(this.getActivity(),dataList);
-        recyclerView.setAdapter(dataAdapter);
+        eventViewModel.getEvents(
+            (ArrayList<Event> events) -> {
+                recyclerView = myView.findViewById(R.id.eventList);
+                recyclerView.setHasFixedSize(true);
 
-        RecyclerItemDecoration recyclerItemDecoration = new RecyclerItemDecoration(this.getActivity(),getResources().getDimensionPixelSize(R.dimen.header_height),true,getSectionCallback(dataList));
+                layoutManager = new LinearLayoutManager(this.getActivity());
+                recyclerView.setLayoutManager(layoutManager);
+
+                list = events;
+
+                EventAdapter dataAdapter = new EventAdapter(activity, events);
+                recyclerView.setAdapter(dataAdapter);
+            }
+        );
+
+        RecyclerItemDecoration recyclerItemDecoration = new RecyclerItemDecoration(this.getActivity(),getResources().getDimensionPixelSize(R.dimen.header_height),true,getSectionCallback(list));
         recyclerView.addItemDecoration(recyclerItemDecoration);
     }
 
-    private RecyclerItemDecoration.SectionCallback getSectionCallback(final ArrayList<HashMap<String,String>> list) {
+    private RecyclerItemDecoration.SectionCallback getSectionCallback(final ArrayList<Event> list) {
         return new RecyclerItemDecoration.SectionCallback() {
             @Override
             public boolean isSection(int pos) {
-                return pos==0 || list.get(pos).get("Title")!=list.get(pos-1).get("Title");
+                return pos==0 || list.get(pos).getFrom() != list.get(pos-1).getFrom();
             }
 
             @Override
             public String getSectionHeaderName(int pos) {
-                HashMap<String,String> dataMap = list.get(pos);
-                return dataMap.get("Title");
+                return String.valueOf(list.get(pos).getFrom());
             }
         };
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        eventViewModel.clear();
     }
 }
