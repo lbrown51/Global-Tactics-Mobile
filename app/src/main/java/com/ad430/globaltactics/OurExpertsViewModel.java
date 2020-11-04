@@ -16,7 +16,6 @@ public class OurExpertsViewModel extends ViewModel {
 
     public OurExpertsViewModel() {
         ourExpertsModel = new OurExpertsModel();
-
     }
 
     public void getExperts(Consumer<ArrayList<Expert>> responseCallback) {
