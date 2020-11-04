@@ -4,8 +4,6 @@ import android.util.Log;
 
 import androidx.lifecycle.ViewModel;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -15,7 +13,7 @@ import java.util.function.Consumer;
 
 public class EventViewModel extends ViewModel {
     ArrayList<HashMap<String,String>> list = new ArrayList<>();
-    private final String TAG = OurExpertsViewModel.class.getSimpleName();
+    private final String TAG = EventViewModel.class.getSimpleName();
     private EventsModel eventsModel;
 
     public EventViewModel() {
