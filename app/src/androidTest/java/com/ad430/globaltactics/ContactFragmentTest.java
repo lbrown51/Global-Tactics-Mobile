@@ -23,10 +23,7 @@ public class ContactFragmentTest {
     public void aboutUsFragmentsAllTextViews() {
         FragmentScenario<ContactFragment> fragmentScenario = FragmentScenario.launchInContainer(ContactFragment.class);
 
-        onView(withId(R.id.your_name_top)).check(matches(withText(R.string.contact_form_name)));
-        onView(withId(R.id.your_email_top)).check(matches(withText(R.string.contact_form_email)));
-        onView(withId(R.id.your_subject_top)).check(matches(withText(R.string.contact_form_subject)));
-        onView(withId(R.id.your_message_top)).check(matches(withText(R.string.contact_form_message)));
+
         onView(withId(R.id.post_message)).check(matches(withText(R.string.contact_form_button)));
         //   onView(withId(R.id.tvBorderLine)).check(matches(isDisplayed()));
 
