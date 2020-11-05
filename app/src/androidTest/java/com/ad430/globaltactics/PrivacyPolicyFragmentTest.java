@@ -24,8 +24,8 @@ import static org.junit.Assert.assertNotNull;
 public class PrivacyPolicyFragmentTest {
 
     @Test
-    public void aboutUsFragmentsAllTextViews() {
-        FragmentScenario<ContactFragment> fragmentScenario = FragmentScenario.launchInContainer(ContactFragment.class);
+    public void privacyPolicyFragmentTextViews() {
+        FragmentScenario<PrivacyPolicyFragment> fragmentScenario = FragmentScenario.launchInContainer(PrivacyPolicyFragment.class);
 
         onView(withId(R.id.tvPrivacyPolicy)).check(matches(withText(R.string.privacy_policy)));
         onView(withId(R.id.tvPrivacyUpdated)).check(matches(withText(R.string.privacy_updated)));
