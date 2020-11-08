@@ -1,24 +1,17 @@
 package com.ad430.globaltactics;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.testing.FragmentScenario;
-import androidx.test.espresso.intent.Intents;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasAction;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static org.hamcrest.Matchers.allOf;
-import static org.junit.Assert.*;
 
 @RunWith(AndroidJUnit4.class)
 
@@ -85,21 +78,4 @@ public class OurSuccessesFragmentTest {
         )
             .check(matches(isDisplayed()));
     }
-
-//    @Test
-//    public void onTabClick() throws InterruptedException {
-//        FragmentScenario<OurSuccessesFragment> fragmentScenario = FragmentScenario
-//            .launchInContainer(
-//                OurSuccessesFragment.class,
-//                new Bundle(),
-//                R.style.AppTheme,
-//                null
-//            );
-//
-//        Thread.sleep(5000);
-//
-//        onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
-//        Intents.intended(allOf(hasAction(Intent.ACTION_VIEW)));
-//        Intents.release();
-//    }
 }
