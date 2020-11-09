@@ -67,11 +67,16 @@ exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(async (req, res)
           $(innerArea).find("a").remove();
           const ourExpertDescription = $(innerArea).find("p").text();
 
+          $(innerArea).find("p").remove();
+          $(innerArea).find("h2").remove();
+          $(innerArea).find("h4").remove();
+          const ourExpertLocation = $(innerArea).text().trim();
 
           const ourExpert = {
             id: expertCount++,
             name: ourExpertName,
             title: ourExpertTitle,
+            location: ourExpertLocation,
             specialties: ourExpertSpecialties,
             description: ourExpertDescription,
             linkedin: ourExpertLinkedIn
