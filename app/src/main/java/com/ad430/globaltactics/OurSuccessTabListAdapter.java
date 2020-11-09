@@ -33,7 +33,6 @@ public class OurSuccessTabListAdapter extends RecyclerView.Adapter<OurSuccessTab
             ivOurSuccessFlag = itemView.findViewById(R.id.ivOurSuccessFlag);
             tvOurSuccessTitle = itemView.findViewById(R.id.tvOurSuccessTitle);
             tvOurSuccessDescription = itemView.findViewById(R.id.tvOurSuccessDescription);
-            ivOurSuccessBackground = itemView.findViewById(R.id.ivOurSuccessBackground);
         }
     }
 
@@ -52,7 +51,6 @@ public class OurSuccessTabListAdapter extends RecyclerView.Adapter<OurSuccessTab
 
         int imageId = context.getResources().getIdentifier(dataMap.get("resource"), "drawable", context.getPackageName());
 
-        holder.ivOurSuccessBackground.setImageResource(imageId);
         holder.ivOurSuccessFlag.setImageResource(imageId);
         holder.tvOurSuccessTitle.setText(dataMap.get("title"));
         holder.tvOurSuccessDescription.setText(dataMap.get("description"));

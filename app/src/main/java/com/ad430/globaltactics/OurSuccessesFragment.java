@@ -59,8 +59,8 @@ public class OurSuccessesFragment extends Fragment {
 
         OurSuccessesAdapter ourSuccessesViewPagerAdapter = new OurSuccessesAdapter(getChildFragmentManager(), 0);
 
-        ourSuccessesViewPagerAdapter.addFragment(ourSuccessesCorporateTab, getString(R.string.corporates));
-        ourSuccessesViewPagerAdapter.addFragment(ourSuccessesGovernmentTab, getString(R.string.governments));
+        ourSuccessesViewPagerAdapter.addFragment(ourSuccessesCorporateTab, getString(R.string.corporate));
+        ourSuccessesViewPagerAdapter.addFragment(ourSuccessesGovernmentTab, getString(R.string.government));
 
         ourSuccessesViewPager.setAdapter(ourSuccessesViewPagerAdapter);
 

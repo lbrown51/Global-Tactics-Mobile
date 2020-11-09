@@ -73,6 +73,12 @@ public class OurSuccessesCorporateTab extends Fragment {
             }
         );
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ourSuccessesViewModel.clear();
+    }
 }
 
 

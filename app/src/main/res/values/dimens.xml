@@ -35,4 +35,8 @@
     <dimen name="sixty_dp">60dp</dimen>
     <dimen name="twenty_two_dp">22sp</dimen>
     <dimen name="twenty_two_sp">22sp</dimen>
+    <dimen name="one_thirty_dp">130dp</dimen>
+    <dimen name="twelve_dp">12dp</dimen>
+    <dimen name="twenty_six_sp">26sp</dimen>
+    <dimen name="twenty_dp">20dp</dimen>
 </resources>
