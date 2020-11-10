@@ -4,8 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
-    android:id="@+id/svEventList"
-    >
+    android:id="@+id/svEventList">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
@@ -15,6 +14,8 @@
         app:cardElevation="@dimen/five_dp"
         android:layout_marginHorizontal="@dimen/ten_dp"
         app:cardUseCompatPadding="false"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/colorPrimary"
         android:theme="@style/Theme.MaterialComponents.Light">
 
         <LinearLayout

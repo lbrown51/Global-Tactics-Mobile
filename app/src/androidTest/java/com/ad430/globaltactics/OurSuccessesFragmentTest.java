@@ -50,12 +50,6 @@ public class OurSuccessesFragmentTest {
 
         onView(
             withRecyclerView(R.id.ourSuccessesCorporateList)
-                    .atPositionOnView(0, R.id.ivOurSuccessBackground)
-        )
-            .check(matches(isDisplayed()));
-
-        onView(
-            withRecyclerView(R.id.ourSuccessesCorporateList)
                 .atPositionOnView(0, R.id.llOurSuccess)
         )
             .check(matches(isDisplayed()));
