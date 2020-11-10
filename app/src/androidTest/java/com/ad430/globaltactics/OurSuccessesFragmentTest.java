@@ -48,11 +48,11 @@ public class OurSuccessesFragmentTest {
 
         Thread.sleep(5000);
 
-        onView(
-            withRecyclerView(R.id.ourSuccessesCorporateList)
-                    .atPositionOnView(0, R.id.ivOurSuccessBackground)
-        )
-            .check(matches(isDisplayed()));
+//        onView(
+//            withRecyclerView(R.id.ourSuccessesCorporateList)
+//                    .atPositionOnView(0, R.id.ivOurSuccessBackground)
+//        )
+//            .check(matches(isDisplayed()));
 
         onView(
             withRecyclerView(R.id.ourSuccessesCorporateList)
