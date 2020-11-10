@@ -12,6 +12,9 @@
         android:id="@+id/ourExpertsFragment"
         android:title="@string/our_experts_fragment_title" />
     <item
+        android:id="@+id/ourSuccessesFragment"
+        android:title="@string/our_successes_fragment_title" />
+    <item
         android:id="@+id/eventsFragment"
         android:title="@string/events_fragment_title" />
     <item

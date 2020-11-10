@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         R.id.homeScreenFragment,
                         R.id.aboutUsFragment,
                         R.id.ourExpertsFragment,
+                        R.id.ourSuccessesFragment,
                         R.id.blogFragment,
                         R.id.eventsFragment,
                         R.id.privacyPolicyFragment,
