@@ -9,6 +9,7 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.blogger.Blogger;
 import com.google.api.services.blogger.model.Blog;
 import com.google.api.services.blogger.model.Post;
+import com.google.api.services.blogger.model.PostList;
 
 import java.io.IOException;
 import java.util.List;
@@ -35,6 +36,8 @@ public class BloggerTest extends AsyncTask<String, Integer, Long> {
 
         Blogger.Blogs.GetByUrl blogGetByUrlAction = null;
         Blogger.Posts.Get postsGetAction = null;
+        Blogger.Posts.Search postsSearchAction = null;
+        Blogger.Posts.List postsListAction = null;
 
         try {
             // The request action object.
@@ -51,7 +54,23 @@ public class BloggerTest extends AsyncTask<String, Integer, Long> {
             postsGetAction = blogger.posts().get(blogId, "");
             postsGetAction.setKey("AIzaSyCMWpGVYH182Z3FjkmNn-W1qBoldx3Is5E");
 
-            Post posts = postsGetAction.execute();
+            Post postsAll = postsGetAction.execute();
+
+
+            postsSearchAction = blogger.posts().search(blogId, "label=Entrepreneurship");
+            postsSearchAction.setKey("AIzaSyCMWpGVYH182Z3FjkmNn-W1qBoldx3Is5E");
+            postsSearchAction.setFetchBodies(true);
+
+            PostList postsByLabel = postsSearchAction.execute();
+
+
+            postsListAction = blogger.posts().list(blogId);
+            postsListAction.setKey("AIzaSyCMWpGVYH182Z3FjkmNn-W1qBoldx3Is5E");
+            postsListAction.setLabels("Entrepreneurship");
+            postsListAction.setMaxResults(5L);
+            postsListAction.setFetchBodies(true);
+
+            PostList postsByLabelList = postsListAction.execute();
             // Now we can navigate the response.
             Log.d("TESSSST", "Name: " + blog.getName());
             Log.d(TAG, "Description: " + blog.getDescription());
