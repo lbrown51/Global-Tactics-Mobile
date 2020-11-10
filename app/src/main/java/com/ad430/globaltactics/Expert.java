@@ -1,6 +1,9 @@
 package com.ad430.globaltactics;
 
+import android.util.Log;
+
 public class Expert {
+    int id;
     String name;
     String title;
     String location;
@@ -19,12 +22,20 @@ public class Expert {
 //        this.linkedin = linkedin;
 //    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name.replace("\n", "");
     }
 
     public String getTitle() {
@@ -32,7 +43,7 @@ public class Expert {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title = title.replace("\n", "");
     }
 
     public String getLocation() {
@@ -40,7 +51,7 @@ public class Expert {
     }
 
     public void setLocation(String location) {
-        this.location = location;
+        this.location = location.replace("\n", "");
     }
 
     public String getSpecialties() {
@@ -48,7 +59,7 @@ public class Expert {
     }
 
     public void setSpecialties(String specialties) {
-        this.specialties = specialties;
+        this.specialties = specialties.replace("\n", "");
     }
 
     public String getDescription() {
@@ -56,7 +67,7 @@ public class Expert {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.description = description.trim().replaceAll("[\n]{2,}", "\n\n");
     }
 
     public String getLinkedin() {
@@ -64,6 +75,6 @@ public class Expert {
     }
 
     public void setLinkedin(String linkedin) {
-        this.linkedin = linkedin;
+        this.linkedin = linkedin.replace("\n", "");
     }
 }

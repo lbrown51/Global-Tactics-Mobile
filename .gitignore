@@ -16,3 +16,5 @@ google-services.json
 node_modules
 *.log
 .env
+release
+app-release.abb
