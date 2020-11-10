@@ -11,9 +11,9 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#BDBDBD"
         app:cardCornerRadius="@dimen/five_dp"
         app:cardElevation="@dimen/five_dp"
+        android:layout_marginHorizontal="@dimen/ten_dp"
         app:cardUseCompatPadding="false"
         android:theme="@style/Theme.MaterialComponents.Light">
 
@@ -27,10 +27,10 @@
             <ImageView
                 android:id="@+id/ivEventCalendar"
                 android:contentDescription="@string/calendar"
-                android:layout_width="@dimen/fifty_dp"
-                android:layout_height="@dimen/fifty_dp"
+                android:layout_width="@dimen/one_twenty_dp"
+                android:layout_height="@dimen/one_twenty_dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="@dimen/ten_dp"
+                android:layout_marginEnd="@dimen/fifteen_dp"
                 android:layout_marginStart="@dimen/five_dp"
                 app:srcCompat="@drawable/calendar" />
 
@@ -47,12 +47,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/five_dp"
                     android:layout_marginBottom="@dimen/five_dp"
-                    android:textSize="@dimen/fifteen_sp"/>
+                    android:textSize="@dimen/twenty_sp"/>
                 <TextView
                     android:id="@+id/tvEventDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/twenty_sp"
+                    android:textStyle="bold"
                     android:layout_marginTop="@dimen/five_dp"
                     android:layout_marginBottom="@dimen/five_dp"/>
             </LinearLayout>

@@ -29,15 +29,12 @@ public class EventsFragment extends Fragment {
     EventViewModel eventViewModel;
     ArrayList<HashMap<String,String>> dataList = new ArrayList<>();
 
-    ArrayList<Event> list = new ArrayList<>();
-
     public EventsFragment() {
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         myView = inflater.inflate(R.layout.fragment_events, container, false);
 
         return myView;
@@ -60,20 +57,20 @@ public class EventsFragment extends Fragment {
                 recyclerView.setLayoutManager(layoutManager);
 
                 for (Event event : events) {
-                    HashMap<String,String> dataMAp = new HashMap<>();
-                    dataMAp.put("title", event.getTitle());
-                    dataMAp.put("date", event.getDate());
-                    dataMAp.put("description", event.getDescription());
-                    dataMAp.put("url", event.getHost());
-                    dataMAp.put("intDate", String.valueOf(event.getIntDate()));
+                    HashMap<String,String> dataMap = new HashMap<>();
+                    dataMap.put(getString(R.string.title), event.getTitle());
+                    dataMap.put(getString(R.string.date), event.getDate());
+                    dataMap.put(getString(R.string.description), event.getDescription());
+                    dataMap.put(getString(R.string.url), event.getHost());
+                    dataMap.put(getString(R.string.intDate), String.valueOf(event.getIntDate()));
 
-                    dataList.add(dataMAp);
+                    dataList.add(dataMap);
                 }
 
                 Collections.sort(dataList, new Comparator<HashMap<String, String>>() {
                     @Override
                     public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
-                        return o1.get("intDate").compareTo(o2.get("intDate"));
+                        return o1.get(getString(R.string.intDate)).compareTo(o2.get(getString(R.string.intDate)));
                     }
                 });
 
@@ -90,12 +87,12 @@ public class EventsFragment extends Fragment {
         return new RecyclerItemDecoration.SectionCallback() {
             @Override
             public boolean isSection(int pos) {
-                return pos==0 || !list.get(pos).get("title").equals(list.get(pos-1).get("title"));
+                return pos==0 || !list.get(pos).get(getString(R.string.title)).equals(list.get(pos-1).get(getString(R.string.title)));
             }
 
             @Override
             public String getSectionHeaderName(int pos) {
-                return String.valueOf(list.get(pos).get("title"));
+                return String.valueOf(list.get(pos).get(getString(R.string.title)));
             }
         };
     }

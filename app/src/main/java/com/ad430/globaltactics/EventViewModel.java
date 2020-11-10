@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 
 public class EventViewModel extends ViewModel {
-    ArrayList<HashMap<String,String>> list = new ArrayList<>();
     private final String TAG = EventViewModel.class.getSimpleName();
     private EventsModel eventsModel;
 

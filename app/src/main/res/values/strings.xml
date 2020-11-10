@@ -156,5 +156,17 @@
     <string name="expert_test_specialties">Testing, Managing, Being the best</string>
     <string name="expert_test_description">The best manager there ever was.</string>
     <string name="expert_test_linkedin">https://www.linkedin.com/in/lennycbrown/</string>
+    <string name="our_successes_fragment_title">Our Successes</string>
+    <string name="corporate">corporate</string>
+    <string name="government">government</string>
+    <string name="title">title</string>
+    <string name="description">description</string>
+    <string name="date">date</string>
+    <string name="url">url</string>
+    <string name="intDate">intDate</string>
+    <string name="srcId">srcId</string>
+    <string name="corporates">corporates</string>
+    <string name="governments">governments</string>
+    <string name="resource">resource</string>
 
 </resources>
