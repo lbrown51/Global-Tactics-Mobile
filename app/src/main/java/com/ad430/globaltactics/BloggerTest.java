@@ -58,9 +58,11 @@ public class BloggerTest extends AsyncTask<String, Integer, Long> {
             Log.d(TAG, "Post Count: " + blog.getPosts().getTotalItems());
             Log.d(TAG, "Last Updated: " + blog.getUpdated());
 
-            posts..forEach((post) -> {
-                Log.d(TAG, "Post Title: " + post.getTitle());
-            });
+            // This gets an array list of the posts
+            //  posts.get("items");
+
+            // those array maps can basically be accessed using
+            // kind, id, blog, published, updated, url,..., title, content author, labels....
 
             return null;
         } catch (IOException e) {
