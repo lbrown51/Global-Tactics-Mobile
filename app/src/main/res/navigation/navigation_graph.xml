@@ -40,6 +40,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/ourSuccessesFragment"
+        android:name="com.ad430.globaltactics.OurSuccessesFragment"
+        android:label="@string/our_successes_fragment_title"
+        tools:layout="@layout/fragment_our_successes" />
+
+    <fragment
         android:id="@+id/blogFragment"
         android:name="com.ad430.globaltactics.BlogFragment"
         android:label="@string/blog_fragment_title"
@@ -70,6 +76,9 @@
     <action
         android:id="@+id/action_global_ourExpertsFragment"
         app:destination="@id/ourExpertsFragment" />
+    <action
+        android:id="@+id/action_global_ourSuccessesFragment"
+        app:destination="@id/ourSuccessesFragment" />
     <action
         android:id="@+id/action_global_eventsFragment"
         app:destination="@id/eventsFragment" />

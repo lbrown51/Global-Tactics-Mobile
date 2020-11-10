@@ -33,7 +33,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivEventCalendar;
-        TextView tvEventDate, tvEventDescription, tvDesc1, tvDesc2;
+        TextView tvEventDate, tvEventDescription;
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
