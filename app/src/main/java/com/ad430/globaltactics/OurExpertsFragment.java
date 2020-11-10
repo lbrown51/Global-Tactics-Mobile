@@ -69,6 +69,17 @@ public class OurExpertsFragment extends Fragment {
                     ourExpertsLayoutManager = new LinearLayoutManager(activity);
                     ourExpertsRecyclerView.setLayoutManager(ourExpertsLayoutManager);
 
+                    experts.sort((e1, e2) -> {
+                      int e1ID = e1.getId();
+                      int e2ID = e2.getId();
+                      return Integer.compare(e1ID, e2ID);
+                    });
+
+                    experts.removeIf(expert -> {
+                        Log.d(TAG, String.valueOf(expert.getId()));
+                        return expert.getId() == -1;
+                    });
+
                     ourExpertsAdapter = new OurExpertsAdapter(activity, experts);
 
                     ourExpertsRecyclerView.setAdapter(ourExpertsAdapter);
