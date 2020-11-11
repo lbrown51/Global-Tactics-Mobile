@@ -20,7 +20,8 @@
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                app:titleTextColor="@android:color/white" />
             <!--                app:title="Global Tactics"-->
 <!--                            app:navigationIcon="@mipmap/letter_o" />-->
 
@@ -46,6 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/navigation_menu" />
+        app:menu="@menu/navigation_menu"
+        app:itemIconTint="@color/colorAccent" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
