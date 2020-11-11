@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     android:id="@+id/privacyPolicyFragmentFragment"
     android:gravity="center">
 
@@ -17,20 +16,6 @@
         tools:context=".PrivacyPolicyFragment">
 
         <TextView
-            android:id="@+id/tvPrivacyPolicy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/thirty_dp"
-            android:layout_marginTop="@dimen/fifty_dp"
-            android:layout_marginRight="@dimen/thirty_dp"
-            android:fontFamily="@font/rufina"
-            android:gravity="center"
-            android:text="@string/privacy_policy"
-            android:textColor="#000000"
-            android:textSize="@dimen/thirty_sp"
-            android:textStyle="bold|italic" />
-
-        <TextView
             android:id="@+id/tvPrivacyUpdated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +25,6 @@
             android:fontFamily="@font/oxygen_light"
             android:text="@string/privacy_updated"
             android:textStyle="bold|italic"
-            android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp" />
         <TextView
             android:id="@+id/tvPrivacyHeaderOne"
@@ -50,9 +34,8 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_one"
-            android:fontFamily="@font/rufina"
-            android:textSize="25sp"
-            android:textColor="#000000" />
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvPrivacyParagraphOne"
@@ -61,9 +44,8 @@
             android:layout_marginLeft="@dimen/thirty_dp"
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
-            android:fontFamily="@font/oxygen"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:text="@string/privacy_paragraph_one"
-            android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -75,7 +57,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_two"
             android:textColor="#000000"
-            android:fontFamily="@font/oxygen"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -87,7 +69,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_three"
             android:textColor="#000000"
-            android:fontFamily="@font/oxygen"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -99,7 +81,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_paragraph_four"
             android:textColor="#000000"
-            android:fontFamily="@font/oxygen"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -111,7 +93,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_two"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -124,7 +106,7 @@
             android:text="@string/privacy_paragraph_five"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphSix"
@@ -136,7 +118,7 @@
             android:text="@string/privacy_paragraph_six"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletOne"
@@ -148,7 +130,7 @@
             android:text="@string/privacy_bullet_one"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwo"
@@ -160,7 +142,7 @@
             android:text="@string/privacy_bullet_two"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThree"
@@ -172,7 +154,7 @@
             android:text="@string/privacy_bullet_three"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFour"
@@ -184,7 +166,7 @@
             android:text="@string/privacy_bullet_four"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphSeven"
@@ -196,7 +178,7 @@
             android:text="@string/privacy_paragraph_seven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFive"
@@ -208,7 +190,7 @@
             android:text="@string/privacy_bullet_five"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletSix"
@@ -220,7 +202,7 @@
             android:text="@string/privacy_bullet_six"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletSeven"
@@ -232,7 +214,7 @@
             android:text="@string/privacy_bullet_seven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletEight"
@@ -244,7 +226,7 @@
             android:text="@string/privacy_bullet_eight"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletNine"
@@ -256,7 +238,7 @@
             android:text="@string/privacy_bullet_nine"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTen"
@@ -268,7 +250,7 @@
             android:text="@string/privacy_bullet_ten"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletEleven"
@@ -280,7 +262,7 @@
             android:text="@string/privacy_bullet_eleven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphEight"
@@ -292,7 +274,7 @@
             android:text="@string/privacy_paragraph_eight"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphNine"
@@ -304,7 +286,7 @@
             android:text="@string/privacy_paragraph_nine"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderThree"
@@ -315,7 +297,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_three"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -328,7 +310,7 @@
             android:text="@string/privacy_paragraph_ten"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwelve"
@@ -340,7 +322,7 @@
             android:text="@string/privacy_bullet_twelve"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirteen"
@@ -352,7 +334,7 @@
             android:text="@string/privacy_bullet_thirteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFourteen"
@@ -364,7 +346,7 @@
             android:text="@string/privacy_bullet_fourteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFifteen"
@@ -376,7 +358,7 @@
             android:text="@string/privacy_bullet_fifteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletSixteen"
@@ -388,7 +370,7 @@
             android:text="@string/privacy_bullet_sixteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletSeventeen"
@@ -400,7 +382,7 @@
             android:text="@string/privacy_bullet_seventeen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphEleven"
@@ -412,7 +394,7 @@
             android:text="@string/privacy_paragraph_eleven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderFour"
@@ -423,7 +405,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_four"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -436,7 +418,7 @@
             android:text="@string/privacy_paragraph_twelve"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletEighteen"
@@ -448,7 +430,7 @@
             android:text="@string/privacy_bullet_eighteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletNineteen"
@@ -460,7 +442,7 @@
             android:text="@string/privacy_bullet_nineteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwenty"
@@ -472,7 +454,7 @@
             android:text="@string/privacy_bullet_twenty"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyOne"
@@ -484,7 +466,7 @@
             android:text="@string/privacy_bullet_twentyone"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyTwo"
@@ -496,7 +478,7 @@
             android:text="@string/privacy_bullet_twentytwo"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderFive"
@@ -507,7 +489,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_five"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp"
             />
 
@@ -521,7 +503,7 @@
             android:text="@string/privacy_paragraph_thirteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFourteen"
@@ -533,7 +515,7 @@
             android:text="@string/privacy_paragraph_fourteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFifteen"
@@ -545,7 +527,7 @@
             android:text="@string/privacy_paragraph_fifteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderSix"
@@ -556,7 +538,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_six"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp"/>
 
         <TextView
@@ -569,7 +551,7 @@
             android:text="@string/privacy_paragraph_sixteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphSeventeen"
@@ -581,7 +563,7 @@
             android:text="@string/privacy_paragraph_seventeen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphEighteen"
@@ -593,7 +575,7 @@
             android:text="@string/privacy_paragraph_eighteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphNineteen"
@@ -605,7 +587,7 @@
             android:text="@string/privacy_paragraph_nineteen"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwenty"
@@ -617,7 +599,7 @@
             android:text="@string/privacy_paragraph_twenty"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyOne"
@@ -629,7 +611,7 @@
             android:text="@string/privacy_paragraph_twentyone"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyTwo"
@@ -641,7 +623,7 @@
             android:text="@string/privacy_paragraph_twentytwo"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyThree"
@@ -653,7 +635,7 @@
             android:text="@string/privacy_paragraph_twentythree"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyFour"
@@ -665,7 +647,7 @@
             android:text="@string/privacy_paragraph_twentyfour"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderSeven"
@@ -676,7 +658,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_seven"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -689,7 +671,7 @@
             android:text="@string/privacy_paragraph_twentyfive"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderEight"
@@ -700,7 +682,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_eight"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp"
             />
 
@@ -714,7 +696,7 @@
             android:text="@string/privacy_paragraph_twentysix"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderNine"
@@ -725,7 +707,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_nine"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -738,7 +720,7 @@
             android:text="@string/privacy_paragraph_twentyseven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderTen"
@@ -749,7 +731,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_ten"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -762,7 +744,7 @@
             android:text="@string/privacy_paragraph_twentyeight"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphTwentyNine"
@@ -774,7 +756,7 @@
             android:text="@string/privacy_paragraph_twentynine"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirty"
@@ -796,7 +778,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_eleven"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -809,7 +791,7 @@
             android:text="@string/privacy_paragraph_thirtyone"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyTwo"
@@ -821,7 +803,7 @@
             android:text="@string/privacy_paragraph_thirtytwo"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyThree"
@@ -833,7 +815,7 @@
             android:text="@string/privacy_bullet_twentythree"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyFour"
@@ -845,7 +827,7 @@
             android:text="@string/privacy_bullet_twentyfour"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyFive"
@@ -857,7 +839,7 @@
             android:text="@string/privacy_bullet_twentyfive"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentySix"
@@ -869,7 +851,7 @@
             android:text="@string/privacy_bullet_twentysix"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyThree"
@@ -881,7 +863,7 @@
             android:text="@string/privacy_paragraph_thirtythree"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyFour"
@@ -893,7 +875,7 @@
             android:text="@string/privacy_paragraph_thirtyfour"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyFive"
@@ -905,7 +887,7 @@
             android:text="@string/privacy_paragraph_thirtyfive"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtySix"
@@ -917,7 +899,7 @@
             android:text="@string/privacy_paragraph_thirtysix"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtySeven"
@@ -929,7 +911,7 @@
             android:text="@string/privacy_paragraph_thirtyseven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyEight"
@@ -941,7 +923,7 @@
             android:text="@string/privacy_paragraph_thirtyeight"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphThirtyNine"
@@ -953,7 +935,7 @@
             android:text="@string/privacy_paragraph_thirtynine"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphForty"
@@ -965,7 +947,7 @@
             android:text="@string/privacy_paragraph_forty"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyOne"
@@ -977,7 +959,7 @@
             android:text="@string/privacy_paragraph_fortyone"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyTwo"
@@ -989,7 +971,7 @@
             android:text="@string/privacy_paragraph_fortytwo"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyThree"
@@ -1001,7 +983,7 @@
             android:text="@string/privacy_paragraph_fortythree"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentySeven"
@@ -1013,7 +995,7 @@
             android:text="@string/privacy_bullet_twentyseven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyEight"
@@ -1025,7 +1007,7 @@
             android:text="@string/privacy_bullet_twentyeight"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletTwentyNine"
@@ -1037,7 +1019,7 @@
             android:text="@string/privacy_bullet_twentynine"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirty"
@@ -1049,7 +1031,7 @@
             android:text="@string/privacy_bullet_thirty"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyFour"
@@ -1061,7 +1043,7 @@
             android:text="@string/privacy_paragraph_fortyfour"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyOne"
@@ -1073,7 +1055,7 @@
             android:text="@string/privacy_bullet_thirtyone"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyTwo"
@@ -1085,7 +1067,7 @@
             android:text="@string/privacy_bullet_thirtytwo"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
 
         <TextView
@@ -1098,7 +1080,7 @@
             android:text="@string/privacy_bullet_thirtythree"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyFour"
@@ -1110,7 +1092,7 @@
             android:text="@string/privacy_bullet_thirtyfour"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyFive"
@@ -1122,7 +1104,7 @@
             android:text="@string/privacy_paragraph_fortyfive"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyFive"
@@ -1134,7 +1116,7 @@
             android:text="@string/privacy_bullet_thirtyfive"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtySix"
@@ -1146,7 +1128,7 @@
             android:text="@string/privacy_bullet_thirtysix"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtySeven"
@@ -1158,7 +1140,7 @@
             android:text="@string/privacy_bullet_thirtyseven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyEight"
@@ -1170,7 +1152,7 @@
             android:text="@string/privacy_bullet_thirtyeight"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletThirtyNine"
@@ -1182,7 +1164,7 @@
             android:text="@string/privacy_bullet_thirtynine"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortySix"
@@ -1205,7 +1187,7 @@
             android:text="@string/privacy_bullet_forty"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyOne"
@@ -1217,7 +1199,7 @@
             android:text="@string/privacy_bullet_fortyone"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyTwo"
@@ -1229,7 +1211,7 @@
             android:text="@string/privacy_bullet_fortytwo"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyThree"
@@ -1241,7 +1223,7 @@
             android:text="@string/privacy_bullet_fortythree"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyFour"
@@ -1253,7 +1235,7 @@
             android:text="@string/privacy_bullet_fortyfour"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortyFive"
@@ -1265,7 +1247,7 @@
             android:text="@string/privacy_bullet_fortyfive"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortySix"
@@ -1277,7 +1259,7 @@
             android:text="@string/privacy_bullet_fortysix"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyBulletFortySeven"
@@ -1289,7 +1271,7 @@
             android:text="@string/privacy_bullet_fortyseven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortySeven"
@@ -1301,7 +1283,7 @@
             android:text="@string/privacy_paragraph_fortyseven"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyEight"
@@ -1313,7 +1295,7 @@
             android:text="@string/privacy_paragraph_fortyeight"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFortyNine"
@@ -1325,7 +1307,7 @@
             android:text="@string/privacy_paragraph_fortynine"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderTwelve"
@@ -1336,7 +1318,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_twelve"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -1349,7 +1331,7 @@
             android:text="@string/privacy_paragraph_fifty"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderThirteen"
@@ -1360,7 +1342,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_thirteen"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -1373,7 +1355,7 @@
             android:text="@string/privacy_paragraph_fiftyone"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyHeaderFourteen"
@@ -1384,7 +1366,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_fourteen"
             android:textColor="#000000"
-            android:fontFamily="@font/rufina"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView
@@ -1397,7 +1379,7 @@
             android:text="@string/privacy_paragraph_fiftytwo"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFiftyThree"
@@ -1409,7 +1391,7 @@
             android:text="@string/privacy_paragraph_fiftythree"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvPrivacyParagraphFiftyFour"
@@ -1421,7 +1403,7 @@
             android:text="@string/privacy_paragraph_fiftyfour"
             android:textColor="#000000"
             android:textSize="@dimen/eighteen_sp"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <TextView
             android:id="@+id/tvBorderLine"
@@ -1431,7 +1413,7 @@
             android:layout_marginTop="@dimen/forty_dp"
             android:layout_marginRight="@dimen/ninety_dp"
             android:background="#000000"
-            android:fontFamily="@font/oxygen"/>
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
