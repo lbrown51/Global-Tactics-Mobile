@@ -123,15 +123,26 @@ public class ContactFragment extends Fragment {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+
+                                first_name.setText("");
+                                last_name.setText("");
+                                your_email.setText("");
+                                your_subject.setText("");
+                                your_message.setText("");
+
+                                view.clearFocus();
+                                Toast.makeText(getContext(), "Email Sent", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.w(TAG, "Error adding document", e);
+
+                                view.clearFocus();
+                                Toast.makeText(getContext(), "Email Failed to Send", Toast.LENGTH_SHORT).show();
                             }
                         });
-                Toast.makeText(getContext(), "Email Sent", Toast.LENGTH_SHORT).show();
             }
         });
 
