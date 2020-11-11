@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#03747e</color>
     <color name="colorPrimaryDark">#055155</color>
-    <color name="colorAccent">#df452c</color>
+    <color name="colorAccent">#037e0d</color>
+    <color name="colorNavIcon">#df452c</color>
     <color name="colorWhite">#FAF7F7</color>
     <color name="colorLink">#1A0DAB</color>
     <color name="colorTabs">#009688</color>

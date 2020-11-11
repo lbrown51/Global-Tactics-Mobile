@@ -90,7 +90,7 @@
                 android:textColor="@android:color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/post_message"
             android:layout_width="@dimen/three_hundred_dp"
             android:layout_height="wrap_content"
@@ -99,7 +99,8 @@
             android:text="@string/contact_form_button"
             android:textColor="@android:color/white"
             android:textAllCaps="true"
-            android:background="@color/colorAccent" />
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/ten_dp" />
 
     </LinearLayout>
-    </ScrollView>
+</ScrollView>
