@@ -1,46 +1,30 @@
 package com.ad430.globaltactics;
 
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BlogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class BlogFragment extends Fragment {
+    private final String TAG = BlogFragment.class.getSimpleName();
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
+    private BlogViewModel blogViewModel;
 
     public BlogFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @return A new instance of fragment BlogFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-//    public static BlogFragment newInstance(String param1, String param2) {
-//        BlogFragment fragment = new BlogFragment();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,5 +39,18 @@ public class BlogFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_blog, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        final Activity activity = this.getActivity();
+
+        blogViewModel = new ViewModelProvider(this).get(BlogViewModel.class);
+
+        blogViewModel.getPostList().observe(getViewLifecycleOwner(), postList -> {
+            Log.d(TAG, postList.getItems().get(0).getTitle());
+        });
     }
 }
