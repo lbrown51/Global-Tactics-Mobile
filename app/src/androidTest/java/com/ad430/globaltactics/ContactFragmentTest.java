@@ -30,6 +30,7 @@ public class ContactFragmentTest {
         onView(withId(R.id.your_email)).perform(typeText("testing@gmail.com"));
         onView(withId(R.id.your_subject)).perform(typeText("test subject"));
         onView(withId(R.id.your_message)).perform(typeText("test message"));
+        onView(withId(R.id.get_ip_btn)).perform(click());
 
         onView(withId(R.id.post_message)).check(matches(withText(R.string.contact_form_button)));
         //   onView(withId(R.id.tvBorderLine)).check(matches(isDisplayed()));
