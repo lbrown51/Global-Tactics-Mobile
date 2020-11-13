@@ -34,7 +34,7 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_one"
-            style="@style/TextAppearance.MaterialComponents.Body1"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
             android:textSize="25sp" />
 
         <TextView

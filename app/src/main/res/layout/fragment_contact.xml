@@ -13,15 +13,23 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_marginTop="@dimen/twenty_dp"
+        android:padding="@dimen/twenty_dp"
         tools:context=".ContactFragment">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/twenty_dp"
+            android:text="@string/how_can_we_help"
+            style="@style/TextAppearance.MaterialComponents.Body1" />
+
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="@dimen/three_hundred_dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/twenty_dp"
             android:hint="@string/contact_form_first_name"
-            app:hintTextColor="@android:color/black"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/first_name"
@@ -31,11 +39,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="@dimen/three_hundred_dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/twenty_dp"
             android:hint="@string/contact_form_last_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/last_name"
@@ -45,11 +54,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="@dimen/three_hundred_dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/twenty_dp"
             android:hint="@string/contact_form_email"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/your_email"
@@ -60,11 +70,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="@dimen/three_hundred_dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/twenty_dp"
             android:hint="@string/contact_form_subject"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/your_subject"
@@ -75,11 +86,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="@dimen/three_hundred_dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/twenty_dp"
             android:hint="@string/contact_form_message"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/your_message"
@@ -92,15 +104,13 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/post_message"
-            android:layout_width="@dimen/three_hundred_dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/seventy_dp"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_gravity="center"
             android:text="@string/contact_form_button"
             android:textColor="@android:color/white"
-            android:textAllCaps="true"
-            android:background="@color/colorPrimary"
-            android:padding="@dimen/ten_dp" />
+            android:textAllCaps="true" />
 
     </LinearLayout>
 </ScrollView>
