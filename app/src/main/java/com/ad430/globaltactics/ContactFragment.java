@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
 
 public class ContactFragment extends Fragment {
 
-    final String TAG = "MAIN ACTIVITY";
+    final String TAG = ContactFragment.class.getSimpleName();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
