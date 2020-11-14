@@ -39,10 +39,6 @@ public class ContactFragmentTest {
         closeSoftKeyboard();
         onView(withId(R.id.post_message)).perform(click());
 
-        onView(withId(R.id.your_email)).perform(typeText("test last"));
-        closeSoftKeyboard();
-        onView(withId(R.id.post_message)).perform(click());
-
         onView(withId(R.id.your_subject)).perform(typeText("test subject"));
         closeSoftKeyboard();
         onView(withId(R.id.post_message)).perform(click());
