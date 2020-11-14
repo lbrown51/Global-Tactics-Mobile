@@ -116,7 +116,7 @@ public class ContactFragment extends Fragment {
                 contactFormInfo.put("topic", subject);
                 contactFormInfo.put("email", email);
                 contactFormInfo.put("message", message);
-
+                
                 db.collection("requests")
                         .add(contactFormInfo)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
