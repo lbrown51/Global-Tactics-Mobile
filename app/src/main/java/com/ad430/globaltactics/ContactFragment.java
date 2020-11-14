@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
 
 public class ContactFragment extends Fragment {
 
-    final String TAG = "MAIN ACTIVITY";
+    final String TAG = ContactFragment.class.getSimpleName();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -116,22 +116,33 @@ public class ContactFragment extends Fragment {
                 contactFormInfo.put("topic", subject);
                 contactFormInfo.put("email", email);
                 contactFormInfo.put("message", message);
-
+                
                 db.collection("requests")
                         .add(contactFormInfo)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+
+                                first_name.setText("");
+                                last_name.setText("");
+                                your_email.setText("");
+                                your_subject.setText("");
+                                your_message.setText("");
+
+                                view.clearFocus();
+                                Toast.makeText(getContext(), "Email Sent", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.w(TAG, "Error adding document", e);
+
+                                view.clearFocus();
+                                Toast.makeText(getContext(), "Email Failed to Send", Toast.LENGTH_SHORT).show();
                             }
                         });
-                Toast.makeText(getContext(), "Email Sent", Toast.LENGTH_SHORT).show();
             }
         });
 

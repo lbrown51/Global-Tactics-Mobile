@@ -13,6 +13,48 @@
     <string name="paragraph_three">We work with our clients to navigate the increasingly complex global environment, to analyze political and economic developments, and understand country-specific regulations and business practices.</string>
     <string name="paragraph_four">We evaluate market readiness, barriers of entry, and strategic alignment between business operations and product development.</string>
 
+    <string name="contact_page_title">CONTACT US</string>
+    <string name="home_fragment_title">Home</string>
+    <string name="about_us_fragment_title">About Us</string>
+    <string name="events_fragment_title">Events</string>
+    <string name="blog_fragment_title">Blog</string>
+    <string name="privacy_policy_fragment_title">Privacy Policy</string>
+    <string name="calendar">calendar</string>
+    <string name="our_experts_fragment_title">Our Experts</string>
+    <string name="expert_test_name">Lenny Brown</string>
+    <string name="expert_test_title">Best Manager</string>
+    <string name="expert_test_location">Seattle, Washington</string>
+    <string name="expert_test_specialties">Testing, Managing, Being the best</string>
+    <string name="expert_test_description">The best manager there ever was.</string>
+    <string name="expert_test_linkedin">https://www.linkedin.com/in/lennycbrown/</string>
+    <string name="our_successes_fragment_title">Our Successes</string>
+    <string name="corporate">corporate</string>
+    <string name="government">government</string>
+    <string name="title">title</string>
+    <string name="description">description</string>
+    <string name="date">date</string>
+    <string name="url">url</string>
+    <string name="intDate">intDate</string>
+    <string name="srcId">srcId</string>
+    <string name="corporates">corporates</string>
+    <string name="governments">governments</string>
+    <string name="resource">resource</string>
+
+    <!-- CONTACT FORM -->
+    <string name="contact_fragment_title">Contact</string>
+    <string name="contact_placeholder">Contact Fragment</string>
+    <string name="contact_form">Contact Us</string>
+    <string name="contact_form_first_name">First Name</string>
+    <string name="contact_form_last_name">Last Name</string>
+    <string name="contact_form_email">Email</string>
+    <string name="contact_form_subject">Subject</string>
+    <string name="contact_form_message">Message</string>
+    <string name="contact_form_button">Send Message</string>
+    <string name="contact_form_post_message">Please wait! We\'re sending your message to the support department...</string>
+    <string name="contact_posted">Your message has been successfully delivered.</string>
+    <string name="how_can_we_help">Thank you for your interest in Global Tactics. Please send us a message to learn how we can help your organization.</string>
+
+    <!-- PRIVACY POLICY -->
     <string name="privacy_policy">PRIVACY POLICY</string>
     <string name="privacy_updated">Last Updated: August 22, 2020</string>
     <string name="privacy_header_one">Introduction</string>
@@ -130,43 +172,5 @@
     <string name="privacy_paragraph_fiftytwo">We will occasionally update this privacy policy to reflect changes in our services and customer feedback. When we post changes to this policy, we will revise the "last updated" date at the top of this policy. If there are material changes to this notice or in how Global Tactics will use your personal information, we will notify you either by prominently posting a notice of such changes prior to implementing the change or by directly sending you a notification. We encourage you to periodically review this policy to be informed of how Global Tactics is protecting your information.</string>
     <string name="privacy_paragraph_fiftythree">Site viewers may view and print excerpts from these pages provided it is for their personal, non-commercial use.</string>
     <string name="privacy_paragraph_fiftyfour">If you feel that we are not abiding by this privacy policy, you should contact us immediately via email at info@globaltactics.co, telephone at +1 (206) 552-9601 or by mail at Global Tactics, LLC, Attn: Privacy Team, 600 Stewart Street, Suite 400, Seattle, Washington 98101-1217.</string>
-
-    <string name="contact_page_title">CONTACT US</string>
-    <string name="home_fragment_title">Home</string>
-    <string name="about_us_fragment_title">About Us</string>
-    <string name="events_fragment_title">Events</string>
-    <string name="blog_fragment_title">Blog</string>
-    <string name="privacy_policy_fragment_title">Privacy Policy</string>
-    <string name="contact_fragment_title">Contact</string>
-    <string name="contact_placeholder">Contact Fragment</string>
-    <string name="contact_form">Contact Us</string>
-    <string name="contact_form_first_name">Your First Name</string>
-    <string name="contact_form_last_name">Your Last Name</string>
-    <string name="contact_form_email">Your Email</string>
-    <string name="contact_form_subject">Your Subject</string>
-    <string name="contact_form_message">Your Message</string>
-    <string name="contact_form_button">Send Message</string>
-    <string name="contact_form_post_message">Please wait! We\'re sending your message to the support department...</string>
-    <string name="contact_posted">Your message has been successfully delivered.</string>
-    <string name="calendar">calendar</string>
-    <string name="our_experts_fragment_title">Our Experts</string>
-    <string name="expert_test_name">Lenny Brown</string>
-    <string name="expert_test_title">Best Manager</string>
-    <string name="expert_test_location">Seattle, Washington</string>
-    <string name="expert_test_specialties">Testing, Managing, Being the best</string>
-    <string name="expert_test_description">The best manager there ever was.</string>
-    <string name="expert_test_linkedin">https://www.linkedin.com/in/lennycbrown/</string>
-    <string name="our_successes_fragment_title">Our Successes</string>
-    <string name="corporate">corporate</string>
-    <string name="government">government</string>
-    <string name="title">title</string>
-    <string name="description">description</string>
-    <string name="date">date</string>
-    <string name="url">url</string>
-    <string name="intDate">intDate</string>
-    <string name="srcId">srcId</string>
-    <string name="corporates">corporates</string>
-    <string name="governments">governments</string>
-    <string name="resource">resource</string>
 
 </resources>

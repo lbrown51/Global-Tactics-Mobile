@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     android:id="@+id/aboutUsFragment"
     android:gravity="center">
 
@@ -17,20 +16,6 @@
         tools:context=".AboutUsFragment">
 
         <TextView
-            android:id="@+id/tvAboutUs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/fifty_dp"
-            android:layout_marginLeft="@dimen/thirty_dp"
-            android:layout_marginRight="@dimen/thirty_dp"
-            android:gravity="center"
-            android:text="@string/about_us"
-            android:textColor="#000000"
-            android:fontFamily="@font/rufina"
-            android:textSize="@dimen/thirty_sp"
-            android:textStyle="bold|italic" />
-
-        <TextView
             android:id="@+id/tvParagraphOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +24,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/paragraph_one"
             android:textColor="#000000"
-            android:fontFamily="@font/oxygen"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -51,7 +36,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/paragraph_two"
             android:textColor="#000000"
-            android:fontFamily="@font/oxygen"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -63,7 +48,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/paragraph_three"
             android:textColor="#000000"
-            android:fontFamily="@font/oxygen"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -75,7 +60,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/paragraph_four"
             android:textColor="#000000"
-            android:fontFamily="@font/oxygen"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
