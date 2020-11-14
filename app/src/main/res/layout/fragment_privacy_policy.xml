@@ -35,6 +35,7 @@
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/privacy_header_one"
             style="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textColor="#000000"
             android:textSize="25sp" />
 
         <TextView
