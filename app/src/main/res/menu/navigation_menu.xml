@@ -4,27 +4,34 @@
 
     <item
         android:id="@+id/homeScreenFragment"
+        android:icon="@drawable/home"
         android:title="@string/home_fragment_title" />
     <item
         android:id="@+id/aboutUsFragment"
+        android:icon="@drawable/about_us"
         android:title="@string/about_us_fragment_title" />
     <item
         android:id="@+id/ourExpertsFragment"
+        android:icon="@drawable/our_experts"
         android:title="@string/our_experts_fragment_title" />
     <item
         android:id="@+id/ourSuccessesFragment"
+        android:icon="@drawable/our_successes"
         android:title="@string/our_successes_fragment_title" />
     <item
         android:id="@+id/eventsFragment"
+        android:icon="@drawable/events"
         android:title="@string/events_fragment_title" />
     <item
         android:id="@+id/blogFragment"
+        android:icon="@drawable/blog"
         android:title="@string/blog_fragment_title" />
     <item
         android:id="@+id/contactFragment"
+        android:icon="@drawable/contact"
         android:title="@string/contact_fragment_title" />
     <item
         android:id="@+id/privacyPolicyFragment"
+        android:icon="@drawable/privacy_policy"
         android:title="@string/privacy_policy_fragment_title" />
-
 </menu>
