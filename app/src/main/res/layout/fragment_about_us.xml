@@ -20,11 +20,13 @@
             android:id="@+id/tvAboutUs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifty_dp"
             android:layout_marginLeft="@dimen/thirty_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:gravity="center"
             android:text="@string/about_us"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
+            android:fontFamily="@font/rufina"
             android:textSize="@dimen/thirty_sp"
             android:textStyle="bold|italic" />
 
@@ -36,7 +38,8 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/paragraph_one"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
+            android:fontFamily="@font/oxygen"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -47,7 +50,8 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/paragraph_two"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
+            android:fontFamily="@font/oxygen"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -58,7 +62,8 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/paragraph_three"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
+            android:fontFamily="@font/oxygen"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -69,7 +74,8 @@
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_marginRight="@dimen/thirty_dp"
             android:text="@string/paragraph_four"
-            android:textColor="#FAF7F7"
+            android:textColor="#000000"
+            android:fontFamily="@font/oxygen"
             android:textSize="@dimen/eighteen_sp" />
 
         <TextView
@@ -79,7 +85,8 @@
             android:layout_marginLeft="@dimen/ninety_dp"
             android:layout_marginTop="@dimen/forty_dp"
             android:layout_marginRight="@dimen/ninety_dp"
-            android:background="#ffffff" />
+            android:layout_marginBottom="@dimen/ten_dp"
+            android:background="#000000" />
 
         <LinearLayout
             android:layout_width="wrap_content"

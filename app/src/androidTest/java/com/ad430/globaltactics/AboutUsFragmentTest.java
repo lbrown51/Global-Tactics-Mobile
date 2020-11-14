@@ -29,6 +29,8 @@ public class AboutUsFragmentTest {
     public void aboutUsFragmentsHasCorrectContent() throws InterruptedException {
         FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
 
+        Thread.sleep(1000);
+
         onView(withId(R.id.tvAboutUs)).check(matches(isDisplayed()));
         onView(withId(R.id.tvParagraphOne)).check(matches(isDisplayed()));
         onView(withId(R.id.tvParagraphTwo)).check(matches(isDisplayed()));

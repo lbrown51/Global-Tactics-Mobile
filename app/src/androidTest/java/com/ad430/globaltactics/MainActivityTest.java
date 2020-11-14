@@ -68,7 +68,7 @@ public class MainActivityTest {
         onView(withId(R.id.topAppBar))
                 .check(matches(hasDescendant(withText(R.string.about_us_fragment_title))));
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
         onView(withId(R.id.drawer_layout))
                 .perform(DrawerActions.open())
                 .check(matches(isOpen()));
@@ -77,14 +77,14 @@ public class MainActivityTest {
         onView(withId(R.id.topAppBar))
                 .check(matches(hasDescendant(withText(R.string.our_experts_fragment_title))));
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
         onView(withRecyclerView(R.id.our_experts_list).atPosition(0)).perform(click());
         onView(withId(R.id.expertDetailsFragment))
                 .check(matches(isDisplayed()));
 
         pressBack();
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
         onView(withId(R.id.drawer_layout))
                 .perform(DrawerActions.open())
                 .check(matches(isOpen()));
@@ -93,7 +93,7 @@ public class MainActivityTest {
         onView(withId(R.id.topAppBar))
                 .check(matches(hasDescendant(withText(R.string.blog_fragment_title))));
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
         onView(withId(R.id.drawer_layout))
                 .perform(DrawerActions.open())
                 .check(matches(isOpen()));
@@ -102,7 +102,7 @@ public class MainActivityTest {
         onView(withId(R.id.topAppBar))
                 .check(matches(hasDescendant(withText(R.string.events_fragment_title))));
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
         onView(withId(R.id.drawer_layout))
                 .perform(DrawerActions.open())
                 .check(matches(isOpen()));
@@ -111,7 +111,7 @@ public class MainActivityTest {
         onView(withId(R.id.topAppBar))
                 .check(matches(hasDescendant(withText(R.string.privacy_policy_fragment_title))));
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
         onView(withId(R.id.drawer_layout))
                 .perform(DrawerActions.open())
                 .check(matches(isOpen()));
@@ -120,7 +120,7 @@ public class MainActivityTest {
         onView(withId(R.id.topAppBar))
                 .check(matches(hasDescendant(withText(R.string.contact_fragment_title))));
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
         onView(withId(R.id.drawer_layout))
                 .perform(DrawerActions.open())
                 .check(matches(isOpen()));
