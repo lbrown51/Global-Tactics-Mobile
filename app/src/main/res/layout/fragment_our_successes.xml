@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/ourSuccessesTabs"
             app:tabIndicatorColor="@color/colorAccent"
+            app:tabTextColor="@android:color/white"
             app:tabIndicatorFullWidth="true"
             app:tabIndicatorHeight="@dimen/three_dp"
             app:tabGravity="center"

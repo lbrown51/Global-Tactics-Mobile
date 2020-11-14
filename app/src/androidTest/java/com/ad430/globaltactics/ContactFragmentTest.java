@@ -1,5 +1,7 @@
 package com.ad430.globaltactics;
 
+import android.os.Bundle;
+
 import androidx.fragment.app.testing.FragmentScenario;
 
 import org.junit.Test;
@@ -25,7 +27,18 @@ public class ContactFragmentTest {
 
     @Test
     public void aboutUsFragmentsAllTextViews() {
-        FragmentScenario<ContactFragment> fragmentScenario = FragmentScenario.launchInContainer(ContactFragment.class);
+        FragmentScenario<ContactFragment> fragmentScenario = FragmentScenario.launchInContainer(
+                ContactFragment.class,
+                new Bundle(),
+                R.style.AppTheme,
+                null
+        );
+
+        onView(withId(R.id.first_name)).perform(typeText("test"));
+        onView(withId(R.id.last_name)).perform(typeText("test last"));
+        onView(withId(R.id.your_email)).perform(typeText("testing@gmail.com"));
+        onView(withId(R.id.your_subject)).perform(typeText("test subject"));
+        onView(withId(R.id.your_message)).perform(typeText("test message"));
 
         onView(withId(R.id.post_message)).perform(click());
         onView(withId(R.id.first_name)).perform(typeText("test"));

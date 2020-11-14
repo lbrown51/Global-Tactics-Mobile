@@ -31,7 +31,6 @@ public class AboutUsFragmentTest {
 
         Thread.sleep(1000);
 
-        onView(withId(R.id.tvAboutUs)).check(matches(isDisplayed()));
         onView(withId(R.id.tvParagraphOne)).check(matches(isDisplayed()));
         onView(withId(R.id.tvParagraphTwo)).check(matches(isDisplayed()));
         onView(withId(R.id.tvParagraphThree)).check(matches(isDisplayed()));

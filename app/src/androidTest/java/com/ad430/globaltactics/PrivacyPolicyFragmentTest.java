@@ -27,7 +27,6 @@ public class PrivacyPolicyFragmentTest {
     public void privacyPolicyFragmentTextViews() {
         FragmentScenario<PrivacyPolicyFragment> fragmentScenario = FragmentScenario.launchInContainer(PrivacyPolicyFragment.class);
 
-        onView(withId(R.id.tvPrivacyPolicy)).check(matches(withText(R.string.privacy_policy)));
         onView(withId(R.id.tvPrivacyUpdated)).check(matches(withText(R.string.privacy_updated)));
         onView(withId(R.id.tvPrivacyHeaderOne)).check(matches(withText(R.string.privacy_header_one)));
         onView(withId(R.id.tvPrivacyParagraphOne)).check(matches(withText(R.string.privacy_paragraph_one)));
