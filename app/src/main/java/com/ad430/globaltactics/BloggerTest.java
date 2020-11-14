@@ -19,7 +19,6 @@ public class BloggerTest extends AsyncTask<String, Integer, Long> {
 
     @Override
     protected Long doInBackground(String... strings) {
-        String CODE_BLOG_URL = "http://code.blogger.com/";
         String BLOG_URL = "https://www.gtperspectives.com/";
 
         // Configure the Java API Client for Installed Native App
