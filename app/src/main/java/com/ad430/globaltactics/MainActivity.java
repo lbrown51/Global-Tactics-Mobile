@@ -10,9 +10,12 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.navigation.NavigationView;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.http.HttpTransport;
@@ -62,22 +65,22 @@ public class MainActivity extends AppCompatActivity {
 
         // All the different fragments
         HashSet<Integer> fragmentIds = new HashSet<Integer>(
-                Arrays.asList(
-                        R.id.homeScreenFragment,
-                        R.id.aboutUsFragment,
-                        R.id.ourExpertsFragment,
-                        R.id.ourSuccessesFragment,
-                        R.id.blogFragment,
-                        R.id.eventsFragment,
-                        R.id.privacyPolicyFragment,
-                        R.id.contactFragment
-                ));
+            Arrays.asList(
+                R.id.homeScreenFragment,
+                R.id.aboutUsFragment,
+                R.id.ourExpertsFragment,
+                R.id.ourSuccessesFragment,
+                R.id.blogFragment,
+                R.id.eventsFragment,
+                R.id.privacyPolicyFragment,
+                R.id.contactFragment
+            ));
 
         // The different fragments that will show up in the app bar
         AppBarConfiguration appBarConfiguration =
-                new AppBarConfiguration.Builder(fragmentIds)
-                        .setOpenableLayout(drawerLayout)
-                        .build();
+            new AppBarConfiguration.Builder(fragmentIds)
+                .setOpenableLayout(drawerLayout)
+                .build();
 
         // Link the nav controller and the menu of navigation items
         NavigationUI.setupWithNavController(navView, navController);
