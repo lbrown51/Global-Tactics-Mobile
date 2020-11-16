@@ -1,4 +1,4 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.objects;
 
 import com.google.firebase.Timestamp;
 
