@@ -14,16 +14,25 @@ exports.sendContactInformation = functions.firestore
   .onCreate((snap, context) => {
     const formDetails = snap.data();
 
-    const email = `From: ${formDetails.email} \n`;
-    const name = `Name: ${formDetails.firstName} ${formDetails.lastName} \n`;
-    const topic = `Topic: ${formDetails.topic} \n`;
-    const message = `Message: ${formDetails.message} \n`;
+    const email = formDetails.email;
+    const name = `${formDetails.firstName} ${formDetails.lastName}`;
+    const topic = formDetails.topic;
+    const message = formDetails.message;
+
+    const html = `
+      <div>
+        <h1>Contact Request</h1>
+        <h2>From ${name}</h2>
+        <h3>Topic: ${topic}</h3>
+        <p>${message}</p>
+        <p>Reply to: <a href="mailto:${email}">${email}</a></p>
+      </div>`;
 
     const mailOptions = {
       from: "gtcontactform@gmail.com",
       to: "lenny.casey.brown@gmail.com",
       subject: "GT Contact Form",
-      text: '' + String(email) + name + topic + message,
+      html: html,
     };
 
     return transporter.sendMail(mailOptions, (err, info) => {
