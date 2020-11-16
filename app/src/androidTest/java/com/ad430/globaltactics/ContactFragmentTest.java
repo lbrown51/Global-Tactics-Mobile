@@ -34,7 +34,7 @@ public class ContactFragmentTest {
                 null
         );
 
-
+        Thread.sleep(2000);
 
         onView(withId(R.id.post_message)).perform(click());
         onView(withId(R.id.first_name)).perform(typeText("test"));
@@ -56,6 +56,8 @@ public class ContactFragmentTest {
         closeSoftKeyboard();
 
         onView(withId(R.id.post_message)).perform(click());
+
+        Thread.sleep(2000);
 
         onView(withId(R.id.post_message)).check(matches(withText(R.string.contact_form_button)));
         //   onView(withId(R.id.tvBorderLine)).check(matches(isDisplayed()));
