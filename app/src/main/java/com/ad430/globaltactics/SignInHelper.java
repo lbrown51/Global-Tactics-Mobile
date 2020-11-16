@@ -1,4 +1,4 @@
-package com.ad430.globaltactics.models;
+package com.ad430.globaltactics;
 
 import android.util.Log;
 

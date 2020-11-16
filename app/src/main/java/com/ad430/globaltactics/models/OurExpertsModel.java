@@ -16,7 +16,6 @@ public class OurExpertsModel {
 
     public OurExpertsModel() {
         db = FirebaseFirestore.getInstance();
-        new SignInHelper();
         listeners = new ArrayList<>();
     }
 

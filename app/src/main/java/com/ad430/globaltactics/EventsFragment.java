@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.ad430.globaltactics.adapters.EventAdapter;
 import com.ad430.globaltactics.objects.Event;
 import com.ad430.globaltactics.viewmodels.EventViewModel;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,6 +31,14 @@ public class EventsFragment extends Fragment {
 
     public EventsFragment() {
 
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            new SignInHelper();
+        }
     }
 
     @Override

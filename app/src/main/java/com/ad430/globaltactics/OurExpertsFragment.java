@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import com.ad430.globaltactics.adapters.OurExpertsAdapter;
 import com.ad430.globaltactics.objects.Expert;
 import com.ad430.globaltactics.viewmodels.OurExpertsViewModel;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -34,12 +35,15 @@ public class OurExpertsFragment extends Fragment {
 
 
     public OurExpertsFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            new SignInHelper();
+        }
     }
 
     @Override

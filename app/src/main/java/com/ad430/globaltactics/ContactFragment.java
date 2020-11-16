@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ad430.globaltactics.models.SignInHelper;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.Timestamp;
@@ -39,7 +38,7 @@ public class ContactFragment extends Fragment {
     private String mParam1;
 
     public ContactFragment() {
-        // Required empty public constructor
+
     }
 
     // TODO: Rename and change types and number of parameters
@@ -47,13 +46,12 @@ public class ContactFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            new SignInHelper();
-        }
 //        if (getArguments() != null) {
 //            mParam1 = getArguments().getString(ARG_PARAM1);
 //        }
-
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            new SignInHelper();
+        }
     }
 
     @Override

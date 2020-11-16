@@ -16,7 +16,6 @@ public class EventsModel {
 
     public EventsModel() {
         db = FirebaseFirestore.getInstance();
-        new SignInHelper();
         listeners = new ArrayList<>();
     }
 

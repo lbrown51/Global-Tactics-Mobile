@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.ad430.globaltactics.adapters.OurSuccessesAdapter;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class OurSuccessesFragment extends Fragment {
     public ViewPager ourSuccessesViewPager;
@@ -27,6 +28,9 @@ public class OurSuccessesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            new SignInHelper();
+        }
     }
 
     @SuppressLint("ResourceType")
