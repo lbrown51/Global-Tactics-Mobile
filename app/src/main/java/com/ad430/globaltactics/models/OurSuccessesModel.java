@@ -16,6 +16,7 @@ public class OurSuccessesModel {
 
     public OurSuccessesModel() {
         db = FirebaseFirestore.getInstance();
+        new SignInHelper();
         listeners = new ArrayList<>();
     }
 
