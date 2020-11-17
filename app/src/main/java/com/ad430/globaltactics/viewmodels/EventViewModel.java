@@ -1,14 +1,15 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.viewmodels;
 
 import android.util.Log;
 
 import androidx.lifecycle.ViewModel;
 
+import com.ad430.globaltactics.objects.Event;
+import com.ad430.globaltactics.models.EventsModel;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.function.Consumer;
 
 public class EventViewModel extends ViewModel {

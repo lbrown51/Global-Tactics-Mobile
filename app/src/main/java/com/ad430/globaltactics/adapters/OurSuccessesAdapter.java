@@ -1,4 +1,4 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

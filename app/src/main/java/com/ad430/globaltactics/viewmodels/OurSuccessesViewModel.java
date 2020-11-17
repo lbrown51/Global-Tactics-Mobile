@@ -1,7 +1,9 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.viewmodels;
 
 import android.util.Log;
 
+import com.ad430.globaltactics.objects.OurSuccess;
+import com.ad430.globaltactics.models.OurSuccessesModel;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
