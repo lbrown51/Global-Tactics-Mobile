@@ -1,4 +1,4 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.adapters;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.ad430.globaltactics.objects.Expert;
+import com.ad430.globaltactics.R;
 
 import java.util.ArrayList;
 

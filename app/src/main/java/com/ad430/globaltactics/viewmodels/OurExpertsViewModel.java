@@ -1,9 +1,11 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.viewmodels;
 
 import android.util.Log;
 
 import androidx.lifecycle.ViewModel;
 
+import com.ad430.globaltactics.objects.Expert;
+import com.ad430.globaltactics.models.OurExpertsModel;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 

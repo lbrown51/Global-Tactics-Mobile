@@ -1,35 +1,33 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.models;
 
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.EventListener;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class OurExpertsModel {
-    private final String TAG = OurExpertsModel.class.getSimpleName();
+public class OurSuccessesModel {
+    private final String TAG = OurSuccessesModel.class.getSimpleName();
     private FirebaseFirestore db;
     private List<ListenerRegistration> listeners;
 
-    public OurExpertsModel() {
+    public OurSuccessesModel() {
         db = FirebaseFirestore.getInstance();
         listeners = new ArrayList<>();
     }
 
-    public void getExperts(Consumer<QuerySnapshot> dataChangedCallback,
-                           Consumer<FirebaseFirestoreException> dataErrorCallback) {
-        ListenerRegistration listener = db.collection("experts")
+    public void getOurSuccesses(Consumer<QuerySnapshot> dataChangedCallback,
+                          Consumer<FirebaseFirestoreException> dataErrorCallback) {
+        ListenerRegistration listener = db.collection("successes")
                 .addSnapshotListener((queryDocumentSnapshots, e) -> {
-                   if (e != null) {
-                       dataErrorCallback.accept(e);
-                   }
+                    if (e != null) {
+                        dataErrorCallback.accept(e);
+                    }
 
-                   dataChangedCallback.accept(queryDocumentSnapshots);
+                    dataChangedCallback.accept(queryDocumentSnapshots);
                 });
         listeners.add(listener);
     }

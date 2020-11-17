@@ -1,4 +1,4 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.objects;
 
 public class OurSuccess {
     String title;

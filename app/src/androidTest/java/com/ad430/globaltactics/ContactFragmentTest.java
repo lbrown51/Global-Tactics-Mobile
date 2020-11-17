@@ -26,7 +26,7 @@ import static org.junit.Assert.assertNotNull;
 public class ContactFragmentTest {
 
     @Test
-    public void aboutUsFragmentsAllTextViews() {
+    public void contactFragmentCanSendRequests() throws InterruptedException {
         FragmentScenario<ContactFragment> fragmentScenario = FragmentScenario.launchInContainer(
                 ContactFragment.class,
                 new Bundle(),
@@ -34,11 +34,7 @@ public class ContactFragmentTest {
                 null
         );
 
-        onView(withId(R.id.first_name)).perform(typeText("test"));
-        onView(withId(R.id.last_name)).perform(typeText("test last"));
-        onView(withId(R.id.your_email)).perform(typeText("testing@gmail.com"));
-        onView(withId(R.id.your_subject)).perform(typeText("test subject"));
-        onView(withId(R.id.your_message)).perform(typeText("test message"));
+        Thread.sleep(2000);
 
         onView(withId(R.id.post_message)).perform(click());
         onView(withId(R.id.first_name)).perform(typeText("test"));
@@ -58,7 +54,10 @@ public class ContactFragmentTest {
 
         onView(withId(R.id.your_message)).perform(typeText("test message"));
         closeSoftKeyboard();
+
         onView(withId(R.id.post_message)).perform(click());
+
+        Thread.sleep(2000);
 
         onView(withId(R.id.post_message)).check(matches(withText(R.string.contact_form_button)));
         //   onView(withId(R.id.tvBorderLine)).check(matches(isDisplayed()));
