@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class LogoAnimationActivity extends AppCompatActivity {
     //declare variables
-    private static int splash_screen = 5000;
+    private static int splash_screen = 3500;
 
     ImageView ivGlobalG, ivGlobalLOne, ivGlobalO, ivGlobalB, ivGlobalA, ivGlobalLTwo,
             ivTacticsTOne, ivTacticsA, ivTacticsCOne, ivTacticsTTwo, ivTacticsI, ivTacticsCTwo, ivTacticsS,
