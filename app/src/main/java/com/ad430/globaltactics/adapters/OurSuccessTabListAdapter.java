@@ -1,4 +1,4 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.ad430.globaltactics.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,6 +1,5 @@
 package com.ad430.globaltactics;
 
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,19 +9,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -43,7 +38,7 @@ public class ContactFragment extends Fragment {
     private String mParam1;
 
     public ContactFragment() {
-        // Required empty public constructor
+
     }
 
     // TODO: Rename and change types and number of parameters
@@ -54,7 +49,9 @@ public class ContactFragment extends Fragment {
 //        if (getArguments() != null) {
 //            mParam1 = getArguments().getString(ARG_PARAM1);
 //        }
-
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            new SignInHelper();
+        }
     }
 
     @Override
@@ -116,6 +113,7 @@ public class ContactFragment extends Fragment {
                 contactFormInfo.put("topic", subject);
                 contactFormInfo.put("email", email);
                 contactFormInfo.put("message", message);
+                contactFormInfo.put("requestDate", Timestamp.now());
                 
                 db.collection("requests")
                         .add(contactFormInfo)

@@ -1,4 +1,4 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.models;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -9,25 +9,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class EventsModel {
-    private final String TAG = EventsModel.class.getSimpleName();
+public class OurExpertsModel {
+    private final String TAG = OurExpertsModel.class.getSimpleName();
     private FirebaseFirestore db;
     private List<ListenerRegistration> listeners;
 
-    public EventsModel() {
+    public OurExpertsModel() {
         db = FirebaseFirestore.getInstance();
         listeners = new ArrayList<>();
     }
 
-    public void getEvents(Consumer<QuerySnapshot> dataChangedCallback,
+    public void getExperts(Consumer<QuerySnapshot> dataChangedCallback,
                            Consumer<FirebaseFirestoreException> dataErrorCallback) {
-        ListenerRegistration listener = db.collection("events")
+        ListenerRegistration listener = db.collection("experts")
                 .addSnapshotListener((queryDocumentSnapshots, e) -> {
-                    if (e != null) {
-                        dataErrorCallback.accept(e);
-                    }
+                   if (e != null) {
+                       dataErrorCallback.accept(e);
+                   }
 
-                    dataChangedCallback.accept(queryDocumentSnapshots);
+                   dataChangedCallback.accept(queryDocumentSnapshots);
                 });
         listeners.add(listener);
     }

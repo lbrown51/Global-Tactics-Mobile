@@ -12,6 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ad430.globaltactics.adapters.EventAdapter;
+import com.ad430.globaltactics.adapters.OurSuccessTabListAdapter;
+import com.ad430.globaltactics.objects.OurSuccess;
+import com.ad430.globaltactics.viewmodels.OurSuccessesViewModel;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
