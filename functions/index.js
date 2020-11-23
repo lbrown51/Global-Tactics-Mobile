@@ -44,73 +44,163 @@ exports.sendContactInformation = functions.firestore
     });
   });
 
-const cheerio = require('cheerio');
-const got = require('got');
+const cheerio = require("cheerio");
+const got = require("got");
+const { response } = require("express");
 
-exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(async (req, res) => {
-  // Grab the text parameter.
-  const ourExpertsBatchAdd = db.batch();
-  const ourExperts = {};
-  const ourExpertsURL = "https://www.globaltactics.co/who-we-are/our-experts.html";
+exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
+  async (req, res) => {
+    const ourExpertsPath = "experts2";
 
-  got(ourExpertsURL).then(response => {
-    const $ = cheerio.load(response.body);
-    const ourExpertSections = $("section");
-    
-    let expertCount = 0;
-    ourExpertSections.each((i, section) => {
-      const ourExpertInnerAreas = $(section).find("div.area_inner");
+    deleteCollection(db, ourExpertsPath, 20).then(() => {
+      // Grab the text parameter.
+      const ourExpertsBatchAdd = db.batch();
+      const ourExperts = {};
+      const ourExpertsURL =
+        "https://www.globaltactics.co/who-we-are/our-experts.html";
 
-      ourExpertInnerAreas.each((i, innerArea) => {
-        const ourExpertName = $(innerArea).find("h2").text();
-        const ourExpertTitle = $(innerArea).find("h4").text();
+      got(ourExpertsURL)
+        .then((response) => {
+          const $ = cheerio.load(response.body);
+          const ourExpertSections = $("section");
 
-        if(ourExpertName !== "" && ourExpertTitle !== "") {
-          const ourExpertSpecialties = $(innerArea).find("small").text();          
-          let ourExpertLinkedIn = $(innerArea).find("a").attr("href");
-          if (ourExpertLinkedIn === undefined) {
-            ourExpertLinkedIn = "";
-          }
+          let expertCount = 0;
+          ourExpertSections.each((i, section) => {
+            const ourExpertInnerAreas = $(section).find("div.area_inner");
 
-          $(innerArea).find("small").remove();
-          $(innerArea).find("a").remove();
-          const ourExpertDescription = $(innerArea).find("p").text();
+            ourExpertInnerAreas.each((i, innerArea) => {
+              const ourExpertName = $(innerArea).find("h2").text();
+              const ourExpertTitle = $(innerArea).find("h4").text();
 
-          $(innerArea).find("p").remove();
-          $(innerArea).find("h2").remove();
-          $(innerArea).find("h4").remove();
-          const ourExpertLocation = $(innerArea).text().trim();
+              if (ourExpertName !== "" && ourExpertTitle !== "") {
+                const ourExpertSpecialties = $(innerArea).find("small").text();
+                let ourExpertLinkedIn = $(innerArea).find("a").attr("href");
+                if (ourExpertLinkedIn === undefined) {
+                  ourExpertLinkedIn = "";
+                }
 
-          const ourExpert = {
-            id: expertCount++,
-            name: ourExpertName,
-            title: ourExpertTitle,
-            location: ourExpertLocation,
-            specialties: ourExpertSpecialties,
-            description: ourExpertDescription,
-            linkedin: ourExpertLinkedIn
-          };
+                $(innerArea).find("small").remove();
+                $(innerArea).find("a").remove();
+                const ourExpertDescription = $(innerArea).find("p").text();
 
-          if (!(ourExpert.name in ourExperts)) {
-            ourExperts[ourExpert.name] = ourExpert;
-            const ourExpertsNewRef = db.collection("experts").doc(ourExpert.id.toString());
-            ourExpertsBatchAdd.set(ourExpertsNewRef, ourExpert);
-          }
-        }
-      });
+                $(innerArea).find("p").remove();
+                $(innerArea).find("h2").remove();
+                $(innerArea).find("h4").remove();
+                const ourExpertLocation = $(innerArea).text().trim();
+
+                const ourExpert = {
+                  id: expertCount++,
+                  name: ourExpertName,
+                  title: ourExpertTitle,
+                  location: ourExpertLocation,
+                  specialties: ourExpertSpecialties,
+                  description: ourExpertDescription,
+                  linkedin: ourExpertLinkedIn,
+                };
+
+                if (!(ourExpert.name in ourExperts)) {
+                  ourExperts[ourExpert.name] = ourExpert;
+                  const ourExpertsNewRef = db
+                    .collection(ourExpertsPath)
+                    .doc(ourExpert.id.toString());
+                  ourExpertsBatchAdd.set(ourExpertsNewRef, ourExpert);
+                }
+              }
+            });
+          });
+
+          ourExpertsBatchAdd
+            .commit()
+            .then(() => {
+              res.json({ result: `it worked!` });
+              return null;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+
+          return null;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     });
+  }
+);
 
-    ourExpertsBatchAdd.commit()
-      .then(() => {
-        res.json({result: `it worked!`});
-        return null;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+exports.fetchAndParseEventsJSON = functions.https.onRequest(
+  async (req, res) => {
+    const eventsPath = "events2";
 
-    return null;
-  }).catch(err => {
-    console.log(err);
+    deleteCollection(db, eventsPath, 50).then(() => {
+      const eventsBatchAdd = db.batch();
+      const eventsURL =
+        "https://www.globaltactics.co/_bloq_calendars/json/6536?start=2020-11-29&end=2021-01-10&_=1605675092353";
+
+      got(eventsURL)
+        .then((response) => {
+          const events = JSON.parse(response.body);
+
+          events.forEach((evnt) => {
+            const newEvent = {
+              description: evnt.title,
+              from: new Date(evnt.start),
+              to: new Date(evnt.end),
+              host: "https://greenwicheconomicforum.com/",
+            };
+
+            const evntNewRef = db.collection(eventsPath).doc();
+            eventsBatchAdd.set(evntNewRef, newEvent);
+          });
+
+          eventsBatchAdd
+            .commit()
+            .then(() => {
+              res.json({ result: `it worked!` });
+              return null;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+
+          return null;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  }
+);
+
+const deleteCollection = async (db, collectionPath, batchSize) => {
+  const collectionRef = db.collection(collectionPath);
+  const query = collectionRef.orderBy("__name__").limit(batchSize);
+
+  return new Promise((resolve, reject) => {
+    deleteQueryBatch(db, query, resolve).catch(reject);
   });
-});
+};
+
+const deleteQueryBatch = async (db, query, resolve) => {
+  const snapshot = await query.get();
+
+  const batchSize = snapshot.size;
+  if (batchSize === 0) {
+    // When there are no documents left, we are done
+    resolve();
+    return;
+  }
+
+  // Delete documents in a batch
+  const batch = db.batch();
+  snapshot.docs.forEach((doc) => {
+    batch.delete(doc.ref);
+  });
+  await batch.commit();
+
+  // Recurse on the next process tick, to avoid
+  // exploding the stack.
+  process.nextTick(() => {
+    deleteQueryBatch(db, query, resolve);
+  });
+};
