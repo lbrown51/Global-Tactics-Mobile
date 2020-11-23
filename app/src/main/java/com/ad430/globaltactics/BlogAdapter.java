@@ -1,6 +1,8 @@
 package com.ad430.globaltactics;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,14 +30,12 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView postTitle, postAuthor, postContent;
+            TextView postTitle;
 
             public ViewHolder(@NonNull final View itemView) {
                 super(itemView);
 
                 postTitle = itemView.findViewById(R.id.postTitle);
-                postAuthor = itemView.findViewById(R.id.postAuthor);
-                postContent = itemView.findViewById(R.id.postContent);
             }
         }
 
@@ -52,20 +52,12 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
             holder.itemView.setTag(post_List.getItems().get(position));
 
             holder.postTitle.setText(post_List.getItems().get(position).getTitle());
-            holder.postAuthor.setText(post_List.getItems().get(position).getTitle());
-            //holder.postContent.setText(post_List.getItems().get(position).getContent());
-
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Bundle postBundle = new Bundle();
-                    postBundle.putString("title", post_List.getItems().get(position).getTitle());
-                    postBundle.putString("author", post_List.getItems().get(position).getPublished());
-                    //postBundle.putString("content",post_List.getItems().get(position).getContent());
-                    Navigation.findNavController(v)
-                            .navigate(
-                                    R.id.action_fragment_blog_to_blogDetailsFragment, postBundle
-                            );
+                    String url = post_List.getItems().get(position).getUrl();
+                    Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    v.getContext().startActivity(i);
                 }
             });
         }
