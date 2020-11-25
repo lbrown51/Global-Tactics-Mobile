@@ -57,18 +57,51 @@ exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
       const ourExpertsBatchAdd = db.batch();
       const ourExperts = {};
       const ourExpertsURL =
-        "https://www.globaltactics.co/who-we-are/our-experts.html";
+        "https://www.globaltactics.co/who-we-are/our-experts.html?appview=true";
 
       got(ourExpertsURL)
         .then((response) => {
           const $ = cheerio.load(response.body);
-          const ourExpertSections = $("section");
+          const ourExpertSections = $("section.GTExperts");
 
           let expertCount = 0;
-          ourExpertSections.each((i, section) => {
-            const ourExpertInnerAreas = $(section).find("div.area_inner");
+          ourExpertSections.each((i, expertSection) => {
+            const ourExpertTextAreas = $(expertSection).find("div.bloq_rich_text_editor_wrapper").children("div");
+            
+            const ourExpert = {};
+            ourExpert.id = expertCount++;
 
-            ourExpertInnerAreas.each((i, innerArea) => {
+            console.log(i);
+            console.log(ourExpertTextAreas.children().not("br").not("ul").length)
+            if(ourExpertTextAreas.children().not("br").not("ul").length > 5) return;
+
+            ourExpertTextAreas.children().not("br").each((i, child) => {
+              if ($(child) === undefined) return;
+              const childText = $(child).text();
+
+              switch (i){
+                case 0:
+                  ourExpert.name = childText;
+                  console.log(childText);
+                  break;
+                case 1:
+                  ourExpert.title = childText;
+                  break;
+                case 2:
+                  ourExpert.location = childText;
+                  break;
+                case 3:
+                  ourExpert.specialties = childText;
+                  break;
+                case 4:
+                  const ourExpertLinkedIn = $(child).find("a").attr("href");
+                  if (ourExpertLinkedIn !== undefined) {
+                    ourExpert.linkedin = ourExpertLinkedIn.text();
+                  }
+                  ourExpert.description = $(child).text();
+              }
+              return;
+               
               const ourExpertName = $(innerArea).find("h2").text();
               const ourExpertTitle = $(innerArea).find("h4").text();
 
@@ -107,17 +140,18 @@ exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
                 }
               }
             });
+            // console.log(ourExpert);
           });
 
-          ourExpertsBatchAdd
-            .commit()
-            .then(() => {
-              res.json({ result: `it worked!` });
-              return null;
-            })
-            .catch((err) => {
-              console.log(err);
-            });
+          // ourExpertsBatchAdd
+          //   .commit()
+          //   .then(() => {
+          //     res.json({ result: `it worked!` });
+          //     return null;
+          //   })
+          //   .catch((err) => {
+          //     console.log(err);
+          //   });
 
           return null;
         })
