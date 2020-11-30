@@ -14,148 +14,132 @@
         android:id="@+id/ivTopLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/line"/>
+        app:srcCompat="@drawable/line"
+        android:contentDescription="@string/animation" />
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/ten_dp"
         android:gravity="center"
-        android:layout_height="wrap_content">
+        >
 
         <ImageView
             android:id="@+id/ivGlobalG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginTop="@dimen/logo_global_margin_top"
-            app:srcCompat="@drawable/light_g" />
+            app:srcCompat="@drawable/light_g"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivGlobalLOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivGlobalG"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginTop="@dimen/logo_global_margin_top"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/light_l1" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/light_l1"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivGlobalO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivGlobalLOne"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginTop="@dimen/logo_global_margin_top"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/letter_o" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/letter_o"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivGlobalB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivGlobalO"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginTop="@dimen/logo_global_margin_top"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-
-            app:srcCompat="@drawable/light_b" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/light_b"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivGlobalA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivGlobalB"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginTop="@dimen/logo_global_margin_top"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/light_a" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/light_a"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivGlobalLTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivGlobalA"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginTop="@dimen/logo_global_margin_top"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/light_l" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/light_l"
+            android:contentDescription="@string/animation" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ten_dp"
         android:layout_marginTop="@dimen/fifteen_dp">
 
         <ImageView
             android:id="@+id/ivTacticsTOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/dark_t" />
+            app:srcCompat="@drawable/dark_t"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivTacticsA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivTacticsTOne"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/dark_a" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/dark_a"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivTacticsCOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivTacticsA"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/dark_c" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/dark_c"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivTacticsTTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivTacticsCOne"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/dark_t1" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/dark_t1"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivTacticsI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivTacticsTTwo"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/dark_i" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/dark_i"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivTacticsCTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivTacticsI"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/dark_c1" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/dark_c1"
+            android:contentDescription="@string/animation" />
 
         <ImageView
             android:id="@+id/ivTacticsS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ivTacticsCTwo"
-            android:layout_below="@+id/ivTopLine"
-            android:layout_marginLeft="@dimen/logo_letter_space"
-            app:srcCompat="@drawable/dark_s" />
+            android:layout_marginStart="@dimen/logo_letter_space"
+            app:srcCompat="@drawable/dark_s"
+            android:contentDescription="@string/animation" />
     </LinearLayout>
-
-
-
 
     <ImageView
         android:id="@+id/ivBottomLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/line" />
+        app:srcCompat="@drawable/line"
+        android:contentDescription="@string/animation" />
 </LinearLayout>
