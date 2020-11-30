@@ -19,7 +19,8 @@ public class LogoAnimationActivity extends AppCompatActivity {
             topLine, bottomLine;
 
     Animation fromTop, fromBottom, fromLeft, fromRight, fromTopLeft, fromBottomLeft, fromBottomRight,
-            fromTopRight, rotate;
+            fromTopRight, rotate, letter_g, letter_l_one, letter_b, letter_a_one, letter_l_two, letter_t_one,
+            letter_a_two, letter_c_one, letter_t_two, letter_i_one, letter_c_two, letter_s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,22 +54,34 @@ public class LogoAnimationActivity extends AppCompatActivity {
         fromBottomRight = AnimationUtils.loadAnimation(this, R.anim.from_bottom_right);
         fromTopRight = AnimationUtils.loadAnimation(this, R.anim.from_top_right);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        letter_g = AnimationUtils.loadAnimation(this, R.anim.letter_g);
+        letter_l_one = AnimationUtils.loadAnimation(this, R.anim.letter_l_one);
+        letter_b = AnimationUtils.loadAnimation(this, R.anim.letter_b);
+        letter_a_one = AnimationUtils.loadAnimation(this, R.anim.letter_a_one);
+        letter_l_two = AnimationUtils.loadAnimation(this, R.anim.letter_l_two);
+        letter_t_one = AnimationUtils.loadAnimation(this, R.anim.letter_t_one);
+        letter_a_two = AnimationUtils.loadAnimation(this, R.anim.letter_a_two);
+        letter_c_one = AnimationUtils.loadAnimation(this, R.anim.letter_c_one);
+        letter_t_two = AnimationUtils.loadAnimation(this, R.anim.letter_t_two);
+        letter_i_one = AnimationUtils.loadAnimation(this, R.anim.letter_i);
+        letter_c_two = AnimationUtils.loadAnimation(this, R.anim.letter_c_two);
+        letter_s = AnimationUtils.loadAnimation(this, R.anim.letter_s);
 
         // set the animations
         topLine.setAnimation(fromLeft);
-        ivGlobalG.setAnimation(fromTopLeft);
-        ivGlobalLOne.setAnimation(fromTop);
+        ivGlobalG.setAnimation(letter_g);
+        ivGlobalLOne.setAnimation(letter_l_one);
         ivGlobalO.setAnimation(rotate);
-        ivGlobalB.setAnimation(fromBottom);
-        ivGlobalA.setAnimation(fromBottomLeft);
-        ivGlobalLTwo.setAnimation(fromBottomRight);
-        ivTacticsTOne.setAnimation(fromTopRight);
-        ivTacticsA.setAnimation(fromTopRight);
-        ivTacticsCOne.setAnimation(fromTop);
-        ivTacticsTTwo.setAnimation(fromBottomLeft);
-        ivTacticsI.setAnimation(fromBottomRight);
-        ivTacticsCTwo.setAnimation(fromTopLeft);
-        ivTacticsS.setAnimation(fromBottom);
+        ivGlobalB.setAnimation(letter_b);
+        ivGlobalA.setAnimation(letter_a_one);
+        ivGlobalLTwo.setAnimation(letter_l_two);
+        ivTacticsTOne.setAnimation(letter_t_one);
+        ivTacticsA.setAnimation(letter_a_two);
+        ivTacticsCOne.setAnimation(letter_c_one);
+        ivTacticsTTwo.setAnimation(letter_t_two);
+        ivTacticsI.setAnimation(letter_i_one);
+        ivTacticsCTwo.setAnimation(letter_c_two);
+        ivTacticsS.setAnimation(letter_s);
         bottomLine.setAnimation(fromRight);
 
         Thread timer = new Thread() {
