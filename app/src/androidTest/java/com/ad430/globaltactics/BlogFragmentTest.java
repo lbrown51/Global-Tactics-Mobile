@@ -47,7 +47,7 @@ public class BlogFragmentTest {
                 null
         );
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         Intents.init();
         onView(withRecyclerView(R.id.blogs_list).atPosition(0)).perform(click());

@@ -146,42 +146,4 @@ public class PrivacyPolicyFragmentTest {
 
         //   onView(withId(R.id.tvBorderLine)).check(matches(isDisplayed()));
     }
-    @Test
-    public void clickOnLinkedinIcon() throws InterruptedException {
-        FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
-
-        Thread.sleep(5000);
-
-        Intents.init();
-        onView(withId(R.id.ivLinkedin)).perform(scrollTo()).perform(click());
-        Intents.intended(allOf(hasAction(Intent.ACTION_VIEW)));
-        Intents.release();
-    }
-
-    @Test
-    public void clickOnFacebookIcon() throws InterruptedException {
-        FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
-
-        Thread.sleep(5000);
-        Intents.init();
-
-        onView(withId(R.id.ivFacebook)).perform(scrollTo()).perform(click());
-        Intents.intended(allOf(hasAction(Intent.ACTION_VIEW)));
-        Intents.release();
-
-    }
-
-    @Test
-    public void clickOnTwitterIcon() throws InterruptedException {
-        FragmentScenario<AboutUsFragment> fragmentScenario = FragmentScenario.launchInContainer(AboutUsFragment.class);
-
-        Thread.sleep(5000);
-        Intents.init();
-
-        onView(withId(R.id.ivTwitter)).perform(scrollTo()).perform(click());
-        Intents.intended(allOf(hasAction(Intent.ACTION_VIEW)));
-        Intents.release();
-
-    }
-
 }
