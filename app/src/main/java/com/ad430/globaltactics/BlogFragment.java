@@ -16,10 +16,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.CheckBox;
 
-import java.util.ArrayList;
+import com.ad430.globaltactics.adapters.BlogAdapter;
+import com.ad430.globaltactics.viewmodels.BlogViewModel;
 
 /**
  * A simple {@link Fragment} subclass.

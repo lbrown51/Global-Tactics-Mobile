@@ -1,17 +1,17 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.models;
 
 import androidx.annotation.Nullable;
 import androidx.lifecycle.MutableLiveData;
 
+import com.ad430.globaltactics.BlogAsyncTask;
+import com.ad430.globaltactics.TaskRunner;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.blogger.Blogger;
-import com.google.api.services.blogger.model.Post;
 import com.google.api.services.blogger.model.PostList;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class BlogModel {
@@ -27,7 +27,7 @@ public class BlogModel {
     HttpTransport HTTP_TRANSPORT;
     JacksonFactory JSON_FACTORY;
 
-    BlogModel() {
+    public BlogModel() {
         postList = new MutableLiveData<>();
         postListBusiness = new MutableLiveData<>();
         postRecord = new HashMap<>();
@@ -44,11 +44,11 @@ public class BlogModel {
         createAndExecuteGetPostListAction(null);
     }
 
-    MutableLiveData<PostList> getPostList() {
+    public MutableLiveData<PostList> getPostList() {
         return postList;
     }
 
-    void updatePostListLabelSelection(@Nullable String label) {
+    public void updatePostListLabelSelection(@Nullable String label) {
         createAndExecuteGetPostListAction(label);
     }
 

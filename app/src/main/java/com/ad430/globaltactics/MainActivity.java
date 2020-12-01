@@ -45,9 +45,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setupNavigation();
-
-        BloggerTest bloggerTest = new BloggerTest();
-        bloggerTest.execute();
     }
 
     private void signIn() {

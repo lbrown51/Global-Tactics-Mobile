@@ -1,24 +1,18 @@
-package com.ad430.globaltactics;
+package com.ad430.globaltactics.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.MutableLiveData;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.api.services.blogger.model.Post;
+import com.ad430.globaltactics.R;
 import com.google.api.services.blogger.model.PostList;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
         private PostList post_List;
