@@ -91,8 +91,26 @@
     <action
         android:id="@+id/action_global_homeScreenFragment"
         app:destination="@id/homeScreenFragment" />
-    <action
-        android:id="@+id/action_global_blogFragment"
-        app:destination="@id/blogFragment" />
+    <fragment
+        android:id="@+id/fragment_blog"
+        android:name="com.ad430.globaltactics.BlogFragment"
+        android:label="@string/blog_fragment_title"
+        tools:layout="@layout/fragment_blog" >
+        <action
+            android:id="@+id/action_fragment_blog_to_blogDetailsFragment"
+            app:destination="@id/blogDetailsFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/blogDetailsFragment"
+        android:name="com.ad430.globaltactics.BlogDetailsFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_blog_details">
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

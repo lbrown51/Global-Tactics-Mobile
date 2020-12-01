@@ -1,0 +1,141 @@
+Index: app/src/main/java/com/ad430/globaltactics/BlogViewModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ad430.globaltactics;\r\n\r\nimport androidx.annotation.Nullable;\r\nimport androidx.lifecycle.MutableLiveData;\r\nimport androidx.lifecycle.ViewModel;\r\n\r\nimport com.google.api.services.blogger.model.PostList;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class BlogViewModel extends ViewModel {\r\n    private final String TAG = BlogViewModel.class.getSimpleName();\r\n    private BlogModel blogModel;\r\n    private MutableLiveData<PostList> postList;\r\n\r\n    public BlogViewModel() {\r\n        blogModel = new BlogModel();\r\n        postList = blogModel.getPostList();\r\n    }\r\n\r\n    MutableLiveData<PostList> getPostList() { return postList; }\r\n\r\n    void updatePostListLabelSelection(@Nullable String label) {\r\n        blogModel.updatePostListLabelSelection(label);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/ad430/globaltactics/BlogViewModel.java	(revision b33aa8b10148f2722412297c2ed3af28943ba2cd)
++++ app/src/main/java/com/ad430/globaltactics/BlogViewModel.java	(date 1606817805407)
+@@ -24,4 +24,4 @@
+         blogModel.updatePostListLabelSelection(label);
+     }
+ 
+-}
++}
+\ No newline at end of file
+Index: app/src/main/java/com/ad430/globaltactics/BlogModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ad430.globaltactics;\r\n\r\nimport androidx.annotation.Nullable;\r\nimport androidx.lifecycle.MutableLiveData;\r\n\r\nimport com.google.api.client.http.HttpTransport;\r\nimport com.google.api.client.http.javanet.NetHttpTransport;\r\nimport com.google.api.client.json.jackson2.JacksonFactory;\r\nimport com.google.api.services.blogger.Blogger;\r\nimport com.google.api.services.blogger.model.Post;\r\nimport com.google.api.services.blogger.model.PostList;\r\n\r\nimport java.io.IOException;\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\n\r\npublic class BlogModel {\r\n    private final String TAG = BlogModel.class.getSimpleName();\r\n    String BLOG_ID = \"5044990419048085041\";\r\n\r\n    private final MutableLiveData<PostList> postList;\r\n    private final MutableLiveData<PostList> postListBusiness;\r\n    private final HashMap<String, PostList> postRecord;\r\n\r\n    private Blogger blogger;\r\n    private TaskRunner taskRunner;\r\n    HttpTransport HTTP_TRANSPORT;\r\n    JacksonFactory JSON_FACTORY;\r\n\r\n    BlogModel() {\r\n        postList = new MutableLiveData<>();\r\n        postListBusiness = new MutableLiveData<>();\r\n        postRecord = new HashMap<>();\r\n\r\n        taskRunner = new TaskRunner();\r\n\r\n        String BLOG_URL = \"https://www.gtperspectives.com/\";\r\n\r\n        // Configure the Java API Client for Installed Native App\r\n        HTTP_TRANSPORT = new NetHttpTransport();\r\n        JSON_FACTORY = new JacksonFactory();\r\n        blogger = new Blogger(HTTP_TRANSPORT, JSON_FACTORY, null);\r\n\r\n        createAndExecuteGetPostListAction(null);\r\n    }\r\n\r\n    MutableLiveData<PostList> getPostList() {\r\n        return postList;\r\n    }\r\n\r\n    void updatePostListLabelSelection(@Nullable String label) {\r\n        createAndExecuteGetPostListAction(label);\r\n    }\r\n\r\n    private void createAndExecuteGetPostListAction(@Nullable String label) {\r\n        if (postRecord.containsKey(label)) {\r\n            postList.setValue(postRecord.get(label));\r\n        } else {\r\n            Blogger.Posts.List getPostListAction = null;\r\n\r\n            try {\r\n                getPostListAction = blogger.posts().list(BLOG_ID);\r\n                //add labels to postListGetByLabelAction\r\n                getPostListAction.setKey(\"AIzaSyC_B6br4L6-nP2F-R-4mLycGmfxddyX3Bg\");\r\n\r\n                if (label != null) {\r\n                    getPostListAction.setLabels(label);\r\n                }\r\n\r\n                getPostListAction.setMaxResults(5L);\r\n\r\n                taskRunner.executeAsync(new BlogAsyncTask(getPostListAction), result -> {\r\n                    postList.setValue(result);\r\n                    postRecord.put(label, result);\r\n                });\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/ad430/globaltactics/BlogModel.java	(revision b33aa8b10148f2722412297c2ed3af28943ba2cd)
++++ app/src/main/java/com/ad430/globaltactics/BlogModel.java	(date 1606817805421)
+@@ -78,4 +78,4 @@
+             }
+         }
+     }
+-}
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_blog.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:id=\"@+id/blogFragment\"\r\n    tools:context=\".BlogFragment\">\r\n<!--    <Button-->\r\n<!--        android:id=\"@+id/labelTest\"-->\r\n<!--        android:layout_width=\"match_parent\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:text=\"Get Posts\" />-->\r\n\r\n\r\n<!--    <TableRow-->\r\n<!--        android:id=\"@+id/tableRow1\"-->\r\n<!--        android:layout_width=\"match_parent\"-->\r\n<!--        android:layout_height=\"wrap_content\" >-->\r\n\r\n<!--        <CheckBox-->\r\n<!--            android:id=\"@+id/Entrepreneurship\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"Entrepreneurship\" />-->\r\n<!--&lt;!&ndash;        <CheckBox&ndash;&gt;-->\r\n<!--&lt;!&ndash;            android:id=\"@+id/Leadership\"&ndash;&gt;-->\r\n<!--&lt;!&ndash;            android:layout_width=\"wrap_content\"&ndash;&gt;-->\r\n<!--&lt;!&ndash;            android:layout_height=\"wrap_content\"&ndash;&gt;-->\r\n<!--&lt;!&ndash;            android:text=\"Leadership\" />&ndash;&gt;-->\r\n<!--&lt;!&ndash;        <CheckBox&ndash;&gt;-->\r\n<!--&lt;!&ndash;            android:id=\"@+id/Risks\"&ndash;&gt;-->\r\n<!--&lt;!&ndash;            android:layout_width=\"wrap_content\"&ndash;&gt;-->\r\n<!--&lt;!&ndash;            android:layout_height=\"wrap_content\"&ndash;&gt;-->\r\n<!--&lt;!&ndash;            android:text=\"Risks\" />&ndash;&gt;-->\r\n<!--        <CheckBox-->\r\n<!--            android:id=\"@+id/Africa\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"Africa\" />-->\r\n<!--    </TableRow>-->\r\n<!--    <TableRow-->\r\n<!--        android:id=\"@+id/tableRow2\"-->\r\n<!--        android:layout_width=\"match_parent\"-->\r\n<!--        android:layout_height=\"wrap_content\" >-->\r\n<!--        <CheckBox-->\r\n<!--            android:id=\"@+id/China\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"China\" />-->\r\n\r\n<!--        <CheckBox-->\r\n<!--            android:id=\"@+id/Europe\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"Europe\" />-->\r\n\r\n<!--        <CheckBox-->\r\n<!--            android:id=\"@+id/India\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"India\" />-->\r\n\r\n<!--        <CheckBox-->\r\n<!--            android:id=\"@+id/LatinAmerica\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"Latin America\" />-->\r\n<!--    </TableRow>-->\r\n\r\n<!--    <TableRow-->\r\n<!--        android:id=\"@+id/tableRow3\"-->\r\n<!--        android:layout_width=\"match_parent\"-->\r\n<!--        android:layout_height=\"wrap_content\" >-->\r\n<!--        <CheckBox-->\r\n<!--            android:id=\"@+id/Mena\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"MENA\" />-->\r\n<!--    </TableRow>-->\r\n\r\n    <com.google.android.material.textfield.TextInputLayout\r\n        style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_margin=\"@dimen/ten_dp\"\r\n        android:hint=\"@string/blog_post_select_a_label\">\r\n\r\n        <AutoCompleteTextView\r\n            android:id=\"@+id/blog_post_label_dropdown\"\r\n            android:inputType=\"none\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"/>\r\n\r\n    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:id=\"@+id/blogs_list\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\" />\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_blog.xml	(revision b33aa8b10148f2722412297c2ed3af28943ba2cd)
++++ app/src/main/res/layout/fragment_blog.xml	(date 1606817811712)
+@@ -6,98 +6,9 @@
+     android:orientation="vertical"
+     android:id="@+id/blogFragment"
+     tools:context=".BlogFragment">
+-<!--    <Button-->
+-<!--        android:id="@+id/labelTest"-->
+-<!--        android:layout_width="match_parent"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:text="Get Posts" />-->
+-
+-
+-<!--    <TableRow-->
+-<!--        android:id="@+id/tableRow1"-->
+-<!--        android:layout_width="match_parent"-->
+-<!--        android:layout_height="wrap_content" >-->
+-
+-<!--        <CheckBox-->
+-<!--            android:id="@+id/Entrepreneurship"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="Entrepreneurship" />-->
+-<!--&lt;!&ndash;        <CheckBox&ndash;&gt;-->
+-<!--&lt;!&ndash;            android:id="@+id/Leadership"&ndash;&gt;-->
+-<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+-<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+-<!--&lt;!&ndash;            android:text="Leadership" />&ndash;&gt;-->
+-<!--&lt;!&ndash;        <CheckBox&ndash;&gt;-->
+-<!--&lt;!&ndash;            android:id="@+id/Risks"&ndash;&gt;-->
+-<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+-<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+-<!--&lt;!&ndash;            android:text="Risks" />&ndash;&gt;-->
+-<!--        <CheckBox-->
+-<!--            android:id="@+id/Africa"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="Africa" />-->
+-<!--    </TableRow>-->
+-<!--    <TableRow-->
+-<!--        android:id="@+id/tableRow2"-->
+-<!--        android:layout_width="match_parent"-->
+-<!--        android:layout_height="wrap_content" >-->
+-<!--        <CheckBox-->
+-<!--            android:id="@+id/China"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="China" />-->
+-
+-<!--        <CheckBox-->
+-<!--            android:id="@+id/Europe"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="Europe" />-->
+-
+-<!--        <CheckBox-->
+-<!--            android:id="@+id/India"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="India" />-->
+-
+-<!--        <CheckBox-->
+-<!--            android:id="@+id/LatinAmerica"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="Latin America" />-->
+-<!--    </TableRow>-->
+-
+-<!--    <TableRow-->
+-<!--        android:id="@+id/tableRow3"-->
+-<!--        android:layout_width="match_parent"-->
+-<!--        android:layout_height="wrap_content" >-->
+-<!--        <CheckBox-->
+-<!--            android:id="@+id/Mena"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="MENA" />-->
+-<!--    </TableRow>-->
+-
+-    <com.google.android.material.textfield.TextInputLayout
+-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:layout_margin="@dimen/ten_dp"
+-        android:hint="@string/blog_post_select_a_label">
+-
+-        <AutoCompleteTextView
+-            android:id="@+id/blog_post_label_dropdown"
+-            android:inputType="none"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"/>
+-
+-    </com.google.android.material.textfield.TextInputLayout>
+ 
+     <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/blogs_list"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" />
+-
+-
+ </LinearLayout>
+\ No newline at end of file
