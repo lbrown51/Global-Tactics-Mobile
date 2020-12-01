@@ -1,24 +1,23 @@
 package com.ad430.globaltactics;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.CheckBox;
 
 import java.util.ArrayList;
 
@@ -48,7 +47,6 @@ public class BlogFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         blogsView = inflater.inflate(R.layout.fragment_blog, container, false);
-
         // Inflate the layout for this fragment
         return blogsView;
     }
@@ -60,25 +58,54 @@ public class BlogFragment extends Fragment {
         final Activity activity = this.getActivity();
 
         blogViewModel = new BlogViewModel();
-
         blogViewModel.getPostList().observe(getViewLifecycleOwner(), postList -> {
-            Log.d(TAG, postList.getItems().get(0).getTitle());
-            blogsRecyclerView = blogsView.findViewById(R.id.blogs_list);
-            blogsRecyclerView.setHasFixedSize(true);
+                    blogsRecyclerView = blogsView.findViewById(R.id.blogs_list);
+                    blogsRecyclerView.setHasFixedSize(true);
 
-            blogsLayoutManager = new LinearLayoutManager(activity);
-            blogsRecyclerView.setLayoutManager(blogsLayoutManager);
+                    blogsLayoutManager = new LinearLayoutManager(activity);
+                    blogsRecyclerView.setLayoutManager(blogsLayoutManager);
 
-            blogsAdapter = new BlogAdapter(activity, postList);
+                    blogsAdapter = new BlogAdapter(activity, postList);
 
-            blogsRecyclerView.setAdapter(blogsAdapter);
-        }
+                    blogsRecyclerView.setAdapter(blogsAdapter);
+
+                }
         );
+
+        String[] Labels = new String[] {
+                "Entrepreneurship", "Africa", "China", "Europe", "India", "Latin America", "Mena"
+        };
+
+        ArrayAdapter<String> labelAdapter =
+                new ArrayAdapter<>(
+                        getContext(),
+                        R.layout.dropdown_menu_blog_post_label_popup_item,
+                        Labels
+                );
+
+        AutoCompleteTextView blogPostLabelsExposedDropdown =
+                blogsView.findViewById(R.id.blog_post_label_dropdown);
+
+        blogPostLabelsExposedDropdown.setAdapter(labelAdapter);
+        blogPostLabelsExposedDropdown.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                blogViewModel.updatePostListLabelSelection(Labels[position]);
+                hideSoftKeyboard(view.getContext(), blogPostLabelsExposedDropdown);
+            }
+        });
+    }
+
+    private static void hideSoftKeyboard(Context context, AutoCompleteTextView labelView){
+        if(((Activity) context).getCurrentFocus()!=null && ((Activity) context).getCurrentFocus() != null){
+            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            assert imm != null;
+            imm.hideSoftInputFromWindow(labelView.getWindowToken(), 0);
+        }
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-       // blogViewModel.clear();
     }
 }
