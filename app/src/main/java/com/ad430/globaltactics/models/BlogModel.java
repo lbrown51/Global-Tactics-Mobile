@@ -19,7 +19,6 @@ public class BlogModel {
     String BLOG_ID = "5044990419048085041";
 
     private final MutableLiveData<PostList> postList;
-    private final MutableLiveData<PostList> postListBusiness;
     private final HashMap<String, PostList> postRecord;
 
     private Blogger blogger;
@@ -29,7 +28,6 @@ public class BlogModel {
 
     public BlogModel() {
         postList = new MutableLiveData<>();
-        postListBusiness = new MutableLiveData<>();
         postRecord = new HashMap<>();
 
         taskRunner = new TaskRunner();
