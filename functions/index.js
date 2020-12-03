@@ -8,7 +8,6 @@ const nodemailer = require("nodemailer");
 let transporter = nodemailer.createTransport({
   service: "gmail",
 });
-
 exports.sendContactInformation = functions.firestore
   .document("/requests/{requestId}")
   .onCreate((snap, context) => {
@@ -47,9 +46,11 @@ exports.sendContactInformation = functions.firestore
 const cheerio = require("cheerio");
 const got = require("got");
 
-exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
-  async (req, res) => {
-    const expertsPath = "experts2";
+// https://crontab.guru/every-week was helpful in getting 0 0 * * 0
+exports.fetchAndParseOurExpertsHTML = functions.pubsub
+  .schedule("0 0 * * 0")
+  .onRun((context) => {
+    const expertsPath = "experts";
 
     deleteCollection(db, expertsPath, 20)
       .then(() => {
@@ -77,20 +78,21 @@ exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
               expert.location = $(expertDiv).find("div.GTLocation").text();
               expert.specialties = $(expertDiv).find("div.GTSpecialty").text();
 
-              const expertCardTextHolder = $(expertDiv).find("div.cardItemTextHolder");
+              const expertCardTextHolder = $(expertDiv).find(
+                "div.cardItemTextHolder"
+              );
               expertCardTextHolder.children().remove("div");
-              expert.description = expertCardTextHolder.text()
-              
+              expert.description = expertCardTextHolder.text();
+
               const linkedin = $(expertDiv)
                 .find("div.cardItemLinkHolder > a")
                 .attr("href");
-              
-              expert.linkedin = linkedin === undefined ? "" : linkedin
+
+              expert.linkedin = linkedin === undefined ? "" : linkedin;
 
               expert.imageUrl =
                 "https://www.globaltactics.co" +
                 $(expertDiv).find("div.cardItemImageHolder > img").attr("src");
-
 
               if (!(expert.name in experts)) {
                 experts[expert.name] = expert;
@@ -104,7 +106,6 @@ exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
             expertsBatchAdd
               .commit()
               .then(() => {
-                res.json({ result: `it worked!` });
                 return null;
               })
               .catch((err) => {
@@ -122,9 +123,7 @@ exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
       .catch((err) => {
         console.log(err);
       });
-  }
-);
-
+  });
 
 exports.fetchAndParseOurSuccessesHTML = functions.https.onRequest(
   async (req, res) => {
@@ -155,12 +154,11 @@ exports.fetchAndParseOurSuccessesHTML = functions.https.onRequest(
 
               success.imageUrl =
                 "https://www.globaltactics.co/" +
-                $(successCard).find("div.cardItemImageHolder > img").attr("src");
+                $(successCard)
+                  .find("div.cardItemImageHolder > img")
+                  .attr("src");
 
-
-              const successesNewRef = db
-                .collection(successesPath)
-                .doc();
+              const successesNewRef = db.collection(successesPath).doc();
               successesBatchAdd.set(successesNewRef, success);
             });
 

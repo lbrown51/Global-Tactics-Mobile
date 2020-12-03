@@ -21,7 +21,7 @@ public class OurExpertsModel {
 
     public void getExperts(Consumer<QuerySnapshot> dataChangedCallback,
                            Consumer<FirebaseFirestoreException> dataErrorCallback) {
-        ListenerRegistration listener = db.collection("experts2")
+        ListenerRegistration listener = db.collection("experts")
                 .addSnapshotListener((queryDocumentSnapshots, e) -> {
                    if (e != null) {
                        dataErrorCallback.accept(e);
