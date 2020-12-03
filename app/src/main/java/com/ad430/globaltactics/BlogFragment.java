@@ -20,6 +20,8 @@ import android.widget.AutoCompleteTextView;
 import com.ad430.globaltactics.adapters.BlogAdapter;
 import com.ad430.globaltactics.viewmodels.BlogViewModel;
 
+import java.util.Objects;
+
 /**
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
@@ -72,12 +74,13 @@ public class BlogFragment extends Fragment {
         );
 
         String[] Labels = new String[] {
-                "Entrepreneurship", "Africa", "China", "Europe", "India", "Latin America", "Mena"
+                "Entrepreneurship", "Leadership", "Risks",
+                "Africa", "China", "Europe", "India", "Latin America", "MENA"
         };
 
         ArrayAdapter<String> labelAdapter =
                 new ArrayAdapter<>(
-                        getContext(),
+                        Objects.requireNonNull(getContext()),
                         R.layout.dropdown_menu_blog_post_label_popup_item,
                         Labels
                 );

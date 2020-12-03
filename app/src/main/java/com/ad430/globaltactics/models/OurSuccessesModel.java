@@ -21,7 +21,7 @@ public class OurSuccessesModel {
 
     public void getOurSuccesses(Consumer<QuerySnapshot> dataChangedCallback,
                           Consumer<FirebaseFirestoreException> dataErrorCallback) {
-        ListenerRegistration listener = db.collection("successes")
+        ListenerRegistration listener = db.collection("successes2")
                 .addSnapshotListener((queryDocumentSnapshots, e) -> {
                     if (e != null) {
                         dataErrorCallback.accept(e);

@@ -52,6 +52,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
     implementation "com.android.volley:volley:1.1.1"
     implementation 'com.google.apis:google-api-services-blogger:v3-rev20200801-1.30.10'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // General Layouts
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'

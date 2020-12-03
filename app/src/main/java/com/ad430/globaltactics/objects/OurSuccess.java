@@ -4,7 +4,7 @@ public class OurSuccess {
     String title;
     String description;
     String parent;
-    String resource;
+    String imageUrl;
 
     public OurSuccess() {
 
@@ -22,8 +22,8 @@ public class OurSuccess {
         return parent;
     }
 
-    public String getResource() {
-        return resource;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public void setTitle(String title) {
@@ -38,12 +38,12 @@ public class OurSuccess {
         this.parent = parent;
     }
 
-    public void setResource(String resource) {
-        this.resource = resource;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String title() {
-        return this.getParent() + " " + this.getResource() + " " + this.getDescription();
+        return this.getParent() + " " + this.getImageUrl() + " " + this.getDescription();
     }
 
 }

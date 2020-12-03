@@ -8,7 +8,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,7 @@ public class ExpertDetailsFragment extends Fragment {
     private static final String ARG_SPECIALTIES = "specialties";
     private static final String ARG_DESCRIPTION = "description";
     private static final String ARG_LINKEDIN = "linkedin";
+    private static final String ARG_IMAGEURL = "imageUrl";
 
     // TODO: Rename and change types of parameters
     private String name;
@@ -31,6 +35,7 @@ public class ExpertDetailsFragment extends Fragment {
     private String specialties;
     private String description;
     private String linkedin;
+    private String imageUrl;
 
     public ExpertDetailsFragment() {
         // Required empty public constructor
@@ -47,6 +52,7 @@ public class ExpertDetailsFragment extends Fragment {
             specialties = getArguments().getString(ARG_SPECIALTIES);
             description = getArguments().getString(ARG_DESCRIPTION);
             linkedin = getArguments().getString(ARG_LINKEDIN);
+            imageUrl = getArguments().getString(ARG_IMAGEURL);
         }
         Log.d("ON_CREATE_EXPERT_DETAILS", title);
     }
@@ -56,6 +62,9 @@ public class ExpertDetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_expert_details, container, false);
+
+        ImageView expertDetailsImageIV = v.findViewById(R.id.expert_details_image_iv);
+        Picasso.get().load(imageUrl).into(expertDetailsImageIV);
 
         TextView expertDetailsNameTV = v.findViewById(R.id.expert_details_name_tv);
         expertDetailsNameTV.setText(name);
