@@ -10,6 +10,7 @@ public class Expert {
     String specialties;
     String description;
     String linkedin;
+    String imageUrl;
 
     public Expert() {}
 
@@ -76,5 +77,11 @@ public class Expert {
 
     public void setLinkedin(String linkedin) {
         this.linkedin = linkedin.replace("\n", "");
+    }
+
+    public String getImageUrl() { return imageUrl; }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

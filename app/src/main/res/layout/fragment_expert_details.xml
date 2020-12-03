@@ -13,6 +13,13 @@
         android:padding="@dimen/fifteen_dp"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/ten_dp"
+            android:id="@+id/expert_details_image_iv"
+            android:contentDescription="@string/expert_image" />
+
         <TextView
             android:id="@+id/expert_details_name_tv"
             android:layout_width="wrap_content"

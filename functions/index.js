@@ -73,7 +73,7 @@ exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
                 .find("div.cardItemNameHolder")
                 .text()
                 .trim();
-              expert.position = $(expertDiv).find("div.GTPosition").text();
+              expert.title = $(expertDiv).find("div.GTPosition").text();
               expert.location = $(expertDiv).find("div.GTLocation").text();
               expert.specialties = $(expertDiv).find("div.GTSpecialty").text();
 
