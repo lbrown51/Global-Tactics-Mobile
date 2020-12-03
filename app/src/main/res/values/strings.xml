@@ -172,6 +172,6 @@
     <string name="privacy_paragraph_fiftytwo">We will occasionally update this privacy policy to reflect changes in our services and customer feedback. When we post changes to this policy, we will revise the "last updated" date at the top of this policy. If there are material changes to this notice or in how Global Tactics will use your personal information, we will notify you either by prominently posting a notice of such changes prior to implementing the change or by directly sending you a notification. We encourage you to periodically review this policy to be informed of how Global Tactics is protecting your information.</string>
     <string name="privacy_paragraph_fiftythree">Site viewers may view and print excerpts from these pages provided it is for their personal, non-commercial use.</string>
     <string name="privacy_paragraph_fiftyfour">If you feel that we are not abiding by this privacy policy, you should contact us immediately via email at info@globaltactics.co, telephone at +1 (206) 552-9601 or by mail at Global Tactics, LLC, Attn: Privacy Team, 600 Stewart Street, Suite 400, Seattle, Washington 98101-1217.</string>
-    <string name="blog_post_select_a_label">Select a label</string>
+    <string name="blog_post_select_a_topic">Topic</string>
     <string name="animation">animation</string>
 </resources>

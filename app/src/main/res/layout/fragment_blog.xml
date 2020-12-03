@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/ten_dp"
-        android:hint="@string/blog_post_select_a_label">
+        android:hint="@string/blog_post_select_a_topic">
 
         <AutoCompleteTextView
             android:id="@+id/blog_post_label_dropdown"
