@@ -48,6 +48,7 @@ public class Event {
 
         String year = String.valueOf(calendar.get(Calendar.YEAR));
         String month = String.valueOf(calendar.get(Calendar.MONTH));
+        String day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
 
         String yearMonth = year;
 
@@ -56,6 +57,13 @@ public class Event {
         }
         else {
             yearMonth = yearMonth + month;
+        }
+
+        if (day.length() < 2) {
+            yearMonth = yearMonth + "0" + day;
+        }
+        else {
+            yearMonth = yearMonth + day;
         }
 
         return Integer.parseInt(yearMonth);
