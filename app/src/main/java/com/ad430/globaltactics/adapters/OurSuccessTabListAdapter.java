@@ -1,6 +1,7 @@
 package com.ad430.globaltactics.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,8 +53,8 @@ public class OurSuccessTabListAdapter extends RecyclerView.Adapter<OurSuccessTab
         HashMap<String,String> dataMap = list.get(position);
         holder.itemView.setTag(position);
 
-
         String imageUrl = dataMap.get("imageUrl");
+
         Picasso.get().load(imageUrl).into(holder.ivOurSuccessFlag);
         holder.tvOurSuccessTitle.setText(dataMap.get("title").trim());
         holder.tvOurSuccessDescription.setText(dataMap.get("description").trim());
