@@ -46,119 +46,145 @@ exports.sendContactInformation = functions.firestore
 
 const cheerio = require("cheerio");
 const got = require("got");
-const { response } = require("express");
 
 exports.fetchAndParseOurExpertsHTML = functions.https.onRequest(
   async (req, res) => {
-    const ourExpertsPath = "experts2";
+    const expertsPath = "experts2";
 
-    deleteCollection(db, ourExpertsPath, 20).then(() => {
-      // Grab the text parameter.
-      const ourExpertsBatchAdd = db.batch();
-      const ourExperts = {};
-      const ourExpertsURL =
-        "https://www.globaltactics.co/who-we-are/our-experts.html?appview=true";
+    deleteCollection(db, expertsPath, 20)
+      .then(() => {
+        // Grab the text parameter.
+        const expertsBatchAdd = db.batch();
+        const experts = {};
+        const expertsURL =
+          "https://www.globaltactics.co/our-experts-cards.html";
 
-      got(ourExpertsURL)
-        .then((response) => {
-          const $ = cheerio.load(response.body);
-          const ourExpertSections = $("section.GTExperts");
+        got(expertsURL)
+          .then((response) => {
+            const $ = cheerio.load(response.body);
+            const expertCards = $("div.cardItemHolder");
 
-          let expertCount = 0;
-          ourExpertSections.each((i, expertSection) => {
-            const ourExpertTextAreas = $(expertSection).find("div.bloq_rich_text_editor_wrapper").children("div");
-            
-            const ourExpert = {};
-            ourExpert.id = expertCount++;
+            let expertCount = 0;
+            expertCards.each((i, expertDiv) => {
+              const expert = {};
+              expert.id = expertCount++;
 
-            console.log(i);
-            console.log(ourExpertTextAreas.children().not("br").not("ul").length)
-            if(ourExpertTextAreas.children().not("br").not("ul").length > 5) return;
+              expert.name = $(expertDiv)
+                .find("div.cardItemNameHolder")
+                .text()
+                .trim();
+              expert.position = $(expertDiv).find("div.GTPosition").text();
+              expert.location = $(expertDiv).find("div.GTLocation").text();
+              expert.specialties = $(expertDiv).find("div.GTSpecialty").text();
 
-            ourExpertTextAreas.children().not("br").each((i, child) => {
-              if ($(child) === undefined) return;
-              const childText = $(child).text();
+              const expertCardTextHolder = $(expertDiv).find("div.cardItemTextHolder");
+              expertCardTextHolder.children().remove("div");
+              expert.description = expertCardTextHolder.text()
+              
+              const linkedin = $(expertDiv)
+                .find("div.cardItemLinkHolder > a")
+                .attr("href");
+              
+              expert.linkedin = linkedin === undefined ? "" : linkedin
 
-              switch (i){
-                case 0:
-                  ourExpert.name = childText;
-                  console.log(childText);
-                  break;
-                case 1:
-                  ourExpert.title = childText;
-                  break;
-                case 2:
-                  ourExpert.location = childText;
-                  break;
-                case 3:
-                  ourExpert.specialties = childText;
-                  break;
-                case 4:
-                  const ourExpertLinkedIn = $(child).find("a").attr("href");
-                  if (ourExpertLinkedIn !== undefined) {
-                    ourExpert.linkedin = ourExpertLinkedIn.text();
-                  }
-                  ourExpert.description = $(child).text();
-              }
-              return;
-               
-              const ourExpertName = $(innerArea).find("h2").text();
-              const ourExpertTitle = $(innerArea).find("h4").text();
+              expert.imageUrl =
+                "https://www.globaltactics.co" +
+                $(expertDiv).find("div.cardItemImageHolder > img").attr("src");
 
-              if (ourExpertName !== "" && ourExpertTitle !== "") {
-                const ourExpertSpecialties = $(innerArea).find("small").text();
-                let ourExpertLinkedIn = $(innerArea).find("a").attr("href");
-                if (ourExpertLinkedIn === undefined) {
-                  ourExpertLinkedIn = "";
-                }
 
-                $(innerArea).find("small").remove();
-                $(innerArea).find("a").remove();
-                const ourExpertDescription = $(innerArea).find("p").text();
-
-                $(innerArea).find("p").remove();
-                $(innerArea).find("h2").remove();
-                $(innerArea).find("h4").remove();
-                const ourExpertLocation = $(innerArea).text().trim();
-
-                const ourExpert = {
-                  id: expertCount++,
-                  name: ourExpertName,
-                  title: ourExpertTitle,
-                  location: ourExpertLocation,
-                  specialties: ourExpertSpecialties,
-                  description: ourExpertDescription,
-                  linkedin: ourExpertLinkedIn,
-                };
-
-                if (!(ourExpert.name in ourExperts)) {
-                  ourExperts[ourExpert.name] = ourExpert;
-                  const ourExpertsNewRef = db
-                    .collection(ourExpertsPath)
-                    .doc(ourExpert.id.toString());
-                  ourExpertsBatchAdd.set(ourExpertsNewRef, ourExpert);
-                }
+              if (!(expert.name in experts)) {
+                experts[expert.name] = expert;
+                const expertsNewRef = db
+                  .collection(expertsPath)
+                  .doc(expert.id.toString());
+                expertsBatchAdd.set(expertsNewRef, expert);
               }
             });
-            // console.log(ourExpert);
+
+            expertsBatchAdd
+              .commit()
+              .then(() => {
+                res.json({ result: `it worked!` });
+                return null;
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+
+            return null;
+          })
+          .catch((err) => {
+            console.log(err);
           });
 
-          // ourExpertsBatchAdd
-          //   .commit()
-          //   .then(() => {
-          //     res.json({ result: `it worked!` });
-          //     return null;
-          //   })
-          //   .catch((err) => {
-          //     console.log(err);
-          //   });
+        return null;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+);
 
-          return null;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
+
+exports.fetchAndParseOurSuccessesHTML = functions.https.onRequest(
+  async (req, res) => {
+    const successesPath = "successes2";
+
+    deleteCollection(db, successesPath, 20)
+      .then(() => {
+        // Grab the text parameter.
+        const successesBatchAdd = db.batch();
+        const successesURL =
+          "https://www.globaltactics.co/who-we-are/our-successes.html";
+
+        got(successesURL)
+          .then((response) => {
+            const $ = cheerio.load(response.body);
+            const successCards = $("div.cardItemHolder");
+
+            successCards.each((i, successCard) => {
+              const success = {};
+
+              success.title = $(successCard)
+                .find("div.cardItemNameHolder")
+                .text();
+
+              success.description = $(successCard)
+                .find("div.cardItemTextHolder")
+                .text();
+
+              success.imageUrl =
+                "https://www.globaltactics.co/" +
+                $(successCard).find("div.cardItemImageHolder > img").attr("src");
+
+
+              const successesNewRef = db
+                .collection(successesPath)
+                .doc();
+              successesBatchAdd.set(successesNewRef, success);
+            });
+
+            successesBatchAdd
+              .commit()
+              .then(() => {
+                res.json({ result: `it worked!` });
+                return null;
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+
+            return null;
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+        return null;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 );
 
@@ -166,43 +192,49 @@ exports.fetchAndParseEventsJSON = functions.https.onRequest(
   async (req, res) => {
     const eventsPath = "events2";
 
-    deleteCollection(db, eventsPath, 50).then(() => {
-      const eventsBatchAdd = db.batch();
-      const eventsURL =
-        "https://www.globaltactics.co/_bloq_calendars/json/6536?start=2020-11-29&end=2021-01-10&_=1605675092353";
+    deleteCollection(db, eventsPath, 50)
+      .then(() => {
+        const eventsBatchAdd = db.batch();
+        const eventsURL =
+          "https://www.globaltactics.co/_bloq_calendars/json/6536?start=2020-11-29&end=2021-01-10&_=1605675092353";
 
-      got(eventsURL)
-        .then((response) => {
-          const events = JSON.parse(response.body);
+        got(eventsURL)
+          .then((response) => {
+            const events = JSON.parse(response.body);
 
-          events.forEach((evnt) => {
-            const newEvent = {
-              description: evnt.title,
-              from: new Date(evnt.start),
-              to: new Date(evnt.end),
-              host: "https://greenwicheconomicforum.com/",
-            };
+            events.forEach((evnt) => {
+              const newEvent = {
+                description: evnt.title,
+                from: new Date(evnt.start),
+                to: new Date(evnt.end),
+                host: "https://greenwicheconomicforum.com/",
+              };
 
-            const evntNewRef = db.collection(eventsPath).doc();
-            eventsBatchAdd.set(evntNewRef, newEvent);
-          });
-
-          eventsBatchAdd
-            .commit()
-            .then(() => {
-              res.json({ result: `it worked!` });
-              return null;
-            })
-            .catch((err) => {
-              console.log(err);
+              const evntNewRef = db.collection(eventsPath).doc();
+              eventsBatchAdd.set(evntNewRef, newEvent);
             });
 
-          return null;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
+            eventsBatchAdd
+              .commit()
+              .then(() => {
+                res.json({ result: `it worked!` });
+                return null;
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+
+            return null;
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+        return null;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 );
 
