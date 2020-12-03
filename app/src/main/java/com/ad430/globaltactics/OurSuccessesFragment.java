@@ -20,6 +20,7 @@ public class OurSuccessesFragment extends Fragment {
     public View ourSuccessesView;
     public OurSuccessesCorporateTab ourSuccessesCorporateTab;
     public OurSuccessesGovernmentTab ourSuccessesGovernmentTab;
+    public OurSuccessesNonProfitTab ourSuccessesNonProfitTab;
 
     public OurSuccessesFragment() {
 
@@ -43,6 +44,7 @@ public class OurSuccessesFragment extends Fragment {
 
         ourSuccessesCorporateTab = new OurSuccessesCorporateTab();
         ourSuccessesGovernmentTab = new OurSuccessesGovernmentTab();
+        ourSuccessesNonProfitTab = new OurSuccessesNonProfitTab();
 
         ourSuccessesTabs.setupWithViewPager(ourSuccessesViewPager);
 
@@ -50,6 +52,7 @@ public class OurSuccessesFragment extends Fragment {
 
         ourSuccessesViewPagerAdapter.addFragment(ourSuccessesCorporateTab, getString(R.string.corporate));
         ourSuccessesViewPagerAdapter.addFragment(ourSuccessesGovernmentTab, getString(R.string.government));
+        ourSuccessesViewPagerAdapter.addFragment(ourSuccessesNonProfitTab, getString(R.string.nonprofit_title));
 
         ourSuccessesViewPager.setAdapter(ourSuccessesViewPagerAdapter);
 

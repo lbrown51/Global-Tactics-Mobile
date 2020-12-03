@@ -67,9 +67,6 @@ public class OurSuccessesGovernmentTab extends Fragment {
                     }
                 }
 
-                EventAdapter dataAdapter = new EventAdapter(activity, governmentTabDataList);
-                recyclerView.setAdapter(dataAdapter);
-
                 OurSuccessTabListAdapter ourSuccessTabListAdapter = new OurSuccessTabListAdapter(activity, governmentTabDataList);
                 recyclerView.setAdapter(ourSuccessTabListAdapter);
             }

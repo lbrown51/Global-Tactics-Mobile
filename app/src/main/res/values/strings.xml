@@ -30,6 +30,8 @@
     <string name="our_successes_fragment_title">Our Successes</string>
     <string name="corporate">corporate</string>
     <string name="government">government</string>
+    <string name="nonprofit">nonprofit</string>
+    <string name="nonprofit_title">NON-PROFIT</string>
     <string name="title">title</string>
     <string name="description">description</string>
     <string name="date">date</string>
