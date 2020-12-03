@@ -45,6 +45,7 @@ exports.sendContactInformation = functions.firestore
 
 const cheerio = require("cheerio");
 const got = require("got");
+const { contains } = require("cheerio");
 
 // https://crontab.guru/every-week was helpful in getting 0 0 * * 0
 exports.fetchAndParseOurExpertsHTML = functions.pubsub
@@ -139,27 +140,45 @@ exports.fetchAndParseOurSuccessesHTML = functions.https.onRequest(
         got(successesURL)
           .then((response) => {
             const $ = cheerio.load(response.body);
-            const successCards = $("div.cardItemHolder");
 
-            successCards.each((i, successCard) => {
-              const success = {};
+            const topLevelSections = $("main#content-all")
+              .children()
+              .filter(function (e, el) {
+                const containsSuccessCards =
+                  $(el).find("div.cardItemHolder").length > 0;
+                return containsSuccessCards;
+              });
 
-              success.title = $(successCard)
-                .find("div.cardItemNameHolder")
-                .text();
+            topLevelSections.each((i, successSection) => {
+              const successType =
+                i === 0 ? "corporate" : i === 1 ? "government" : "nonprofit";
 
-              success.description = $(successCard)
-                .find("div.cardItemTextHolder")
-                .text();
+              const successCards = $(successSection).find(
+                "div.cardItemHolder"
+              );
 
-              success.imageUrl =
-                "https://www.globaltactics.co/" +
-                $(successCard)
-                  .find("div.cardItemImageHolder > img")
-                  .attr("src");
+              successCards.each((i, successCard) => {
+                const success = {};
 
-              const successesNewRef = db.collection(successesPath).doc();
-              successesBatchAdd.set(successesNewRef, success);
+                success.parent = successType;
+
+                success.title = $(successCard)
+                  .find("div.cardItemNameHolder")
+                  .text();
+
+                success.description = $(successCard)
+                  .find("div.cardItemTextHolder")
+                  .text();
+
+                success.imageUrl =
+                  "https://www.globaltactics.co/" +
+                  $(successCard)
+                    .find("div.cardItemImageHolder > img")
+                    .attr("src");
+
+                const successesNewRef = db.collection(successesPath).doc();
+                successesBatchAdd.set(successesNewRef, success);
+              });
             });
 
             successesBatchAdd

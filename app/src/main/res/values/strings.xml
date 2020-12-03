@@ -38,7 +38,7 @@
     <string name="srcId">srcId</string>
     <string name="corporates">corporates</string>
     <string name="governments">governments</string>
-    <string name="resource">resource</string>
+    <string name="imageUrl">imageUrl</string>
 
     <!-- CONTACT FORM -->
     <string name="contact_fragment_title">Contact</string>

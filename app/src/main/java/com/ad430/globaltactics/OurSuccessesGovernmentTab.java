@@ -61,7 +61,7 @@ public class OurSuccessesGovernmentTab extends Fragment {
 
                         dataMap.put(getString(R.string.title), ourSuccess.getTitle());
                         dataMap.put(getString(R.string.description), ourSuccess.getDescription());
-                        dataMap.put(getString(R.string.resource), ourSuccess.getResource());
+                        dataMap.put(getString(R.string.imageUrl), ourSuccess.getImageUrl());
 
                         governmentTabDataList.add(dataMap);
                     }

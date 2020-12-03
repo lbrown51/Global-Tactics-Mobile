@@ -30,42 +30,38 @@
 
             <ImageView
                 android:id="@+id/ivOurSuccessFlag"
-                android:layout_width="@dimen/one_thirty_dp"
-                android:layout_height="@dimen/sixty_dp"
-                android:maxHeight="@dimen/one_twenty_dp"
-                android:layout_marginTop="@dimen/fifteen_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/fifteen_dp"
                 app:layout_constraintBottom_toTopOf="@+id/tvOurSuccessTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvOurSuccessTitle"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/forty_dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="@dimen/twenty_six_sp"
                 android:textStyle="bold"
+                android:padding="@dimen/five_dp"
                 app:layout_constraintBottom_toTopOf="@+id/tvOurSuccessDescription"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/TextAppearance.MaterialComponents.Headline4"/>
 
             <TextView
                 android:id="@+id/tvOurSuccessDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/fifteen_sp"
-                android:paddingTop="@dimen/fifteen_dp"
-                android:paddingBottom="@dimen/fifteen_dp"
-                android:paddingLeft="@dimen/twenty_dp"
-                android:paddingRight="@dimen/twenty_dp"
+                android:paddingVertical="@dimen/fifteen_dp"
+                android:paddingHorizontal="@dimen/twenty_dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/TextAppearance.MaterialComponents.Body1" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

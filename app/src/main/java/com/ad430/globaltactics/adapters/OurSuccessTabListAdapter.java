@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ad430.globaltactics.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,11 +52,11 @@ public class OurSuccessTabListAdapter extends RecyclerView.Adapter<OurSuccessTab
         HashMap<String,String> dataMap = list.get(position);
         holder.itemView.setTag(position);
 
-        int imageId = context.getResources().getIdentifier(dataMap.get("resource"), "drawable", context.getPackageName());
 
-        holder.ivOurSuccessFlag.setImageResource(imageId);
-        holder.tvOurSuccessTitle.setText(dataMap.get("title"));
-        holder.tvOurSuccessDescription.setText(dataMap.get("description"));
+        String imageUrl = dataMap.get("imageUrl");
+        Picasso.get().load(imageUrl).into(holder.ivOurSuccessFlag);
+        holder.tvOurSuccessTitle.setText(dataMap.get("title").trim());
+        holder.tvOurSuccessDescription.setText(dataMap.get("description").trim());
     }
 
     @Override
