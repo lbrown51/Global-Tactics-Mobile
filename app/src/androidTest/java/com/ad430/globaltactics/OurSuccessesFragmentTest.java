@@ -9,9 +9,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.swipeLeft;
+import static androidx.test.espresso.action.ViewActions.swipeRight;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withParent;
+import static androidx.test.espresso.matcher.ViewMatchers.withParentIndex;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.allOf;
 
 @RunWith(AndroidJUnit4.class)
 
@@ -72,4 +79,20 @@ public class OurSuccessesFragmentTest {
         )
             .check(matches(isDisplayed()));
     }
+
+    @Test
+    public void canNavigateToAllTabs() {
+        FragmentScenario<OurSuccessesFragment> fragmentScenario = FragmentScenario
+                .launchInContainer(
+                        OurSuccessesFragment.class,
+                        new Bundle(),
+                        R.style.AppTheme,
+                        null
+                );
+
+        onView(withText("GOVERNMENT")).perform(click());
+        onView(withText("NON-PROFIT")).perform(click());
+        onView(withText("CORPORATE")).perform(click());
+    }
+
 }
