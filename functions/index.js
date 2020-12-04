@@ -126,9 +126,11 @@ exports.fetchAndParseOurExpertsHTML = functions.pubsub
       });
   });
 
-exports.fetchAndParseOurSuccessesHTML = functions.https.onRequest(
-  async (req, res) => {
-    const successesPath = "successes2";
+
+exports.fetchAndParseOurSuccessesHTML = functions.pubsub
+  .schedule("0 0 * * 6")
+  .onRun((context) => {
+    const successesPath = "successes";
 
     deleteCollection(db, successesPath, 20)
       .then(() => {
@@ -153,9 +155,7 @@ exports.fetchAndParseOurSuccessesHTML = functions.https.onRequest(
               const successType =
                 i === 0 ? "corporate" : i === 1 ? "government" : "nonprofit";
 
-              const successCards = $(successSection).find(
-                "div.cardItemHolder"
-              );
+              const successCards = $(successSection).find("div.cardItemHolder");
 
               successCards.each((i, successCard) => {
                 const success = {};
@@ -184,7 +184,6 @@ exports.fetchAndParseOurSuccessesHTML = functions.https.onRequest(
             successesBatchAdd
               .commit()
               .then(() => {
-                res.json({ result: `it worked!` });
                 return null;
               })
               .catch((err) => {
@@ -202,14 +201,13 @@ exports.fetchAndParseOurSuccessesHTML = functions.https.onRequest(
       .catch((err) => {
         console.log(err);
       });
-  }
-);
+  });
 
 exports.fetchAndParseEventsJSON = functions.https.onRequest(
   async (req, res) => {
-    const eventsPath = "events2";
+    const eventsPath = "events";
 
-    deleteCollection(db, eventsPath, 50)
+    deleteCollection(db, successesPath, 20)
       .then(() => {
         const eventsBatchAdd = db.batch();
         const eventsURL =
@@ -224,7 +222,7 @@ exports.fetchAndParseEventsJSON = functions.https.onRequest(
                 description: evnt.title,
                 from: new Date(evnt.start),
                 to: new Date(evnt.end),
-                host: "https://greenwicheconomicforum.com/",
+                host: evnt.contact_url,
               };
 
               const evntNewRef = db.collection(eventsPath).doc();
