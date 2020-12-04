@@ -11,11 +11,11 @@ public class OurSuccess {
     }
 
     public String getTitle() {
-        return title;
+        return title.trim();
     }
 
     public String getDescription() {
-        return description;
+        return description.trim();
     }
 
     public String getParent() {

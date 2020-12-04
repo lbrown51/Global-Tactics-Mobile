@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,20 +21,20 @@ import com.ad430.globaltactics.viewmodels.OurSuccessesViewModel;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class OurSuccessesCorporateTab extends Fragment {
+public class OurSuccessesNonProfitTab extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     View myView;
     OurSuccessesViewModel ourSuccessesViewModel;
-    ArrayList<HashMap<String,String>> corporateTabDataList = new ArrayList<>();
+    ArrayList<HashMap<String,String>> nonProfitTabDataList = new ArrayList<>();
 
-    public OurSuccessesCorporateTab() {
+    public OurSuccessesNonProfitTab() {
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.fragment_our_successes_corporate_tab, container, false);
+        myView = inflater.inflate(R.layout.fragment_our_successes_nonprofit_tab, container, false);
 
         return myView;
     }
@@ -44,30 +45,32 @@ public class OurSuccessesCorporateTab extends Fragment {
 
         final Activity activity = this.getActivity();
 
-
         ourSuccessesViewModel = new OurSuccessesViewModel();
 
         ourSuccessesViewModel.getOurSuccesses(
             (ArrayList<OurSuccess> ourSuccesses) -> {
-                recyclerView = myView.findViewById(R.id.ourSuccessesCorporateList);
+                recyclerView = myView.findViewById(R.id.ourSuccessesNonProfitList);
                 recyclerView.setHasFixedSize(true);
 
                 layoutManager = new LinearLayoutManager(this.getActivity());
                 recyclerView.setLayoutManager(layoutManager);
 
                 for (OurSuccess ourSuccess : ourSuccesses) {
-                    if (ourSuccess.getParent().equals(getString(R.string.corporate))) {
+                    Log.d("hgfhgfhgfh", ourSuccess.getParent());
+                    Log.d("sssssssssss", getString(R.string.nonprofit));
+
+                    if (ourSuccess.getParent().equals(getString(R.string.nonprofit))) {
                         HashMap<String, String> dataMap = new HashMap<>();
 
                         dataMap.put(getString(R.string.title), ourSuccess.getTitle());
                         dataMap.put(getString(R.string.description), ourSuccess.getDescription());
                         dataMap.put(getString(R.string.imageUrl), ourSuccess.getImageUrl());
 
-                        corporateTabDataList.add(dataMap);
+                        nonProfitTabDataList.add(dataMap);
                     }
                 }
 
-                OurSuccessTabListAdapter ourSuccessTabListAdapter = new OurSuccessTabListAdapter(activity, corporateTabDataList);
+                OurSuccessTabListAdapter ourSuccessTabListAdapter = new OurSuccessTabListAdapter(activity, nonProfitTabDataList);
                 recyclerView.setAdapter(ourSuccessTabListAdapter);
             }
         );
@@ -79,6 +82,3 @@ public class OurSuccessesCorporateTab extends Fragment {
         ourSuccessesViewModel.clear();
     }
 }
-
-
-

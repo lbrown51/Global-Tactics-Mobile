@@ -31,7 +31,7 @@
             <ImageView
                 android:id="@+id/ivOurSuccessFlag"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/one_twenty_dp"
                 android:paddingTop="@dimen/fifteen_dp"
                 app:layout_constraintBottom_toTopOf="@+id/tvOurSuccessTitle"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:padding="@dimen/five_dp"
+                android:textSize="@dimen/twenty_sp"
+                android:padding="@dimen/ten_dp"
                 app:layout_constraintBottom_toTopOf="@+id/tvOurSuccessDescription"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
