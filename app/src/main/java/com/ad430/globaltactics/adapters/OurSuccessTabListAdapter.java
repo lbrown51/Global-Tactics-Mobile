@@ -15,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ad430.globaltactics.R;
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.io.FileOutputStream;
@@ -64,12 +63,11 @@ public class OurSuccessTabListAdapter extends RecyclerView.Adapter<OurSuccessTab
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         HashMap<String,String> dataMap = list.get(position);
-//        holder.itemView.setTag(position);
+        holder.itemView.setTag(position);
 
         String imageUrl = dataMap.get("imageUrl");
 
-        Glide.with(this.context).load(imageUrl).into(holder.ivOurSuccessFlag);
-//        Picasso.get().load(imageUrl).into(holder.ivOurSuccessFlag);
+        Picasso.get().load(imageUrl).into(holder.ivOurSuccessFlag);
 
         holder.tvOurSuccessTitle.setText(dataMap.get("title").trim());
         holder.tvOurSuccessDescription.setText(dataMap.get("description").trim());
