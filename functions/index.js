@@ -203,16 +203,21 @@ exports.fetchAndParseOurSuccessesHTML = functions.pubsub
       });
   });
 
+
 exports.fetchAndParseEventsJSON = functions.pubsub
 .schedule("0 0 * * *")
 .onRun((context) => {
     const eventsPath = "events";
+    const numDaysInAdvance = 180;
 
-    deleteCollection(db, successesPath, 20)
+    deleteCollection(db, eventsPath, 20)
       .then(() => {
         const eventsBatchAdd = db.batch();
+
+        const [startDate, endDate] = getStartAndEndDate(numDaysInAdvance);
+
         const eventsURL =
-          "https://www.globaltactics.co/_bloq_calendars/json/6536?start=2020-11-29&end=2021-01-10&_=1605675092353";
+          `https://www.globaltactics.co/_bloq_calendars/json/6536?start=${startDate}&end=${endDate}&_=1605675092353`;
 
         got(eventsURL)
           .then((response) => {
@@ -285,3 +290,28 @@ const deleteQueryBatch = async (db, query, resolve) => {
     deleteQueryBatch(db, query, resolve);
   });
 };
+
+function getStartAndEndDate(numDaysInAdvance=180) {
+  let start = new Date(),
+      sMonth = '' + (start.getMonth() + 1),
+      sDay = '' + start.getDate(),
+      sYear = start.getFullYear();
+  
+  let end = new Date();
+  end.setDate(end.getDate() + numDaysInAdvance);
+
+  let eMonth = '' + (end.getMonth() + 1),
+    eDay = '' + end.getDate(),
+    eYear = end.getFullYear();
+    
+  if (sMonth.length < 2) sMonth = '0' + sMonth;
+  if (eMonth.length < 2)  eMonth = '0' + eMonth;
+  
+  if (sDay.length < 2) sDay = '0' + sDay;
+  if (eDay.length < 2)  eDay = '0' + eDay;
+
+  return [
+    [sYear, sMonth, sDay].join('-'),
+    [eYear, eMonth, eDay].join('-'),
+  ];
+}
