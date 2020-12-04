@@ -56,6 +56,9 @@ public class OurSuccessesNonProfitTab extends Fragment {
                 recyclerView.setLayoutManager(layoutManager);
 
                 for (OurSuccess ourSuccess : ourSuccesses) {
+                    Log.d("hgfhgfhgfh", ourSuccess.getParent());
+                    Log.d("sssssssssss", getString(R.string.nonprofit));
+
                     if (ourSuccess.getParent().equals(getString(R.string.nonprofit))) {
                         HashMap<String, String> dataMap = new HashMap<>();
 
