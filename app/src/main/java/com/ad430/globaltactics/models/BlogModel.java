@@ -62,7 +62,7 @@ public class BlogModel {
                 getPostListAction.setKey("AIzaSyC_B6br4L6-nP2F-R-4mLycGmfxddyX3Bg");
 
                 if (label != null) {
-                    if(label.equals("risks") || label.equals("leadership")) {
+                    if(label.equals("Risks") || label.equals("Leadership")) {
                         String uncappedLabel = label.substring(0, 1).toLowerCase() + label.substring(1);
                         getPostListAction.setLabels(uncappedLabel);
                     }

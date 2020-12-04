@@ -8,6 +8,7 @@ const nodemailer = require("nodemailer");
 let transporter = nodemailer.createTransport({
   service: "gmail",
 });
+
 exports.sendContactInformation = functions.firestore
   .document("/requests/{requestId}")
   .onCreate((snap, context) => {
@@ -126,7 +127,6 @@ exports.fetchAndParseOurExpertsHTML = functions.pubsub
       });
   });
 
-
 exports.fetchAndParseOurSuccessesHTML = functions.pubsub
   .schedule("0 0 * * 6")
   .onRun((context) => {
@@ -203,8 +203,9 @@ exports.fetchAndParseOurSuccessesHTML = functions.pubsub
       });
   });
 
-exports.fetchAndParseEventsJSON = functions.https.onRequest(
-  async (req, res) => {
+exports.fetchAndParseEventsJSON = functions.pubsub
+.schedule("0 0 * * *")
+.onRun((context) => {
     const eventsPath = "events";
 
     deleteCollection(db, successesPath, 20)
@@ -232,7 +233,6 @@ exports.fetchAndParseEventsJSON = functions.https.onRequest(
             eventsBatchAdd
               .commit()
               .then(() => {
-                res.json({ result: `it worked!` });
                 return null;
               })
               .catch((err) => {
