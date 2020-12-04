@@ -55,6 +55,7 @@ public class OurSuccessesCorporateTab extends Fragment {
                 layoutManager = new LinearLayoutManager(this.getActivity());
                 recyclerView.setLayoutManager(layoutManager);
 
+                corporateTabDataList = new ArrayList<>();
                 for (OurSuccess ourSuccess : ourSuccesses) {
                     if (ourSuccess.getParent().equals(getString(R.string.corporate))) {
                         HashMap<String, String> dataMap = new HashMap<>();

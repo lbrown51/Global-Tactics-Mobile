@@ -55,6 +55,7 @@ public class OurSuccessesGovernmentTab extends Fragment {
                 layoutManager = new LinearLayoutManager(this.getActivity());
                 recyclerView.setLayoutManager(layoutManager);
 
+                governmentTabDataList = new ArrayList<>();
                 for (OurSuccess ourSuccess : ourSuccesses) {
                     if (ourSuccess.getParent().equals(getString(R.string.government))) {
                         HashMap<String, String> dataMap = new HashMap<>();

@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class OurSuccessesNonProfitTab extends Fragment {
+    private final String TAG = OurSuccessesNonProfitTab.class.getSimpleName();
+
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     View myView;
@@ -55,10 +57,8 @@ public class OurSuccessesNonProfitTab extends Fragment {
                 layoutManager = new LinearLayoutManager(this.getActivity());
                 recyclerView.setLayoutManager(layoutManager);
 
+                nonProfitTabDataList = new ArrayList<>();
                 for (OurSuccess ourSuccess : ourSuccesses) {
-                    Log.d("hgfhgfhgfh", ourSuccess.getParent());
-                    Log.d("sssssssssss", getString(R.string.nonprofit));
-
                     if (ourSuccess.getParent().equals(getString(R.string.nonprofit))) {
                         HashMap<String, String> dataMap = new HashMap<>();
 

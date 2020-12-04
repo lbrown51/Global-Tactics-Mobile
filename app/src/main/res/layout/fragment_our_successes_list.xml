@@ -44,7 +44,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:textSize="@dimen/twenty_sp"
                 android:padding="@dimen/ten_dp"
                 app:layout_constraintBottom_toTopOf="@+id/tvOurSuccessDescription"
                 app:layout_constraintEnd_toEndOf="parent"
