@@ -30,7 +30,7 @@ exports.sendContactInformation = functions.firestore
 
     const mailOptions = {
       from: "gtcontactform@gmail.com",
-      to: "lenny.casey.brown@gmail.com",
+      to: "aaron.rose@globaltactics.co",
       subject: "GT Contact Form",
       html: html,
     };
